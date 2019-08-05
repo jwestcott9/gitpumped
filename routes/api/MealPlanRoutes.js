@@ -11,9 +11,9 @@ router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
     });
 });
 
-// /api/mealPlans/new, authMiddleware.isLoggedIn
+// /api/mealPlans/new, 
 // add new workout, update the user to have workout id
-router.post("/new", function (req, res, next) {
+router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
     const newMealPlan = new db.MealPlans({
         user: req.body.user,
         MealPlan: req.body.MealPlan

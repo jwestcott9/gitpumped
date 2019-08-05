@@ -17,7 +17,7 @@ router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
 
 // /api/workouts/new
 // add new workout, update the user to have workout id
-router.post("/new",  function (req, res, next) {
+router.post("/new",  authMiddleware.isLoggedIn, function (req, res, next) {
     const newWorkout = new db.Workouts({
         user: req.body.user,
         monday: req.body.monday,
