@@ -1,45 +1,45 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WorkoutsSchema = new Schema({
+const workoutsSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  mondayWorkout: {
+  monday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
-  tuesdayWorkout: {
+  tuesday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
-  wednesdayWorkout: {
+  wednesday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
-  thursdayWorkout: {
+  thursday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
-  fridayWorkout: {
+  friday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
-  saturdayWorkout: {
+  saturday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
-  sundayWorkout: {
+  sunday: {
     type: String,
     unique: false,
-    required: [true, "text is required"]
+    required: false
   },
   createdAt: {
     type: Date,
@@ -47,6 +47,6 @@ const WorkoutsSchema = new Schema({
   }
 });
 
-const Workouts = mongoose.model("Workouts", WorkoutsSchema);
+const Workout = mongoose.model("Workout", workoutsSchema);
 
-module.exports = Workouts;
+module.exports = Workout;

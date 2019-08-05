@@ -3,73 +3,49 @@ const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
 
-// /api/todos/all
-// get all todos from the signed in user
+// /api/mealPlans/all
+// get all mealPlans from the signed in user
 router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
-    db.MealPlans.find({
-        user: req.user.id
-    }, (err, workouts) => {
-        res.json(workouts);
+    db.MealPlans.find({ author: req.body.user}, (err, mealplans) => {
+        res.json(mealplans);
     });
 });
 
-router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
-    const newWorkout = new db.Workouts({
-        user: req.user._id,
-        workout: req.body.workout
+// /api/mealPlans/new, authMiddleware.isLoggedIn
+// add new workout, update the user to have workout id
+router.post("/new", function (req, res, next) {
+    const newMealPlan = new db.MealPlans({
+        user: req.body.user,
+        MealPlan: req.body.MealPlan
     });
 
-    newWorkout.save((err, newWorkout) => {
+    newMealPlan.save((err, newMealPlan) => {
         if (err) throw err;
-        db.User.findByIdAndUpdate(req.user.id, {
-            $push: {
-                Workouts: newWorkout._id
-            }
-        }, (err, user) => {
+        db.User.findByIdAndUpdate(req.body.user, { $push: { MealPlans: newMealPlan._id } }, (err, user) => {
             if (err) throw err;
-            res.send(newWorkout, user);
+            res.send(newMealPlan, user);
         });
     });
 });
 
+// /api/mealPlans/remove
+// removed workout based on id, updates user
 router.delete("/remove", authMiddleware.isLoggedIn, function (req, res, next) {
-    db.Workouts.findByIdAndDelete(req.body.id, (err, workout) => {
+    db.MealPlans.findByIdAndDelete(req.body.id, (err, workout) => {
         if (err) throw err;
-        db.User.findByIdAndUpdate(workout._id, {
-            $pull: {
-                'Workouts': workout._id
-            }
-        }, {
-            new: true
-        }, (err, user) => {
+        db.User.findByIdAndUpdate(MealPlans._id, { $pull: { 'MealPlan': MealPlans._id } }, { new: true }, (err, user) => {
             if (err) throw err;
             res.send(user);
         });
     });
 });
 
-// /api/todos/update
-// update a todo based on id
+// /api/mealPlans/update
+// update a workout based on id
 router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
-    db.Workouts.findByIdAndUpdate(req.body.id, {
-        mondayWorkout: req.body.mondayWorkout
-    }, {
-        tuesdayWorkout: req.body.mondayWorkout
-    }, {
-        wednesdayWorkout: req.body.mondayWorkout
-    }, {
-        thursdayWorkout: req.body.mondayWorkout
-    }, {
-        fridayWorkout: req.body.mondayWorkout
-    }, {
-        saturdayWorkout: req.body.mondayWorkout
-    }, {
-        sundayWorkout: req.body.mondayWorkout
-    }, {
-        new: true
-    }, (err, todo) => {
+    db.MealPlans.findByIdAndUpdate(req.body.id, { MealPlans: req.body.MealPlan }, { new: true }, (err, mealplan) => {
         if (err) throw err;
-        res.json(todo);
+        res.json(mealplan);
     });
 });
 

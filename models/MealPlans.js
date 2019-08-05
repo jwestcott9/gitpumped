@@ -6,37 +6,7 @@ const MealPlanSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  mondayPlan: {
-    type: String,
-    unique: false,
-    required: [true, "text is required"]
-  },
-  tuesdayPlan: {
-    type: String,
-    unique: false,
-    required: [true, "text is required"]
-  },
-  wednesdayPlan: {
-    type: String,
-    unique: false,
-    required: [true, "text is required"]
-  },
-  thursdayPlan: {
-    type: String,
-    unique: false,
-    required: [true, "text is required"]
-  },
-  fridayPlan: {
-    type: String,
-    unique: false,
-    required: [true, "text is required"]
-  },
-  saturdayPlan: {
-    type: String,
-    unique: false,
-    required: [true, "text is required"]
-  },
-  sundayPlan: {
+  MealPlan: {
     type: String,
     unique: false,
     required: [true, "text is required"]
@@ -47,6 +17,6 @@ const MealPlanSchema = new Schema({
   }
 });
 
-const MealPlan = mongoose.model("MealPlan", MealPlanSchema);
+const MealPlans = mongoose.model("MealPlan", MealPlanSchema);
 
-module.exports = MealPlan;
+module.exports = MealPlans;
