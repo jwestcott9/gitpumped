@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./TopNav.scss";
 import API from "../../utils/API";
+import "./style.css"
 import {
     Collapse,
     Navbar,
@@ -56,7 +56,7 @@ export default class Navigation extends Component {
         return (
             <div>
                 <Navbar className="navbar" light expand="md">
-                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-key"></i> React Auth</NavbarBrand>
+                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-dumbbell"></i> GitPumped</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
