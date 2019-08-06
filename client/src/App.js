@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
+import UserInfo from "./pages/UserInfo";
 import NoMatch from "./pages/NoMatch";
 import TopNav from "./components/TopNav";
 import Footer from "./components/Footer";
@@ -21,7 +22,8 @@ function App() {
               <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
               <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
               <Route exact path="/profile" component={Profile} />
-              <Route component={NoMatch} />
+              {/* <Route exact path = "/UserInfo" component = {UserInfo}/> */}
+              <Route component= {NoMatch} />
             </Switch>
           </div>
                  </>
