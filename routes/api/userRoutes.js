@@ -88,4 +88,8 @@ router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
   });
 });
 
+
+/* Copy the code above but make it work with meal plans  */
+router.get 
+
 module.exports = router;

@@ -7,7 +7,7 @@ const workoutsSchema = new Schema({
     ref: "User"
   },
   monday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Login from "../../components/Login";
 import Signup from "../../components/Signup";
+import UserInfo from "../../components/UserInfo";
 import API from "../../utils/API";
 import "./Auth.scss";
 
@@ -22,6 +23,11 @@ class Auth extends Component {
       [name]: value
     });
   };
+
+  handleUserInfo = event=>{
+    event.preventDefault();
+    /* handle the Api call that will add the user data to the User database */
+  }
 
   handleLogin = event => {
     event.preventDefault();
@@ -61,7 +67,7 @@ class Auth extends Component {
             user: user.data.user
           });
           console.log("log in successful");
-          window.location.href = '/profile';
+          window.location.href = '/UserInfo';
         } else {
           console.log("something went wrong :(")
           console.log(user.data);
@@ -70,6 +76,12 @@ class Auth extends Component {
           })
         }
       });
+    }
+  }
+  handleInfoSubmit = event => {
+    event.preventDefault();
+    if(this.state.bodyType && this.state.goals){
+      
     }
   }
 
@@ -84,7 +96,7 @@ class Auth extends Component {
             handleInputChange={this.handleInputChange}
             message={this.state.message}
           />
-        ) : (
+        ) : (this.props.action === "signup") ? (
             <Signup
               username={this.state.username}
               password={this.state.password}
@@ -93,7 +105,12 @@ class Auth extends Component {
               handleInputChange={this.handleInputChange}
               message={this.state.message}
             />
-          )}
+          ): <UserInfo
+              username={this.state.username}
+              handleUserInfo = {this.handleUserInfo}
+
+          />
+          }
       </div>
     )
   }
