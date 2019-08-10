@@ -4,7 +4,15 @@
         "exercise_name":"Calve Raises",
         "body_part":"leg",
         "type":"STRING",
-        "type_id":2,
+        "split":"lower-body",      
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
+        "type_id": 2,
         "id": 8
     },
 
@@ -13,6 +21,14 @@
         "exercise_name":"Lunges",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 9
     },
@@ -22,6 +38,14 @@
         "exercise_name":"Backwards Lunges",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 10
     },
@@ -31,6 +55,14 @@
         "exercise_name":"Squats",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 11
     },
@@ -40,6 +72,14 @@
         "exercise_name":"Standing Calf Raises",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 12
     },
@@ -49,6 +89,14 @@
         "exercise_name":"Barbell Squat",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 13
     },
@@ -58,6 +106,14 @@
         "exercise_name":"Lef Press",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 14
     },
@@ -67,6 +123,14 @@
         "exercise_name":"Lying Leg Curls",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 15
     },
@@ -76,6 +140,14 @@
         "exercise_name":"Dumbbell Lunges",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 16
     },
@@ -85,6 +157,14 @@
         "exercise_name":"Hack Squat",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 17
     },
@@ -94,6 +174,14 @@
         "exercise_name":"Romanian DeadLift",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 18
     },
@@ -103,8 +191,16 @@
         "exercise_name":"Romanian DeadLift",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
-        "id": 19
+        "id":19
     },
 
     {
@@ -112,6 +208,14 @@
         "exercise_name":"Thigh Abductor",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 20
     },
@@ -121,6 +225,14 @@
         "exercise_name":"Calf Press/Leg Machine",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 21
     },
@@ -130,6 +242,14 @@
         "exercise_name":"Front Barbell Squat",
         "body_part":"leg",
         "type":"STRING",
+        "split":"lower-body", 
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 22
     },
@@ -139,6 +259,14 @@
         "exercise_name":"Cable Crunch",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 23
     },
@@ -148,6 +276,14 @@
         "exercise_name":"Barbell Side Bend",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 24
     },
@@ -157,6 +293,14 @@
         "exercise_name":"Crunches",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 25
     },
@@ -166,6 +310,14 @@
         "exercise_name":"Reverse Crunch",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 26
     },
@@ -175,6 +327,14 @@
         "exercise_name":"Seated Barbell Twist",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 27
     },
@@ -184,6 +344,14 @@
         "exercise_name":"Air Bike",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 28
     },
@@ -193,6 +361,14 @@
         "exercise_name":"Crunch-Hands Overhead",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 29
     },
@@ -202,6 +378,14 @@
         "exercise_name":"Flat Bench Lying Leg Raise",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 30
     },
@@ -211,6 +395,14 @@
         "exercise_name":"Frog Sit-Ups",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 31
     },
@@ -220,6 +412,14 @@
         "exercise_name":"Jackknife Sit-Up",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 32
     },
@@ -229,6 +429,14 @@
         "exercise_name":"Oblique Crunches",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 33
     },
@@ -238,6 +446,14 @@
         "exercise_name":"Reverse Crunch",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 34
     },
@@ -247,6 +463,14 @@
         "exercise_name":"Russian Twist",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 35
     },
@@ -256,6 +480,14 @@
         "exercise_name":"Ab Crunch Machine",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 36
     },
@@ -265,6 +497,14 @@
         "exercise_name":"Barbell Side Bend",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 37
     },
@@ -274,6 +514,14 @@
         "exercise_name":"Crunch-Legs on Exercise Ball",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 38
     },
@@ -283,6 +531,14 @@
         "exercise_name":"Decline Crunch",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 39
     },
@@ -292,6 +548,14 @@
         "exercise_name":"Dumbbell Side Bend",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 40
     },
@@ -301,6 +565,14 @@
         "exercise_name":"Exercise Ball Crunch",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 41
     },
@@ -310,6 +582,14 @@
         "exercise_name":"Flat Bench Leg Pull-In",
         "body_part":"core",
         "type":"STRING",
+        "split": "core",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 42
     },
@@ -319,6 +599,14 @@
         "exercise_name":"Barbell Incline Bench Press Medium-Grip",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 43
     },
@@ -328,6 +616,14 @@
         "exercise_name":"Incline Dumbbell Press",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2, 
         "id": 44
     },
@@ -337,6 +633,14 @@
         "exercise_name":"Incline Dumbbell Flyes",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 45
     },
@@ -346,6 +650,14 @@
         "exercise_name":"Pushups",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 46
     },
@@ -355,6 +667,14 @@
         "exercise_name":"Dumbbell Flyes",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 47
     },
@@ -364,6 +684,14 @@
         "exercise_name":"Decline Barbell Bench Press",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 48
     },
@@ -373,6 +701,14 @@
         "exercise_name":"Decline Dumbbell Bench Press",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 49
     },
@@ -382,6 +718,14 @@
         "exercise_name":"Decline Dumbbell Flyes",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 50
     },
@@ -391,6 +735,14 @@
         "exercise_name":"Dips- Chest Version",
         "body_part":"chest",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 51
     },
@@ -400,6 +752,14 @@
         "exercise_name":"Barbell Shoulder Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 52
     },
@@ -409,6 +769,14 @@
         "exercise_name":"One-Arm Side Laterals",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 53
     },
@@ -418,6 +786,14 @@
         "exercise_name":"Front Plate Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 54
     },
@@ -427,6 +803,14 @@
         "exercise_name":"Lying Rear Delt Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 55
     },
@@ -436,6 +820,14 @@
         "exercise_name":"Seated Side Lateral Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 56
     },
@@ -445,6 +837,14 @@
         "exercise_name":"Pushupse",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 57
     },
@@ -454,6 +854,14 @@
         "exercise_name":"Reverse Flyes",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 57
     },
@@ -463,6 +871,14 @@
         "exercise_name":"Side Lateral Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 58
     },
@@ -472,6 +888,14 @@
         "exercise_name":"Seated Bent-Over Rear Delt Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 59
     },
@@ -481,6 +905,14 @@
         "exercise_name":"Dumbbell Shoulder Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 60
     },
@@ -490,6 +922,14 @@
         "exercise_name":"Standing Low-Pulley Deltoid Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 61
     },
@@ -499,6 +939,14 @@
         "exercise_name":"Barbell Rear Delt Row",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 62
     },
@@ -508,6 +956,14 @@
         "exercise_name":"Arnold Dumbbell Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 63
     },
@@ -517,6 +973,14 @@
         "exercise_name":"Bent Over Low-Pulley Side Lateral",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 64
     },
@@ -526,6 +990,14 @@
         "exercise_name":"Lying One-Arm Lateral Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 65
     },
@@ -535,6 +1007,14 @@
         "exercise_name":"Front Dumbbell Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 66
     },
@@ -544,6 +1024,14 @@
         "exercise_name":"Standing Military Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 67
     },
@@ -553,6 +1041,14 @@
         "exercise_name":"Bent Over Barbell Row",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 68
     },
@@ -562,6 +1058,14 @@
         "exercise_name":"Seated Cable Rows",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 69
     },
@@ -571,6 +1075,14 @@
         "exercise_name":"V-Bar Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 70
     },
@@ -580,6 +1092,14 @@
         "exercise_name":"Barbell Shrug",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 71
     },
@@ -589,6 +1109,14 @@
         "exercise_name":"Hyperextensions (Back Extensions)",
         "body_part":"back",
         "type":"STRING",
+        "split": "uer-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 72
     },
@@ -598,6 +1126,14 @@
         "exercise_name":"Reverse Grip Bent-Over Rows",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 73
     },
@@ -607,6 +1143,14 @@
         "exercise_name":"Close Grip Front Lat Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 74
     },
@@ -616,6 +1160,14 @@
         "exercise_name":"Dumbbell Shrug",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 75
     },
@@ -625,6 +1177,14 @@
         "exercise_name":"Stiff Leg Barbell Good Morning",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 76
     },
@@ -634,6 +1194,14 @@
         "exercise_name":"Wide-Grip Lat Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 77
     },
@@ -643,6 +1211,14 @@
         "exercise_name":"Underhand Cable Pulldowns",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 78
     },
@@ -652,6 +1228,14 @@
         "exercise_name":"Stiff-Legged Barbell Deadlift",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 79
     },
@@ -661,6 +1245,14 @@
         "exercise_name":"Full Range-Of-Motion Lat Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 80
     },
@@ -670,6 +1262,14 @@
         "exercise_name":"One-Arm Dumbbell Row",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 81
     },
@@ -679,6 +1279,14 @@
         "exercise_name":"Upright Barbell Row",
         "body_part":"back",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 82
     },
@@ -688,6 +1296,14 @@
         "exercise_name":"Close-Grip Barbell Bench Press",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 83
     },
@@ -697,6 +1313,14 @@
         "exercise_name":"Cable Rope Overhead Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 84
     },
@@ -706,6 +1330,14 @@
         "exercise_name":"Triceps Pushdown",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 85
     },
@@ -715,6 +1347,14 @@
         "exercise_name":"Barbell Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 86
     },
@@ -724,6 +1364,14 @@
         "exercise_name":"Dumbbell Alternate Bicep Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 87
     },
@@ -733,6 +1381,14 @@
         "exercise_name":"Standing Biceps Cable Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 88
     },
@@ -742,6 +1398,14 @@
         "exercise_name":"Palms-Down Wrist Curl Over a Bench",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 89
     },
@@ -751,6 +1415,14 @@
         "exercise_name":"Bench Dips",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 90
     },
@@ -760,6 +1432,14 @@
         "exercise_name":"Lying Triceps Press",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 91
     },
@@ -769,6 +1449,14 @@
         "exercise_name":"Standing One-Arm Dumbbell Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 92
     },
@@ -778,6 +1466,14 @@
         "exercise_name":"Alternate Incline Dumbbell Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 93
     },
@@ -787,6 +1483,14 @@
         "exercise_name":"Barbell Curls Lying Against an Incline",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 94
     },
@@ -796,6 +1500,14 @@
         "exercise_name":"Cable Wrist Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 95
     },
@@ -805,6 +1517,14 @@
         "exercise_name":"EZ-Bar Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 96
     },
@@ -814,6 +1534,14 @@
         "exercise_name":"Cable Hammer Curls- Rope Attachment",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 97
     },
@@ -823,6 +1551,14 @@
         "exercise_name":"Concentration Curls",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 98
     },
@@ -832,6 +1568,14 @@
         "exercise_name":"Dip Machine",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 99
     },
@@ -841,6 +1585,14 @@
         "exercise_name":"Decline Dumbbell Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 100
     },
@@ -850,6 +1602,14 @@
         "exercise_name":"Cable Incline Triceps Extesion",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 101
     },
@@ -859,6 +1619,14 @@
         "exercise_name":"Palms-Up Barbell Wrist Curl Over A Bench",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 102
     },
@@ -868,6 +1636,14 @@
         "exercise_name":"Cross Body Hammer Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 103
     },
@@ -877,6 +1653,14 @@
         "exercise_name":"Machine Preacher Curls",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 104
     },
@@ -886,6 +1670,14 @@
         "exercise_name":"Close-Grip Barbell Bench Press",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 105
     },  
@@ -895,6 +1687,14 @@
         "exercise_name":"Decline EZ Bar Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 106
     },
@@ -904,6 +1704,14 @@
         "exercise_name":"Reverse Grip Triceps Pushdown",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 107
     },
@@ -913,6 +1721,14 @@
         "exercise_name":"Incline Dumbbell Curl",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 108
     },
@@ -922,6 +1738,14 @@
         "exercise_name":"Lying Triceps Press",
         "body_part":"arms",
         "type":"STRING",
+        "split": "upper-body",
+        "reps": {
+
+            "high": ["12-16"],
+            "medium": ["10-13"],
+            "low": ["6-8"]
+            
+        },
         "type_id":2,
         "id": 109
     }
