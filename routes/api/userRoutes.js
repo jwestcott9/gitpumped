@@ -81,15 +81,39 @@ router.get("/admin", authMiddleware.isAdmin, function(req, res, next) {
 });
 
 router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
-  db.User.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
+  db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
     res.json(workout );
   }).catch((err) => {
     res.json(err);
   });
 });
+// authMiddleware.isLoggedIn,
+
+router.put("/updateProfile", function(req, res, next){
+  console.log(req.body);
+  console.log("I was hit")
+  db.User.findOneAndUpdate({_id: req.body.user},
+     {
+    height: req.body.height, 
+    weight: req.body.weight,
+    age: req.body.age,
+    sex: req.body.sex
+  },
+  res.json("data changed!")
+  
+  ).catch((err)=>{
+    res.json(err);
+  })
+})
 
 
 /* Copy the code above but make it work with meal plans  */
-router.get 
+router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
+  db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
+    res.json(workout );
+  }).catch((err) => {
+    res.json(err);
+  });
+});
 
 module.exports = router;

@@ -17,7 +17,7 @@ const usersSchema = new Schema({
       },
       message: props => `${props.value} is not a valid password`
     },
-    required: [false, "password is required"]
+    required: [true, "password is required"]
   },
   admin: {
     type: Boolean,
@@ -28,6 +28,22 @@ const usersSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now()
+  },
+  height: {
+    type: String,
+    default: null
+  },
+  weight: {
+    type: String,
+    default: null
+  },
+  sex:{
+    type: String,
+    default: null
+  },
+  age:{
+    type: Number,
+    default: null
   },
   Workouts: [{
     type: Schema.Types.ObjectId,

@@ -13,7 +13,7 @@ class Auth extends Component {
     password: "",
     confirmPassword: "",
     user: null,
-    message: ""
+    message: "",
   }
 
   handleInputChange = event => {
@@ -26,6 +26,7 @@ class Auth extends Component {
 
   handleUserInfo = event=>{
     event.preventDefault();
+    
     /* handle the Api call that will add the user data to the User database */
   }
 
@@ -108,6 +109,11 @@ class Auth extends Component {
           ): <UserInfo
               username={this.state.username}
               handleUserInfo = {this.handleUserInfo}
+              sex = {this.state.sex}
+              height = {this.state.height}
+              weight = {this.state.weight}
+              user = {this.state.user}
+              age = {this.state.age}
 
           />
           }

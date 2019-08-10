@@ -12,7 +12,12 @@ class Profile extends Component {           //Lets comment this code!
              loading? */                                
         loggedIn: false,                   
         user: null,
-        loading: true
+        loading: true,
+        height: null,
+        weight: null,
+        sex: null,
+        age: null, 
+
     }
 
     componentDidMount() {
@@ -25,7 +30,11 @@ class Profile extends Component {           //Lets comment this code!
             if (user.data.loggedIn) {
                 this.setState({
                     loggedIn: true,
-                    user: user.data.user
+                    user: user.data.user,
+                    sex: user.data.sex,
+                    weight: user.data.weight,
+                    height: user.data.height,
+                    age: user.data.age
                 });
             }
         }).catch(err => {
@@ -53,6 +62,10 @@ class Profile extends Component {           //Lets comment this code!
                 {this.state.loggedIn ? (            //  puts the name in the header 
                     <div className="profileBox">    {/* header */}
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                        <p id= "height">Height: {this.state.user.height}</p>
+                        <p id= "weight">weight: {this.state.user.weight}</p>
+                        <p id= "sex">sex: {this.state.user.sex}</p>
+                        <p id= "age">age: {this.state.user.age}</p>
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
                     </div>
                 ) : (
