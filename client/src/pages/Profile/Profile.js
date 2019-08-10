@@ -53,6 +53,7 @@ class Profile extends Component {           //Lets comment this code!
                 {this.state.loggedIn ? (            //  puts the name in the header 
                     <div className="profileBox">    {/* header */}
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                        <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
                     </div>
                 ) : (
                     <div className="noUser">
