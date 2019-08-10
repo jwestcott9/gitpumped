@@ -2,10 +2,11 @@ import React, {Component} from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert, Container } from 'reactstrap';
 import API from "../../utils/API";
 import { Link } from "react-router-dom"
+import Image from "../../assets/"
 
 
 class UserInfo extends Component {
-    state={
+    state = {
         loggedIn: false,                   
         user: null,
         loading: true
@@ -47,6 +48,7 @@ class UserInfo extends Component {
     render(){
         return(
         <div>
+           
          {this.state.loggedIn? (<>
             <h2 className = "welcomeMessage"> welcome {this.state.user.username}</h2>
         <h2 className="loginTitle title-font">Please tell us some more about you so that we can better understand your workout needs</h2>
@@ -61,6 +63,8 @@ class UserInfo extends Component {
                 <Button> Loose Weight</Button>
             </FormGroup>
             <FormGroup>
+                <Label for="BodyType">What is your Body type?</Label>
+                <img alt = "ectomorph" src="../../assets/ectomorph.jpg"x></img>
                 {/* <Label for="confirmPassword">Confirm Password</Label>
                 <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
                 <FormText>at least 8 characters, 1 capital & 1 number</FormText> */}
