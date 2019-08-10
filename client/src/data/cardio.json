@@ -1,0 +1,74 @@
+[
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Run",
+        "type":"STRING",
+        "type_id": 1,
+        "id": 110
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Bike",
+        "type":"STRING",
+        "type_id": 1,
+        "id": 111
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Swim",
+        "type":"STRING",
+        "type_id":1,
+        "id": 112
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Walk",
+        "type": "STRING",
+        "type_id":1,
+        "id": 113
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Hike",
+        "type":"STRING",
+        "type_id":1,
+        "id": 114
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Stair Master",
+        "type":"STRING",
+        "type_id":1,
+        "id": 115
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Row Machine",
+        "type":"STRING",
+        "type_id":1,
+        "id": 116
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Eliptical",
+        "type":"STRING",
+        "type_id":1,
+        "id": 117
+    },
+
+    {
+        "workout_type":"cardio",
+        "exercise_name":"Sex",
+        "type":"STRING",
+        "type_id":1,
+        "id": 118
+    }
+
+]

@@ -1,0 +1,928 @@
+[
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Calve Raises",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 8
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lunges",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 9
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Backwards Lunges",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 10
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Squats",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 11
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Standing Calf Raises",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 12
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Squat",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 13
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lef Press",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 14
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lying Leg Curls",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 15
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dumbbell Lunges",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 16
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Hack Squat",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 17
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Romanian DeadLift",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 18
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Romanian DeadLift",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 19
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Thigh Abductor",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 20
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Calf Press/Leg Machine",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 21
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Front Barbell Squat",
+        "body_part":"leg",
+        "type":"STRING",
+        "type_id":2,
+        "id": 22
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Cable Crunch",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 23
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Side Bend",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 24
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Crunches",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 25
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Reverse Crunch",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 26
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Seated Barbell Twist",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 27
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Air Bike",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 28
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Crunch-Hands Overhead",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 29
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Flat Bench Lying Leg Raise",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 30
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Frog Sit-Ups",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 31
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Jackknife Sit-Up",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 32
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Oblique Crunches",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 33
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Reverse Crunch",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 34
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Russian Twist",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 35
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Ab Crunch Machine",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 36
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Side Bend",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 37
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Crunch-Legs on Exercise Ball",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 38
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Decline Crunch",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 39
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dumbbell Side Bend",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 40
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Exercise Ball Crunch",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 41
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Flat Bench Leg Pull-In",
+        "body_part":"core",
+        "type":"STRING",
+        "type_id":2,
+        "id": 42
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Incline Bench Press Medium-Grip",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 43
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Incline Dumbbell Press",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2, 
+        "id": 44
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Incline Dumbbell Flyes",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 45
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Pushups",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 46
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dumbbell Flyes",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 47
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Decline Barbell Bench Press",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 48
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Decline Dumbbell Bench Press",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 49
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Decline Dumbbell Flyes",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 50
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dips- Chest Version",
+        "body_part":"chest",
+        "type":"STRING",
+        "type_id":2,
+        "id": 51
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Shoulder Press",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 52
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"One-Arm Side Laterals",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 53
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Front Plate Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 54
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lying Rear Delt Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 55
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Seated Side Lateral Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 56
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Pushupse",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 57
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Reverse Flyes",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 57
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Side Lateral Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 58
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Seated Bent-Over Rear Delt Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 59
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dumbbell Shoulder Press",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 60
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Standing Low-Pulley Deltoid Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 61
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Rear Delt Row",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 62
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Arnold Dumbbell Press",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 63
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Bent Over Low-Pulley Side Lateral",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 64
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lying One-Arm Lateral Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 65
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Front Dumbbell Raise",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 66
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Standing Military Press",
+        "body_part":"shoulders",
+        "type":"STRING",
+        "type_id":2,
+        "id": 67
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Bent Over Barbell Row",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 68
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Seated Cable Rows",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 69
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"V-Bar Pulldown",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 70
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Shrug",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 71
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Hyperextensions (Back Extensions)",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 72
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Reverse Grip Bent-Over Rows",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 73
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Close Grip Front Lat Pulldown",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 74
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dumbbell Shrug",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 75
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Stiff Leg Barbell Good Morning",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 76
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Wide-Grip Lat Pulldown",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 77
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Underhand Cable Pulldowns",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 78
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Stiff-Legged Barbell Deadlift",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 79
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Full Range-Of-Motion Lat Pulldown",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 80
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"One-Arm Dumbbell Row",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 81
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Upright Barbell Row",
+        "body_part":"back",
+        "type":"STRING",
+        "type_id":2,
+        "id": 82
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Close-Grip Barbell Bench Press",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 83
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Cable Rope Overhead Triceps Extension",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 84
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Triceps Pushdown",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 85
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 86
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dumbbell Alternate Bicep Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 87
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Standing Biceps Cable Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 88
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Palms-Down Wrist Curl Over a Bench",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 89
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Bench Dips",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 90
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lying Triceps Press",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 91
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Standing One-Arm Dumbbell Triceps Extension",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 92
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Alternate Incline Dumbbell Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 93
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Barbell Curls Lying Against an Incline",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 94
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Cable Wrist Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 95
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"EZ-Bar Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 96
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Cable Hammer Curls- Rope Attachment",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 97
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Concentration Curls",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 98
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Dip Machine",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 99
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Decline Dumbbell Triceps Extension",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 100
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Cable Incline Triceps Extesion",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 101
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Palms-Up Barbell Wrist Curl Over A Bench",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 102
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Cross Body Hammer Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 103
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Machine Preacher Curls",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 104
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Close-Grip Barbell Bench Press",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 105
+    },  
+    
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Decline EZ Bar Triceps Extension",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 106
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Reverse Grip Triceps Pushdown",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 107
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Incline Dumbbell Curl",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 108
+    },
+
+    {
+        "workout_type":"Lifting",
+        "exercise_name":"Lying Triceps Press",
+        "body_part":"arms",
+        "type":"STRING",
+        "type_id":2,
+        "id": 109
+    }
+]
