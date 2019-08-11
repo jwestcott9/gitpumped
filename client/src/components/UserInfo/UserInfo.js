@@ -2,56 +2,17 @@ import React, {Component} from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert, Container } from 'reactstrap';
 import API from "../../utils/API";
 import { Link } from "react-router-dom"
-import Image from "../../assets/"
 
 
-class UserInfo extends Component {
-    state = {
-        loggedIn: false,                   
-        user: null,
-        loading: true
-    };
-    componentDidMount() {
-        /* when the component mounts run this code
-         */
-        /* change ths stateuful component to false */
-        this.loading();
-        /*  */
-        API.isLoggedIn().then(user => {
-            console.log(user.data.loggedIn);
-            if (user.data.loggedIn) {
-                console.log(user.data.user)
-                this.setState({
-                    loggedIn: true,
-                    user: user.data.user
-                });
-            }
-        }).catch(err => {
-            console.log(err);
-        });
 
-        console.log(this.props)
-    }
-
-    loading() {
-        /* after 1 second loading is set to false 
-        adds an automated buffer so that it will 
-        attempt to not show client loading?
-         */
-        setTimeout(()=> {
-            this.setState({
-                loading: false
-            })
-        }, 1000)  
-    }
-
-    render(){
+function UserInfo (props){
+    console.log(props);
         return(
-        <div>
            
-         {this.state.loggedIn? (<>
-            <h2 className = "welcomeMessage"> welcome {this.state.user.username}</h2>
-        <h2 className="loginTitle title-font">Please tell us some more about you so that we can better understand your workout needs</h2>
+<>
+{props.loggedIn ? (<>
+            <h2 className = "welcomeMessage"> welcome {props.username} </h2>
+             <h2 className="loginTitle title-font">Please tell us some more about you so that we can better understand your workout needs</h2>
         
         <Container>
         <Form>
@@ -63,8 +24,18 @@ class UserInfo extends Component {
                 <Button> Loose Weight</Button>
             </FormGroup>
             <FormGroup>
-                <Label for="BodyType">What is your Body type?</Label>
-                <img alt = "ectomorph" src="../../assets/ectomorph.jpg"x></img>
+                <Label for="Height">Height</Label>
+               <Input type="height" name="height" id="height" placeholder="height" value= {props.height} onChange={props.handleInputChange}/>
+
+                 <Label for="Weight">Weight</Label>
+               <Input type="weight" name="weight" id="weight" placeholder="weight" value= {props.weight} onChange={props.handleInputChange}/>
+
+               <Label for="sex">sex</Label>
+               <Input type="sex" name="sex" id="sex" placeholder="sex" value= {props.sex} onChange={props.handleInputChange}/>
+
+               <Label for="age">age</Label>
+               <Input type="age" name="age" id="age" placeholder="age" value= {props.age} onChange={props.handleInputChange}/>
+                <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {props.handleFormSubmit}> Submit </Button>
                 {/* <Label for="confirmPassword">Confirm Password</Label>
                 <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
                 <FormText>at least 8 characters, 1 capital & 1 number</FormText> */}
@@ -75,24 +46,34 @@ class UserInfo extends Component {
         </Form>
         </Container>
         </>)
-        : (<>
-         <>
-         <h1>please log in</h1> {/*if the user hasn't logged in show them the option to  */}
-        <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
-                            </>
-        ) 
-      
-        </>)}
-
-       {/* Not quiet sure how to use this yet */}
-      {/*   {this.props.message?(
-            <Alert className="animated fadeIn" color="danger">{this.props.message}</Alert>
-        ): (<></>)} */}
-        
-        
-    </div>)
-    }
-
+: (<>
+<div>You are not logged in</div>
+<Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
+</>)
 }
+        </>
+    //     <div>
+           
+    //      {props.state.loggedIn?
+    //          ()
+    //     : (<>
+    //      <>
+    //      <h1>please log in</h1> {/*if the user hasn't logged in show them the option to  */}
+    //     <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
+    //                         </>
+    //     ) 
+      
+    //     </>)}
+
+    //    {/* Not quiet sure how to use this yet */}
+    //   {/*   {this.props.message?(
+    //         <Alert className="animated fadeIn" color="danger">{this.props.message}</Alert>
+    //     ): (<></>)} */}
+        
+        
+    // </div>
+    
+    )}
+
 
 export default UserInfo;

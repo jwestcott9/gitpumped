@@ -12,32 +12,32 @@ const workoutsSchema = new Schema({
     required: false
   },
   tuesday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },
   wednesday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },
   thursday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },
   friday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },
   saturday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },
   sunday: {
-    type: String,
+    type: Object,
     unique: false,
     required: false
   },

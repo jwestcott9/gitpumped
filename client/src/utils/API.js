@@ -16,6 +16,9 @@ export default {
     return axios.get("/api/users/profile");
   },
 
+  updateProfile: function(userInfo){
+    return axios.put("/api/users/updateProfile", userInfo);
+  },
   // checks to see if the user is logged in and and admin, then returns the user
   isAdmin: function() {
     return axios.get("/api/users/logout")
