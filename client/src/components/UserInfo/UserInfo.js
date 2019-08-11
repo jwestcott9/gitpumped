@@ -11,17 +11,36 @@ function UserInfo (props){
            
 <>
 {props.loggedIn ? (<>
-            <h2 className = "welcomeMessage"> welcome {props.username} </h2>
-             <h2 className="loginTitle title-font">Please tell us some more about you so that we can better understand your workout needs</h2>
+            
         
         <Container>
+        <h2 className = "welcomeMessage"> Hello, {props.username} ! </h2>
+             <h4 className="loginTitle title-font">Please help us get a better understanding of you and your intention</h4>
         <Form>
+
             <FormGroup>
-                <Label for="GoalsOptions">Goals</Label>
-                {/* <Input type="text" name="username" id="username" placeholder="username" value={this.props.username} onChange={this.props.handleInputChange} valid={this.state.validUsername} /> */}
-                <Button >Gain Muscle</Button>
-                <Button >Maintain Strength </Button>
-                <Button> Loose Weight</Button>
+                <legend>Fitness Goals</legend>
+            <Label loseweight>
+
+            <Input type="radio" value = "1" onChange={props.handleInputChange} name="goals" />{' '}
+              Lose Weight
+            </Label>
+            </FormGroup>
+            <FormGroup>
+            <Label check>
+
+            <Input type="radio" value = "2" onChange={props.handleInputChange} name="goals" />{' '}
+              Maintain Weight but Improve Health
+            </Label>
+
+            </FormGroup>
+
+            <FormGroup>
+            <Label check>
+
+            <Input type="radio" value = "3" onChange={props.handleInputChange} name="goals" />{' '}
+            Gain Muscle
+                </Label>
             </FormGroup>
             <FormGroup>
                 <Label for="Height">Height</Label>
@@ -30,10 +49,10 @@ function UserInfo (props){
                  <Label for="Weight">Weight</Label>
                <Input type="weight" name="weight" id="weight" placeholder="weight" value= {props.weight} onChange={props.handleInputChange}/>
 
-               <Label for="sex">sex</Label>
+               <Label for="sex">Sex</Label>
                <Input type="sex" name="sex" id="sex" placeholder="sex" value= {props.sex} onChange={props.handleInputChange}/>
 
-               <Label for="age">age</Label>
+               <Label for="age">Age</Label>
                <Input type="age" name="age" id="age" placeholder="age" value= {props.age} onChange={props.handleInputChange}/>
                 <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {props.handleFormSubmit}> Submit </Button>
                 {/* <Label for="confirmPassword">Confirm Password</Label>
