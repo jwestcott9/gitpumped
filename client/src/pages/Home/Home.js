@@ -45,7 +45,23 @@ class Home extends Component {
       <div className = "Home">
       <Container>
         <Banner/>
-          <Card/>
+          <Card
+          title= "this is a title"
+          subtitle= "This is a subtitle"
+          content = "this is some content"
+          />
+
+        <Card
+          title= "this is a title"
+          subtitle= "This is a subtitle"
+          content = "this is some content"
+          />
+           <Card
+          title= "this is a title"
+          subtitle= "This is a subtitle"
+          content = "this is some content"
+          />
+
         
       </Container>
       </div>

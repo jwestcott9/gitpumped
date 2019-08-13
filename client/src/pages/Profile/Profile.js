@@ -3,14 +3,30 @@ import "./Profile.scss";
 import { Button, Container } from "reactstrap";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import MealPlan from "../../components/MealPlan/MealPlan";
+
+// import FullCalendar from "@fullcalendar/react";
+// import dayGridPlugin from "@fullcalendar/daygrid";
 
 
 
-class Profile extends Component {           //Lets comment this code!
+                                 // needed for dayClick
+
+
+// must manually import the stylesheets for each plugin
+// import "@fullcalendar/core/main.css";
+// import "@fullcalendar/daygrid/main.css";
+// import "@fullcalendar/timegrid/main.css";
+
+
+
+class Profile extends Component {   
+            //Lets comment this code!
+    calendarComponentRef = React.createRef()
     state = {
              /* makes a stateful component for the profile 
              page to check to see if the person is logged in 
-             defaults the user to being null 
+             defaults the user to being null s
              loading? */                                
         loggedIn: false,                   
         user: null,
@@ -20,10 +36,15 @@ class Profile extends Component {           //Lets comment this code!
         sex: null,
         age: null,
         goals: null, 
+        plan: null
 
     }
 
+ 
+
+    
     componentDidMount() {
+        this.getMeal();
         /* when the component mounts run this code
          */
         /* change ths stateuful component to false */
@@ -63,6 +84,20 @@ class Profile extends Component {           //Lets comment this code!
         }, 1000)  
     }
 
+    getMeal = () => {
+        API.PlanMeal();
+}   /*  getMeal = () => {
+        API.PlanMeal().then(newPlan =>{
+        this.setState({
+            plan: newPlan
+         }, ()=> {
+             console.log(this.state.plan);
+         })
+     }).catch(err => {
+         console.log(err);
+     })
+    } */
+
     render() {
         return (
             <div className="profilePage">
@@ -92,14 +127,26 @@ class Profile extends Component {           //Lets comment this code!
                         <p id= "weight">weight: {this.state.user.weight}</p>
                         <p id= "sex">sex: {this.state.user.sex}</p>
                         <p id= "age">age: {this.state.user.age}</p>
+                        {/* <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} /> */}
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
+                        <MealPlan
+                         timeFrame = "day"
+                         targetCalories= "2000"
+                        diet= "vegetarian"
+                         exclude= "shellfish, olives"
+                        />
                     </div>
-                    
+
+                  
+                  /* 
+                    IF THE USER IS NOT LOGGED IN EXECUTE BELOW CODE
+                     */
+
                 ) : (
                     <div className="noUser">
                         {!this.state.loading ? ( /* checks to see if this page is loading  */
                             <>
-                                <h1>please log i</h1> {/*if the user hasn't logged in show them the option to  */}
+                                <h1>please log in</h1> {/*if the user hasn't logged in show them the option to  */}
                                 <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
                             </>
                         ) : (/* also add a loading icon  */

@@ -8,12 +8,12 @@ class UpdatePage extends Component {
     state={
     loggedIn: false,
     username: null,
-    sex: "sex",
-    weight: "weight",
-    height: "height",
+    sex: "",
+    weight: "",
+    height: "",
     user: null,
-    age: "age",
-    goals: "1",
+    age: "",
+    goals: "",
     }
 
     componentDidMount() {
