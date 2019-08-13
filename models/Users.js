@@ -45,6 +45,10 @@ const usersSchema = new Schema({
     type: Number,
     default: null
   },
+  goals: {
+    type: Number,
+    default: 2
+  },
   Workouts: [{
     type: Schema.Types.ObjectId,
     ref: 'Workout'

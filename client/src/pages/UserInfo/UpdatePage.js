@@ -8,11 +8,12 @@ class UpdatePage extends Component {
     state={
     loggedIn: false,
     username: null,
-    sex: "sex",
-    weight: "weight",
-    height: "height",
+    sex: "",
+    weight: "",
+    height: "",
     user: null,
-    age: "age",
+    age: "",
+    goals: "",
     }
 
     componentDidMount() {
@@ -105,6 +106,7 @@ handleFormSubmit = (event) => {
             weight = {this.state.weight}
             user = {this.state.user}
             age = {this.state.age}
+            goals = {this.state.goals}
             handleInputChange = {this.handleInputChange}
             handleFormSubmit = {this.handleFormSubmit}
             />
