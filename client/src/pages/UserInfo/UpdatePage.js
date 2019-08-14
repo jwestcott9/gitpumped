@@ -51,6 +51,8 @@ class UpdatePage extends Component {
     }, 1000)  
 }
 
+    // handleAllergies
+
 
     handleInputChange = event => {
       console.log("I was hit here is what I am seeing" +event.target.value)

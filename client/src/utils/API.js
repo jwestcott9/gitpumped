@@ -1,5 +1,5 @@
 import axios from "axios";
-import unirest from "unirest";
+
 
 export default {
   // logs in user
@@ -30,38 +30,8 @@ export default {
     return axios.get("/api/users/logout")
   },
 
-  // api that gets a random Chuck Norris Joke
-  ChuckNorris: function() {
-    return axios.get("https://api.icndb.com/jokes/random");
-  },
-
-  // PlanMeal: function() { 
-  //  console.log("PlanMeal")
-  
-  //   let req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate");
-  
-  //   req.query({
-  //       "timeFrame": "week",
-  //       "targetCalories": "2000",
-  //       "diet": "vegetarian",
-  //       "exclude": "shellfish"
-  //   });
-    
-  //   req.headers({
-  //       "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-  //       "x-rapidapi-key": "fcb3b27bb6mshc7a98d29060e823p1674e7jsn37cc5c313307"
-  //   });
-        
-       
-  
-  //   req.end(function (res) {
-  //       console.log(res);
-  //       if (res.error) throw new Error(res.error);
-  //       console.log(res.body);
-        
-  //   });
-    
-  // }
-  
+  addMealPlan: function(userPlan){
+    return axios.post("/api/mealPlans/new", userPlan);
+  }
 
 };

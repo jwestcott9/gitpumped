@@ -16,8 +16,6 @@ router.post("/login", passport.authenticate("local", {
   });
 });
 
-// /api/users/signup
-// route to logout the user
 router.post("/signup", function(req, res, next) {
   db.User.findOne({username: req.body.username}, function(err, user) {
     if (err) throw err;

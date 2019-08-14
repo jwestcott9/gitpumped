@@ -4,6 +4,8 @@ import API from "../../utils/API";
 import "./style.css";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
+import UploadPhoto from "../../components/UploadPhoto";
+
 
 class Home extends Component {
 
@@ -13,20 +15,10 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.getJoke();
     this.loggedIn();
   }
 
-  getJoke = () => {
-    API.ChuckNorris().then(joke => {
-      let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
-      this.setState({
-        joke: newJoke
-      })
-    }).catch(err => {
-      console.log(err)
-    });
-  }
+ 
 
   loggedIn = () => {
     API.isLoggedIn().then(user => {
@@ -61,8 +53,9 @@ class Home extends Component {
           subtitle= "This is a subtitle"
           content = "this is some content"
           />
+          <UploadPhoto/>
 
-        
+      
       </Container>
       </div>
     );

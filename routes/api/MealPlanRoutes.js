@@ -12,18 +12,25 @@ router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
 });
 
 // /api/mealPlans/new, 
+// authMiddleware.isLoggedIn, 
 // add new workout, update the user to have workout id
-router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
+router.post("/new", function (req, res, next) {
+    console.log("I was hit");
     const newMealPlan = new db.MealPlans({
         user: req.body.user,
         MealPlan: req.body.MealPlan
     });
 
     newMealPlan.save((err, newMealPlan) => {
+        console.log("I was also hits")
+        console.log(req.body.user);
         if (err) throw err;
         db.User.findByIdAndUpdate(req.body.user, { $push: { MealPlans: newMealPlan._id } }, (err, user) => {
-            if (err) throw err;
+            console.log( "I was also hit also")
+            console.log(user);
             res.send(newMealPlan, user);
+            if (err) throw err;
+            
         });
     });
 });
