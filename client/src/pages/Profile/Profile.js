@@ -7,19 +7,6 @@ import MealPlan from "../../components/MealPlan/MealPlan";
 import axios from "axios";
 import Calendar from "../../components/Calender"
 
-// import FullCalendar from "@fullcalendar/react";
-// import dayGridPlugin from "@fullcalendar/daygrid";
-
-
-
-                                 // needed for dayClick
-
-
-// must manually import the stylesheets for each plugin
-// import "@fullcalendar/core/main.css";
-// import "@fullcalendar/daygrid/main.css";
-// import "@fullcalendar/timegrid/main.css";
-
 
 
 class Profile extends Component {   
@@ -97,6 +84,7 @@ class Profile extends Component {
        "diet": diet,
        "exclude": exclude},})
             .then((response)=>{
+                console.log(response.data.items);
                 let allPlans = response.data.items;
                 this.setState({
                     plans: allPlans

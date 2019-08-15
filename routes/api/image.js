@@ -35,8 +35,8 @@ ImageRouter.route("/uploadmulter")
         console.log(req.body);
         const newImage = new Image ({
             user: req.body.user,
-            imageName: req.body.imageFormObj.imageName,
-            imageData: req.file.imageFormObj.path
+            // imageName: req.body.imageFormObj.imageName,
+            imageData: req.file.path
         });
 
         newImage.save((err, newimage) =>{
@@ -47,7 +47,7 @@ ImageRouter.route("/uploadmulter")
             console.log(user);
             res.send(newimage);
           })
-        })
+        
             .then((result) => {
                 console.log(result);
                 res.status(200).json({
@@ -56,6 +56,7 @@ ImageRouter.route("/uploadmulter")
                 });
             })
             .catch((err) => next(err))
+          })
     })
 
     module.exports = ImageRouter;

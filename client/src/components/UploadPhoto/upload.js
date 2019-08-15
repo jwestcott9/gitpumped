@@ -34,6 +34,7 @@ class ModalExample extends React.Component {
 
       imageFormObj.append("imageName", "multer-image-" + Date.now());
       imageFormObj.append("imageData", e.target.files[0]);
+      imageFormObj.append("user", this.props.user);
     
 
      
@@ -41,7 +42,8 @@ class ModalExample extends React.Component {
 
       this.setState({
         multerImage: URL.createObjectURL(e.target.files[0]),
-        image: imageFormObj
+        imageFormObj: imageFormObj
+        
       }, ()=> {
         console.log(this.state.image);
       });
@@ -49,7 +51,18 @@ class ModalExample extends React.Component {
 
       /* this is where the photo actually gets sent to the database
       move it wherever you want it to finally upload. */
-
+      axios.post('/api/image/uploadmulter', imageFormObj)
+      .then((data)=> {
+        if(data.data.success){
+          alert("image has been successfully uploaded using multer");
+          this.setDefaultImage("multer");
+        }
+      })
+      .catch((err) => {
+          console.log(err);
+          alert("Error while uploading image using multer");
+          this.setDefaultImage ("multer");
+      })
      
      
     }
@@ -58,17 +71,7 @@ class ModalExample extends React.Component {
   actuallyUploadToDatabase(image){
     console.log(image);
 
-    axios.post('/api/image/uploadmulter', image)
-    .then((data)=> {
-      if(data.data.success){
-        alert("image has been successfully uploaded using multer");
-        this.setDefaultImage("multer");
-      }
-    })
-    .catch((err) => {
-        alert("Error while uploading image using multer");
-        this.setDefaultImage ("multer");
-    })
+    
 
   };
 
@@ -95,7 +98,7 @@ class ModalExample extends React.Component {
             </div>
              </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={() => {this.toggle(); this.actuallyUploadToDatabase(this.state.image)}}>Do Something</Button>{' '}
+            <Button color="primary" onClick={() => {this.toggle(); this.actuallyUploadToDatabase(this.state.imageFormObj)}}>Do Something</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
