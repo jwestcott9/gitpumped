@@ -105,7 +105,7 @@ router.put("/updateProfile", function(req, res, next){
 })
 
 
-/* Copy the code above but make it work with meal plans  */
+
 router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
   db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
     res.json(workout );

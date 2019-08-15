@@ -2,14 +2,16 @@ const router = require("express").Router();
 const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
-
+//  authMiddleware.isLoggedIn,
 // /api/mealPlans/all
 // get all mealPlans from the signed in user
-router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
-    db.MealPlans.find({ author: req.body.user}, (err, mealplans) => {
+router.get("/all", function (req, res, next) {
+    db.MealPlans.find({ user: req.body.user}, (err, mealplans) => {
         res.json(mealplans);
     });
 });
+
+
 
 // /api/mealPlans/new, 
 // authMiddleware.isLoggedIn, 
@@ -25,12 +27,11 @@ router.post("/new", function (req, res, next) {
         console.log("I was also hits")
         console.log(req.body.user);
         if (err) throw err;
-        db.User.findByIdAndUpdate(req.body.user, { $push: { MealPlans: newMealPlan._id } }, (err, user) => {
+        db.User.findByIdAndUpdate(req.body.user, { MealPlans: newMealPlan._id}, (err, user) => {
+            if (err) throw err;
             console.log( "I was also hit also")
             console.log(user);
-            res.send(newMealPlan, user);
-            if (err) throw err;
-            
+            res.send(newMealPlan); 
         });
     });
 });

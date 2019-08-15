@@ -58,7 +58,8 @@ function UserInfo (props){
                <Label for="age">Age</Label>
                <Input type="age" name="age" id="age" placeholder="age" value= {props.age} onChange={props.handleInputChange}/>
                <UploadPhoto
-                buttonLabel = "upload profile photo"/>
+                buttonLabel = "upload profile photo"
+                user = {props.user}/>
                 <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {props.handleFormSubmit}> Submit </Button>
                 
               

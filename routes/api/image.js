@@ -2,6 +2,7 @@ let express = require("express");
 let ImageRouter = express.Router();
 const multer = require('multer');
 let Image = require("../../models/image")
+const db = require("../../models");
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb){
@@ -30,14 +31,23 @@ const upload = multer ({
 
 ImageRouter.route("/uploadmulter")
     .post(upload.single('imageData'), (req, res, next) => {
-        console.log("Multer route");
+        console.log("routes/api/Multer route");
         console.log(req.body);
         const newImage = new Image ({
-            imageName: req.body.imageName,
-            imageData: req.file.path
+            user: req.body.user,
+            imageName: req.body.imageFormObj.imageName,
+            imageData: req.file.imageFormObj.path
         });
 
-        newImage.save()
+        newImage.save((err, newimage) =>{
+          if(err) throw err;
+          db.User.findByIdAndUpdate(req.body.user, {image: newimage._id}, (err, user) => {
+            if(err) throw err; 
+            console.log("printing the image reference to the user database")
+            console.log(user);
+            res.send(newimage);
+          })
+        })
             .then((result) => {
                 console.log(result);
                 res.status(200).json({

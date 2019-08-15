@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import MealPlan from "../../components/MealPlan/MealPlan";
 import axios from "axios";
+import Calendar from "../../components/Calender"
 
 // import FullCalendar from "@fullcalendar/react";
 // import dayGridPlugin from "@fullcalendar/daygrid";
@@ -154,7 +155,7 @@ class Profile extends Component {
                          plans = {this.state.plans}
                         />
 
-                        
+                        <Calendar/>
 
                     </div>
 
