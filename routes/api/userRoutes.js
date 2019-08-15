@@ -16,8 +16,6 @@ router.post("/login", passport.authenticate("local", {
   });
 });
 
-// /api/users/signup
-// route to logout the user
 router.post("/signup", function(req, res, next) {
   db.User.findOne({username: req.body.username}, function(err, user) {
     if (err) throw err;
@@ -107,7 +105,7 @@ router.put("/updateProfile", function(req, res, next){
 })
 
 
-/* Copy the code above but make it work with meal plans  */
+
 router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
   db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
     res.json(workout );

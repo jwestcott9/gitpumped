@@ -9,9 +9,11 @@ const passport = require("passport");
 const logger = require("morgan");
 const flash = require('connect-flash');
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger("dev"));
+app.use('uploads',express.static('uploads'));
 app.use(flash())
 app.use(express.static("public"));
 app.use(session({
@@ -22,6 +24,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 
 if (process.env.NODE_ENV === "production") {

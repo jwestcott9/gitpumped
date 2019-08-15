@@ -49,6 +49,7 @@ const usersSchema = new Schema({
     type: Number,
     default: 2
   },
+  
   Workouts: [{
     type: Schema.Types.ObjectId,
     ref: 'Workout'
@@ -56,6 +57,10 @@ const usersSchema = new Schema({
   MealPlans: [{
     type: Schema.Types.ObjectId,
     ref: 'MealPlan'
+  }],
+  image: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Image'
   }]
 });
 

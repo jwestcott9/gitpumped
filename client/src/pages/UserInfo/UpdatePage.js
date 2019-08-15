@@ -16,6 +16,8 @@ class UpdatePage extends Component {
     goals: "",
     }
 
+   
+
     componentDidMount() {
       /* when the component mounts run this code
        */
@@ -50,6 +52,8 @@ class UpdatePage extends Component {
         })
     }, 1000)  
 }
+
+    // handleAllergies
 
 
     handleInputChange = event => {
