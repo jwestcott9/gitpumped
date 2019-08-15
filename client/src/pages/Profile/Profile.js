@@ -23,13 +23,10 @@ import Calendar from "../../components/Calender"
 
 
 class Profile extends Component {   
-            //Lets comment this code!
+          
     calendarComponentRef = React.createRef()
     state = {
-             /* makes a stateful component for the profile 
-             page to check to see if the person is logged in 
-             defaults the user to being null s
-             loading? */                                
+
         loggedIn: false,                   
         user: null,
         loading: true,
