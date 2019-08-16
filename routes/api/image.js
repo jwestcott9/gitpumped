@@ -6,7 +6,7 @@ const db = require("../../models");
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb){
-    cb(null, "./uploads")
+    cb(null, "./client/src/assets/uploads")
   },
   filename: function(req, file, cb){
     cb(null, Date.now() + file.originalname);
@@ -29,14 +29,20 @@ const upload = multer ({
   fileFilter: fileFilter
 });
 
+ImageRouter.get("/getImage", function (req, res, next){
+  Image.find({user: req.body.user}, (err, Image) =>{
+    res.json(Image);
+  });
+});
+
 ImageRouter.route("/uploadmulter")
     .post(upload.single('imageData'), (req, res, next) => {
         console.log("routes/api/Multer route");
         console.log(req.body);
         const newImage = new Image ({
             user: req.body.user,
-            imageName: req.body.imageFormObj.imageName,
-            imageData: req.file.imageFormObj.path
+            imageName: req.body.imageName,
+            imageData: req.file.path
         });
 
         newImage.save((err, newimage) =>{
@@ -47,7 +53,7 @@ ImageRouter.route("/uploadmulter")
             console.log(user);
             res.send(newimage);
           })
-        })
+        
             .then((result) => {
                 console.log(result);
                 res.status(200).json({
@@ -56,6 +62,17 @@ ImageRouter.route("/uploadmulter")
                 });
             })
             .catch((err) => next(err))
+          })
+    })
+    .get(function(req, res ){
+      Image.find({user: req.body.user}, function (err, img){
+        if(err)
+        res.send(err)
+        console.log(img)
+
+        res.contentType('json');
+        res.send(img);
+      })
     })
 
     module.exports = ImageRouter;
