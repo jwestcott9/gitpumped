@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/evanejtucker/react-auth#readme",
   "dependencies": {
+    "@fullcalendar/bootstrap": "^4.3.0",
     "@fullcalendar/core": "^4.3.1",
     "@fullcalendar/daygrid": "^4.3.0",
     "@fullcalendar/interaction": "^4.3.0",

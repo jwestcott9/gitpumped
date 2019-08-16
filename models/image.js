@@ -12,6 +12,7 @@ var ImageSchema = new Schema({
         required: false
     },
     imageData: {
+        data: Buffer,
         type: String,
         require: false
     }
