@@ -48,6 +48,7 @@ class DemoApp extends React.Component {
             events={this.state.calendarEvents}
             dateClick={this.handleDateClick}
             themeSystem = 'bootstrap'
+            selectable = "true"
           />
         </div>
       </div>
