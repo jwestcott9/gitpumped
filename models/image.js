@@ -8,7 +8,7 @@ var ImageSchema = new Schema({
     },
     imageName:{
         type: String,
-        default: "none",
+        desfault: "none",
         required: false
     },
     imageData: {

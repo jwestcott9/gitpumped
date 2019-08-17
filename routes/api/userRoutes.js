@@ -63,6 +63,7 @@ router.get("/profile", authMiddleware.isLoggedIn, function(req, res, next) {
   });
 });
 
+
 // /api/users/logout
 // logs out the user
 router.get("/logout", authMiddleware.logoutUser, function(req, res, next) {

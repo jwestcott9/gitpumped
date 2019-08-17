@@ -17,6 +17,11 @@ export default {
     return axios.get("/api/users/profile");
   },
 
+  //saves user workouts to mongo
+  addWorkouts: function(workoutInfo) {
+    return axios.post("/api/workouts/new", workoutInfo);
+  },
+
   updateProfile: function(userInfo){
     return axios.put("/api/users/updateProfile", userInfo);
   },

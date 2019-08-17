@@ -38,6 +38,7 @@ state = {
 componentDidMount() {
         
         this.getMeal("week", "2000", "vegetarian", "dairy");
+
         /* when the component mounts run this code
          */
         /* change ths stateuful component to false */
@@ -97,7 +98,8 @@ loading() {
         }, 1000)  
     }
 
-getMeal = (timeFrame, targetCalories, diet, exclude) => {
+
+ getMeal = (timeFrame, targetCalories, diet, exclude) => {
 
     axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate',
     {"headers": 

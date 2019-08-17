@@ -22,7 +22,7 @@ router.post("/new",   function (req, res, next) {
         user: req.body.user,
         workouts: req.body.workouts
     });
-
+    res.json(newWorkout);
     newWorkout.save((err, newWorkout) => {
         if (err) throw err;
         db.User.findByIdAndUpdate(req.body.user, { $push: { Workouts: newWorkout._id } }, (err, user) => {
