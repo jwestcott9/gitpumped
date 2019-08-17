@@ -21,6 +21,8 @@ class UpdatePage extends Component {
     workouts: []
     }
 
+   
+
     componentDidMount() {
       /* when the component mounts run this code
        */
@@ -52,6 +54,8 @@ class UpdatePage extends Component {
         })
     }, 1000)  
 }
+
+    // handleAllergies
 
 
     handleInputChange = event => {

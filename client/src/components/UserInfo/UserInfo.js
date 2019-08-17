@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert, Container } from 'reactstrap';
 import API from "../../utils/API";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Allergies from "../Allergies";
+import UploadPhoto from "../UploadPhoto"
+
 
 
 
@@ -54,7 +57,13 @@ function UserInfo (props){
 
                <Label for="age">Age</Label>
                <Input type="age" name="age" id="age" placeholder="age" value= {props.age} onChange={props.handleInputChange}/>
+               <UploadPhoto
+                buttonLabel = "upload profile photo"
+                user = {props.user}/>
                 <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {props.handleFormSubmit}> Submit </Button>
+                
+              
+              
                 {/* <Label for="confirmPassword">Confirm Password</Label>
                 <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
                 <FormText>at least 8 characters, 1 capital & 1 number</FormText> */}

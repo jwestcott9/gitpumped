@@ -7,7 +7,7 @@ const MealPlanSchema = new Schema({
     ref: "User"
   },
   MealPlan: {
-    type: String,
+    type: Array,
     unique: false,
     required: [true, "text is required"]
   },

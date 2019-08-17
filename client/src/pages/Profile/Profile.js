@@ -4,30 +4,20 @@ import { Button, Container } from "reactstrap";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import MealPlan from "../../components/MealPlan/MealPlan";
-
-// import FullCalendar from "@fullcalendar/react";
-// import dayGridPlugin from "@fullcalendar/daygrid";
-
+import axios from "axios";
+import Calendar from "../../components/Calender";
 
 
-                                 // needed for dayClick
 
 
-// must manually import the stylesheets for each plugin
-// import "@fullcalendar/core/main.css";
-// import "@fullcalendar/daygrid/main.css";
-// import "@fullcalendar/timegrid/main.css";
 
 
 
 class Profile extends Component {   
-            //Lets comment this code!
+          
     calendarComponentRef = React.createRef()
     state = {
-             /* makes a stateful component for the profile 
-             page to check to see if the person is logged in 
-             defaults the user to being null s
-             loading? */                                
+
         loggedIn: false,                   
         user: null,
         loading: true,
@@ -36,7 +26,8 @@ class Profile extends Component {
         sex: null,
         age: null,
         goals: null, 
-        plan: null
+        plans: null,
+        image: null,
 
     }
 
@@ -44,7 +35,9 @@ class Profile extends Component {
 
     
     componentDidMount() {
-        // this.getMeal();
+
+        this.getMeal("week", "2000", "vegetarian", "dairy");
+
         /* when the component mounts run this code
          */
         /* change ths stateuful component to false */
@@ -61,6 +54,7 @@ class Profile extends Component {
                     age: user.data.age,
                     goals: user.data.goals
                 }, ()=>{
+                    this.getProfileImage(this.state.user);
                     console.log(this.state.user.goals)
                 });
             }
@@ -70,6 +64,13 @@ class Profile extends Component {
     
        
         console.log(this.props)
+    }
+
+    getProfileImage(user){
+        axios.get('/api/image/uploadmulter', user)
+            .then((data) => {
+                console.log(data) 
+            })
     }
 
     loading() {
@@ -84,19 +85,39 @@ class Profile extends Component {
         }, 1000)  
     }
 
-//     getMeal = () => {
-//         API.PlanMeal();
-// }   /*  getMeal = () => {
-//         API.PlanMeal().then(newPlan =>{
-//         this.setState({
-//             plan: newPlan
-//          }, ()=> {
-//              console.log(this.state.plan);
-//          })
-//      }).catch(err => {
-//          console.log(err);
-//      })
-//     } */
+
+ getMeal = (timeFrame, targetCalories, diet, exclude) => {
+
+    axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate',
+    {"headers": 
+    { "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+       "x-rapidapi-key": "fcb3b27bb6mshc7a98d29060e823p1674e7jsn37cc5c313307"}},
+  
+       {query: {"timeFrame": timeFrame,
+       "targetCalories": targetCalories,
+       "diet": diet,
+       "exclude": exclude},})
+            .then((response)=>{
+                console.log(response.data.items);
+                let allPlans = response.data.items;
+                this.setState({
+                    plans: allPlans
+                });
+             }).then( () => 
+                    this.state.loggedIn?
+                     API.addMealPlan({
+                     user: this.state.user._id,
+                     MealPlan: this.state.plans
+                                    })
+                     :
+                     () => {
+                         console.log("failed");
+                            }
+                    )
+                    
+        
+      }
+    
 
     render() {
         return (
@@ -130,11 +151,12 @@ class Profile extends Component {
                         {/* <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} /> */}
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
                         <MealPlan
-                         timeFrame = "day"
-                         targetCalories= "2000"
-                        diet= "vegetarian"
-                         exclude= "shellfish, olives"
+                         plans = {this.state.plans}
                         />
+                        <img src = "../../assets/uploads\1565983040144Screenshot (3)" alt= "profile" className = "profile-image"/>
+
+                        <Calendar/>
+
                     </div>
 
                   

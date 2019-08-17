@@ -4,7 +4,6 @@ const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
 
 // /api/workouts/all
-// 
 // get all workouts from the signed in user
 router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
     db.Workouts.find({ user: req.body.user }, (err, workouts) => {
