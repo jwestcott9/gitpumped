@@ -63,8 +63,8 @@ class UpdatePage extends Component {
         console.log("this.state"));
       };
 
-handleFormSubmit = (event) => {
-  event.preventDefault();
+handleFormSubmit = event => {
+    event.preventDefault();
       API.updateProfile({
         user: this.state.user,
         sex: this.state.sex,
@@ -73,29 +73,34 @@ handleFormSubmit = (event) => {
         age: this.state.age
     }).then (()=> {
       window.location.href="/profile"
-      // regex to transfer the height in inches for bmi formula. this takes apostrophes and quotations into consideration
-      var regex_op =  /^(\d{1,2})[\']?((\d)|([0-1][0-2]))?[\"]?$/g.exec(this.state.height); 
-      var feet = regex_op[1];
-      var inches = regex_op[2]; 
-      var height = (parseInt(feet) || 0) * 12 + (parseInt(inches) || 0);
-      
-      //calculate bmi formula
-      let bmiHeight = height * height;
-      let bmiDecimal = this.state.weight / bmiHeight;
-      let userBMI = bmiDecimal * 703;
-      //set bmi state
-      this.setState({ bmi: userBMI });
-
-      //this conditional calls the appropriate workout generation function depending on the user's choice
-      if (this.state.goals === "1") {
-        this.generateLose();
-      } else if (this.state.goals === "2") {
-        this.generateGain();
-      } else {
-        this.generateMaintain();
-      }
+      this.checkGoals();
     }
 )}
+
+checkGoals = event =>  {
+ 
+        // regex to transfer the height in inches for bmi formula. this takes apostrophes and quotations into consideration
+        var regex_op =  /^(\d{1,2})[\']?((\d)|([0-1][0-2]))?[\"]?$/g.exec(this.state.height); 
+        var feet = regex_op[1];
+        var inches = regex_op[2]; 
+        var height = (parseInt(feet) || 0) * 12 + (parseInt(inches) || 0);
+        
+        //calculate bmi formula
+        let bmiHeight = height * height;
+        let bmiDecimal = this.state.weight / bmiHeight;
+        let userBMI = bmiDecimal * 703;
+        //set bmi state
+        this.setState({ bmi: userBMI });
+  
+        // this conditional calls the appropriate workout generation function depending on the user's choice
+        if (this.state.goals === "1") {
+          this.generateLose();
+        } else if (this.state.goals === "2") {
+          this.generateGain();
+        } else {
+          this.generateMaintain();
+        }
+}
 
 // this function renders a workout for weight loss
 generateLose = () => {
@@ -369,6 +374,8 @@ generateMaintain = () => {
 getWorkouts = () =>{
   console.log(this.state.workouts);
   console.log(this.state.user);
+  console.log(this.state.loggedIn);
+  console.log(this.state.username);
 
   const workoutInfo = {
     user: this.state.user,
@@ -376,13 +383,13 @@ getWorkouts = () =>{
   }
 
   API.addWorkouts(workoutInfo).then(data => {
-    console.log(data)
-    
-    
+    console.log(data); 
+    this.loginCheck();
   });
-
+ 
   this.setState({ workouts: [] });
 }
+
 
       render(){
         
