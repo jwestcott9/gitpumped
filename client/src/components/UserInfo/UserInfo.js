@@ -29,7 +29,7 @@ function UserInfo (props){
             <FormGroup>
             <Label check>
 
-            <Input type="radio" value = "2" onChange={props.handleInputChange} name="goals" />{' '}
+            <Input type="radio" value = "3" onChange={props.handleInputChange} name="goals" />{' '}
               Maintain Weight but Improve Health
             </Label>
 
@@ -38,7 +38,7 @@ function UserInfo (props){
             <FormGroup>
             <Label check>
 
-            <Input type="radio" value = "3" onChange={props.handleInputChange} name="goals" />{' '}
+            <Input type="radio" value = "2" onChange={props.handleInputChange} name="goals" />{' '}
             Gain Muscle
                 </Label>
             </FormGroup>

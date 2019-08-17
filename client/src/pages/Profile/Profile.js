@@ -44,7 +44,7 @@ class Profile extends Component {
 
     
     componentDidMount() {
-        this.getMeal();
+        // this.getMeal();
         /* when the component mounts run this code
          */
         /* change ths stateuful component to false */
@@ -84,19 +84,19 @@ class Profile extends Component {
         }, 1000)  
     }
 
-    getMeal = () => {
-        API.PlanMeal();
-}   /*  getMeal = () => {
-        API.PlanMeal().then(newPlan =>{
-        this.setState({
-            plan: newPlan
-         }, ()=> {
-             console.log(this.state.plan);
-         })
-     }).catch(err => {
-         console.log(err);
-     })
-    } */
+//     getMeal = () => {
+//         API.PlanMeal();
+// }   /*  getMeal = () => {
+//         API.PlanMeal().then(newPlan =>{
+//         this.setState({
+//             plan: newPlan
+//          }, ()=> {
+//              console.log(this.state.plan);
+//          })
+//      }).catch(err => {
+//          console.log(err);
+//      })
+//     } */
 
     render() {
         return (

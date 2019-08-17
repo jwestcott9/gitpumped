@@ -20,15 +20,9 @@ router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
 router.post("/new",  authMiddleware.isLoggedIn, function (req, res, next) {
     const newWorkout = new db.Workouts({
         user: req.body.user,
-        monday: req.body.monday,
-        tuesday: req.body.tuesday,
-        // wednesday: req.body.wednesday,
-        // thursday: req.body.thursday,
-        // friday: req.body.friday,
-        // saturday: req.body.saturday,
-        // sunday: req.body.sunday
+        workouts: req.body.workouts
     });
-
+    res.json(newWorkout);
     newWorkout.save((err, newWorkout) => {
         if (err) throw err;
         db.User.findByIdAndUpdate(req.body.user, { $push: { Workouts: newWorkout._id } }, (err, user) => {
