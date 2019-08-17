@@ -35,8 +35,9 @@ class Profile extends Component {
 
     
     componentDidMount() {
-        
+
         this.getMeal("week", "2000", "vegetarian", "dairy");
+
         /* when the component mounts run this code
          */
         /* change ths stateuful component to false */
@@ -84,7 +85,6 @@ class Profile extends Component {
         }, 1000)  
     }
 
- 
 
  getMeal = (timeFrame, targetCalories, diet, exclude) => {
 
