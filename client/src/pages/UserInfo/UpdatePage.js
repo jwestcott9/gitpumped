@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UserInfo from "../../components/UserInfo";
 import API from "../../utils/API";
 import "./style.css";
-import { Link } from "react-router-dom";
+
 
 class UpdatePage extends Component {
     state={
@@ -26,7 +26,7 @@ class UpdatePage extends Component {
       /*  */
       API.isLoggedIn().then(user => {
           if (user.data.loggedIn) {
-            console.log(user.data.user)
+           
               this.setState({
                   loggedIn: true,
                   user: user.data.user._id,
@@ -36,8 +36,6 @@ class UpdatePage extends Component {
       }).catch(err => {
           console.log(err);
       });
-
-      console.log(this.props)
   }
 
   
@@ -57,7 +55,7 @@ class UpdatePage extends Component {
 
 
     handleInputChange = event => {
-      console.log("I was hit here is what I am seeing" +event.target.value)
+      
         const value = event.target.value;
         const name = event.target.name;
         this.setState({

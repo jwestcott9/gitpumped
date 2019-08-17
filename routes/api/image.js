@@ -9,7 +9,12 @@ const storage = multer.diskStorage({
     cb(null, "./client/src/assets/uploads")
   },
   filename: function(req, file, cb){
-    cb(null, Date.now() + file.originalname);
+    var ext = require('path').extname(file.originalname);
+      ext = ext.length>1 ? ext : "." + require('mime').extension(file.mimetype);
+      require('crypto').pseudoRandomBytes(16, function (err, raw) {
+        cb(null, (err ? undefined : raw.toString('hex') ) + ext);
+      });
+    // cb(null, Date.now() + file.originalname);
   }
 });
 
@@ -29,11 +34,7 @@ const upload = multer ({
   fileFilter: fileFilter
 });
 
-ImageRouter.get("/getImage", function (req, res, next){
-  Image.find({user: req.body.user}, (err, Image) =>{
-    res.json(Image);
-  });
-});
+
 
 ImageRouter.route("/uploadmulter")
     .post(upload.single('imageData'), (req, res, next) => {
@@ -64,11 +65,15 @@ ImageRouter.route("/uploadmulter")
             .catch((err) => next(err))
           })
     })
+
+    ImageRouter.route("/getImage/:id")
     .get(function(req, res ){
-      Image.find({user: req.body.user}, function (err, img){
-        if(err)
-        res.send(err)
-        console.log(img)
+      console.log('this is the user id', req.params.id);
+      Image.findOne({user: req.params.id}, function (err, img){
+        console.log("----------------------------------------------------api/image.js/get()callback/image.findone()")
+        if(err) {
+          res.send(err)
+        }
 
         res.contentType('json');
         res.send(img);

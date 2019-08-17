@@ -6,41 +6,10 @@ const workoutsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  monday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
-  tuesday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
-  wednesday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
-  thursday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
-  friday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
-  saturday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
-  sunday: {
-    type: Object,
-    unique: false,
-    required: false
-  },
+ workouts:{
+   type: Array,
+   unique: false
+ },
   createdAt: {
     type: Date,
     default: Date.now()

@@ -15,17 +15,12 @@ router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
 });
 
 // /api/workouts/new
+// authMiddleware.isLoggedIn,
 // add new workout, update the user to have workout id
-router.post("/new",  authMiddleware.isLoggedIn, function (req, res, next) {
+router.post("/new",   function (req, res, next) {
     const newWorkout = new db.Workouts({
         user: req.body.user,
-        monday: req.body.monday,
-        tuesday: req.body.tuesday,
-        // wednesday: req.body.wednesday,
-        // thursday: req.body.thursday,
-        // friday: req.body.friday,
-        // saturday: req.body.saturday,
-        // sunday: req.body.sunday
+        workouts: req.body.workouts
     });
 
     newWorkout.save((err, newWorkout) => {

@@ -11,12 +11,11 @@ import Calendar from "../../components/Calender";
 
 
 
-
-
-class Profile extends Component {   
-          
-    calendarComponentRef = React.createRef()
-    state = {
+class Profile extends Component {
+   
+    // calendarComponentRef = React.createRef()
+    
+state = {
 
         loggedIn: false,                   
         user: null,
@@ -27,14 +26,16 @@ class Profile extends Component {
         age: null,
         goals: null, 
         plans: null,
-        image: null,
-
+        image: "bitches",
     }
 
- 
-
-    
-    componentDidMount() {
+   setImage = () => {
+        let image = this.state.image; 
+        console.log(image)
+        return image  
+    }
+   
+componentDidMount() {
         
         this.getMeal("week", "2000", "vegetarian", "dairy");
         /* when the component mounts run this code
@@ -53,8 +54,9 @@ class Profile extends Component {
                     age: user.data.age,
                     goals: user.data.goals
                 }, ()=>{
-                    this.getProfileImage(this.state.user);
-                    console.log(this.state.user.goals)
+                
+                    this.getProfileImage(this.state.user._id);
+                    console.log(this.state.user._id)
                 });
             }
         }).catch(err => {
@@ -65,14 +67,25 @@ class Profile extends Component {
         console.log(this.props)
     }
 
-    getProfileImage(user){
-        axios.get('/api/image/uploadmulter', user)
-            .then((data) => {
-                console.log(data) 
+getProfileImage(user){
+    console.log(user);
+        axios.get('/api/image/getImage/' + user)
+            .then(data => {
+                console.log(data.data.imageData)
+                let str = data.data.imageData;
+                let res = str.substring(26);
+                console.log(res);
+                let image = "../../assets/uploads/" + res;
+                console.log(image);
+                this.setState({
+                    image: image
+                }, ()=>{
+                    console.log(typeof this.state.image);
+                })
             })
     }
 
-    loading() {
+loading() {
         /* after 1 second loading is set to false 
         adds an automated buffer so that it will 
         attempt to not show client loading?
@@ -84,9 +97,7 @@ class Profile extends Component {
         }, 1000)  
     }
 
- 
-
- getMeal = (timeFrame, targetCalories, diet, exclude) => {
+getMeal = (timeFrame, targetCalories, diet, exclude) => {
 
     axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate',
     {"headers": 
@@ -98,7 +109,7 @@ class Profile extends Component {
        "diet": diet,
        "exclude": exclude},})
             .then((response)=>{
-                console.log(response.data.items);
+               
                 let allPlans = response.data.items;
                 this.setState({
                     plans: allPlans
@@ -114,19 +125,18 @@ class Profile extends Component {
                          console.log("failed");
                             }
                     )
-                    
-        
       }
     
 
     render() {
         return (
             <div className="profilePage">
+                
                 <Container>
-                {this.state.loggedIn ? (            //  puts the name in the header 
-                    <div className="profileBox">    {/* header */}
-                   
-
+                {this.state.loggedIn ? (    
+                               //  puts the name in the header 
+                        <div className="profileBox">    {/* header */}
+                        <img id="profile" src= {this.state.image} alt={this.state.image}/> 
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
 
                         {
@@ -150,11 +160,7 @@ class Profile extends Component {
                         <p id= "age">age: {this.state.user.age}</p>
                         {/* <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} /> */}
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
-                        <MealPlan
-                         plans = {this.state.plans}
-                        />
-                        <img src = "../../assets/uploads\1565983040144Screenshot (3)" alt= "profile" className = "profile-image"/>
-
+                        <MealPlan plans = {this.state.plans}/>
                         <Calendar/>
 
                     </div>
@@ -164,7 +170,8 @@ class Profile extends Component {
                     IF THE USER IS NOT LOGGED IN EXECUTE BELOW CODE
                      */
 
-                ) : (
+                ) 
+                : (
                     <div className="noUser">
                         {!this.state.loading ? ( /* checks to see if this page is loading  */
                             <>
