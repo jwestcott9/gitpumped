@@ -9,7 +9,7 @@ router.post("/login", passport.authenticate("local", {
   failureRedirect: "/api/users/unauthorized",
   failureFlash : true
 }), function (req, res, next) {
-  console.log("sign in successful")
+  // console.log("sign in successful")
   res.json({
     user: req.user,
     loggedIn: true
@@ -20,7 +20,7 @@ router.post("/signup", function(req, res, next) {
   db.User.findOne({username: req.body.username}, function(err, user) {
     if (err) throw err;
     if (user) {
-      console.log("user already exists")
+      // console.log("user already exists")
       return res.json("user already exists");
     }
     if (!user) {
@@ -89,8 +89,8 @@ router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
 // authMiddleware.isLoggedIn,
 
 router.put("/updateProfile", function(req, res, next){
-  console.log(req.body);
-  console.log("I was hit")
+  // console.log(req.body);
+  // console.log("I was hit")
   db.User.findOneAndUpdate({_id: req.body.user},
      {
     height: req.body.height, 

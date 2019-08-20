@@ -76,7 +76,7 @@ handleFormSubmit = event => {
         height: this.state.height,
         age: this.state.age
     }).then (()=> {
-      window.location.href="/profile"
+      // window.location.href="/profile"
       this.checkGoals();
     }
 )}
@@ -388,7 +388,7 @@ getWorkouts = () =>{
 
   API.addWorkouts(workoutInfo).then(data => {
     console.log(data); 
-    this.loginCheck();
+  
   });
  
   this.setState({ workouts: [] });

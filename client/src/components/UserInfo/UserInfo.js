@@ -55,15 +55,14 @@ function UserInfo (props){
                <Label for="sex">Sex</Label>
                <Input type="sex" name="sex" id="sex" placeholder="sex" value= {props.sex} onChange={props.handleInputChange}/>
 
-               <Label for="age">Age</Label>
+               <Label for="age">
+                 
+               </Label>
                <Input type="age" name="age" id="age" placeholder="age" value= {props.age} onChange={props.handleInputChange}/>
                <UploadPhoto
                 buttonLabel = "upload profile photo"
                 user = {props.user}/>
                 <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {props.handleFormSubmit}> Submit </Button>
-                
-              
-              
                 {/* <Label for="confirmPassword">Confirm Password</Label>
                 <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
                 <FormText>at least 8 characters, 1 capital & 1 number</FormText> */}

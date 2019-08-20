@@ -5,8 +5,8 @@ const authMiddleware = require("../../config/middleware/authMiddleware");
 
 // /api/workouts/all
 // get all workouts from the signed in user
-router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
-    db.Workouts.find({ user: req.body.user }, (err, workouts) => {
+router.get("/all/:id",  function (req, res, next) {
+    db.Workouts.find({ user: req.params.id }, (err, workouts) => {
         if(err){
             res.json(err);
         }
@@ -15,6 +15,7 @@ router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
 });
 
 // /api/workouts/new
+// authMiddleware.isLoggedIn,
 // add new workout, update the user to have workout id
 router.post("/new",  authMiddleware.isLoggedIn, function (req, res, next) {
     db.Workouts.create({
