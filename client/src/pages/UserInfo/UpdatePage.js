@@ -1,3 +1,5 @@
+/* eslint-disable default-case */
+/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import UserInfo from "../../components/UserInfo";
 import API from "../../utils/API";
