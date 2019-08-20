@@ -17,18 +17,16 @@ router.get("/all", authMiddleware.isLoggedIn,  function (req, res, next) {
 // /api/workouts/new
 // add new workout, update the user to have workout id
 router.post("/new",  authMiddleware.isLoggedIn, function (req, res, next) {
-    const newWorkout = new db.Workouts({
+    db.Workouts.create({
         user: req.body.user,
         workouts: req.body.workouts
-    });
-    res.json(newWorkout);
-    newWorkout.save((err, newWorkout) => {
-        if (err) throw err;
-        db.User.findByIdAndUpdate(req.body.user, { $push: { Workouts: newWorkout._id } }, (err, user) => {
-            if (err) throw err;
-            res.send(newWorkout, user);
-        });
-    });
+    }).then(function(dbWorkout) {
+        return db.User.findOneAndUpdate({ _id: req.body.user }, { Workouts: dbWorkout._id }, { new: true });
+      })
+    .then(data => {
+        res.json(data);
+    }).catch(err => res.status(422).json(err));
+
 });
 
 // /api/workouts/remove
