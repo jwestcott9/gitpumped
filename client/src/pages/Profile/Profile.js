@@ -6,11 +6,10 @@ import API from "../../utils/API";
 import MealPlan from "../../components/MealPlan/MealPlan";
 import axios from "axios";
 import Calendar from "../../components/Calender";
+import SideBar from "../../components/SideBar";
 
 
-
-
-
+let image;
 class Profile extends Component {
    
     // calendarComponentRef = React.createRef()
@@ -25,8 +24,8 @@ state = {
         sex: null,
         age: null,
         goals: null, 
-        plans: null,
-        image: "bitches",
+        image: null,
+        workouts: null
     }
 
    setImage = () => {
@@ -37,13 +36,8 @@ state = {
    
 componentDidMount() {
         
-        this.getMeal("week", "2000", "vegetarian", "dairy");
-
-        /* when the component mounts run this code
-         */
-        /* change ths stateuful component to false */
+       
         this.loading();
-        /*  */
         API.isLoggedIn().then(user => {
             if (user.data.loggedIn) {
                 this.setState({
@@ -57,7 +51,7 @@ componentDidMount() {
                 }, ()=>{
                 
                     this.getProfileImage(this.state.user._id);
-                    console.log(this.state.user._id)
+                   
                 });
             }
         }).catch(err => {
@@ -65,23 +59,25 @@ componentDidMount() {
         });
     
        
-        console.log(this.props)
+        
     }
 
+
+
+
 getProfileImage(user){
-    console.log(user);
+    console.log(":)")
         axios.get('/api/image/getImage/' + user)
             .then(data => {
-                console.log(data.data.imageData)
+                // console.log(data.data.imageData)
                 let str = data.data.imageData;
-                let res = str.substring(26);
-                console.log(res);
-                let image = "../../assets/uploads/" + res;
-                console.log(image);
+                let image = str.substring(10);
+               
+                // console.log(image);
                 this.setState({
-                    image: image
+                    image:  image
                 }, ()=>{
-                    console.log(typeof this.state.image);
+                    console.log(this.state.image);
                 })
             })
     }
@@ -91,7 +87,7 @@ loading() {
         adds an automated buffer so that it will 
         attempt to not show client loading?
          */
-        setTimeout(()=> {
+        setTimeout(()=> { 
             this.setState({
                 loading: false
             })
@@ -99,47 +95,28 @@ loading() {
     }
 
 
- getMeal = (timeFrame, targetCalories, diet, exclude) => {
-
-    axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate',
-    {"headers": 
-    { "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-       "x-rapidapi-key": "fcb3b27bb6mshc7a98d29060e823p1674e7jsn37cc5c313307"}},
-  
-       {query: {"timeFrame": timeFrame,
-       "targetCalories": targetCalories,
-       "diet": diet,
-       "exclude": exclude},})
-            .then((response)=>{
-               
-                let allPlans = response.data.items;
-                this.setState({
-                    plans: allPlans
-                });
-             }).then( () => 
-                    this.state.loggedIn?
-                     API.addMealPlan({
-                     user: this.state.user._id,
-                     MealPlan: this.state.plans
-                                    })
-                     :
-                     () => {
-                         console.log("failed");
-                            }
-                    )
-      }
+ 
     
 
     render() {
         return (
             <div className="profilePage">
-                
                 <Container>
+                    
+                
                 {this.state.loggedIn ? (    
-                               //  puts the name in the header 
-                        <div className="profileBox">    {/* header */}
-                        <img id="profile" src= {this.state.image} alt={this.state.image}/> 
+                               //  puts the name in the header
+                <>      
+                    <SideBar/>     
+                        <div className="profileBox"> 
+                        
+                        
+                           {/* header */}
+                        <img id="profile" src= {this.state.image} alt= "profile"/> 
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                        <Calendar
+                        user = {this.state.user._id}/>
+
 
                         {
                          this.state.user.goals === 1 ?
@@ -162,10 +139,16 @@ loading() {
                         <p id= "age">age: {this.state.user.age}</p>
                         {/* <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} /> */}
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
-                        <MealPlan plans = {this.state.plans}/>
-                        <Calendar/>
-
+                        <MealPlan
+                        user = {this.state.user._id}
+                        timeFrame = "week"
+                        targetCalories = "2000"
+                        diet = "vegetarian"
+                        exclude = "dairy" />
+                        
                     </div>
+
+            </>
 
                   
                   /* 

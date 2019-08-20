@@ -6,7 +6,7 @@ const db = require("../../models");
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb){
-    cb(null, "./client/src/assets/uploads")
+    cb(null, "./client/public/assets/images")
   },
   filename: function(req, file, cb){
     var ext = require('path').extname(file.originalname);

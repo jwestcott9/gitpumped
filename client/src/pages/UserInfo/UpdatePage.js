@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import UserInfo from "../../components/UserInfo";
 import API from "../../utils/API";
 import "./style.css";
-<<<<<<< HEAD
-
-=======
 import { Link } from "react-router-dom";
 import Lose from '../../data/cardio.json';
 import Gain from '../../data/gain.json';
 import Maintain from '../../data/essentials.json';
->>>>>>> cd0f0dcc055028f86dc52a44306146a849b4eae7
 
 class UpdatePage extends Component {
     state={
@@ -35,10 +31,6 @@ class UpdatePage extends Component {
       /*  */
       API.isLoggedIn().then(user => {
           if (user.data.loggedIn) {
-<<<<<<< HEAD
-           
-=======
->>>>>>> cd0f0dcc055028f86dc52a44306146a849b4eae7
               this.setState({
                   loggedIn: true,
                   user: user.data.user._id,
@@ -67,10 +59,6 @@ class UpdatePage extends Component {
 
 
     handleInputChange = event => {
-<<<<<<< HEAD
-      
-=======
->>>>>>> cd0f0dcc055028f86dc52a44306146a849b4eae7
         const value = event.target.value;
         const name = event.target.name;
         this.setState({
@@ -88,7 +76,7 @@ handleFormSubmit = event => {
         height: this.state.height,
         age: this.state.age
     }).then (()=> {
-      window.location.href="/profile"
+      // window.location.href="/profile"
       this.checkGoals();
     }
 )}
@@ -400,7 +388,7 @@ getWorkouts = () =>{
 
   API.addWorkouts(workoutInfo).then(data => {
     console.log(data); 
-    this.loginCheck();
+  
   });
  
   this.setState({ workouts: [] });

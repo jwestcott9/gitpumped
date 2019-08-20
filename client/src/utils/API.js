@@ -29,7 +29,9 @@ export default {
   isAdmin: function() {
     return axios.get("/api/users/logout")
   },
-
+  getWorkouts: function (){
+    return axios.get("api/workouts/all/:id")
+  },
   // logs out the user
   logout: function() {
     return axios.get("/api/users/logout")

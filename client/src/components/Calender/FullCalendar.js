@@ -3,7 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
-
+import axios from "axios";
 
 import "./styles.css";
 
@@ -15,22 +15,23 @@ import bootstrapPlugin from '@fullcalendar/bootstrap'
 
 class DemoApp extends React.Component {
   calendarComponentRef = React.createRef();
-  
-  state = {
+  constructor(props) {
+    super(props);
+  this.state = {
     calendarWeekends: true,
     calendarEvents: [
       // initial event data
       { title: "Event Now", start: new Date()},
-      {title: "event test", start: new Date ()}
-    ]
+      {title: "event test", back: "something", legs: "somethingelse", cardio: "something",url: "facebook.com", start: new Date ()}
+    ],
+    workouts: null
   };
+}
 
   render() {
     return (
       <div className="demo-app">
         <div className="demo-app-top">
-          <button onClick={this.toggleWeekends}>toggle weekends</button>&nbsp;
-          <button onClick={this.gotoPast}>go to a date in the past</button>
           &nbsp; (also, click a date/time to add an event)
         </div>
         <div className="demo-app-calendar">
@@ -49,6 +50,7 @@ class DemoApp extends React.Component {
             dateClick={this.handleDateClick}
             themeSystem = 'bootstrap'
             selectable = "true"
+            eventClick = {this.eventClick}
           />
         </div>
       </div>
@@ -67,12 +69,41 @@ class DemoApp extends React.Component {
     calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
   };
 
-  componentDidMount = (props) =>{
-    console.log(typeof this.state.calendarEvents[0].start)
-    
+  getWorkouts(user){
+    console.log(user)
+    axios.get("api/workouts/all/"+ user)
+        .then(data => {
+          console.log(data)
+            this.setState({
+                workouts: data
+            }, ()=>{
+                console.log(this.state.workouts.data)
+                let paragraph = "";
+                this.state.workouts.data.forEach((element)=>{
+                  for(let i =0; i<element.workouts.length; i++){
+                    console.log(element.workouts[i]); 
+                    console.log(element.workouts[i].back)
+                    paragraph = paragraph + element.workouts[1].back.exercise_name
+                    console.log(paragraph);
+                    
+
+                  }
+                  console.log(element.workouts);
+                })
+            });
+        })
+}
+
+  componentDidMount = () =>{
+   
+    this.getWorkouts(this.props.user)
+    console.log(this.state.workouts);
+  
     let newEvent = {
       title: 'dynamic event',
       start: new Date('2019-08-02' + 'T12:00:00'),
+      url: "facebook.com",
+     
       
     };
     console.log(typeof newEvent.start)
@@ -86,7 +117,18 @@ class DemoApp extends React.Component {
         
       })
     })
+ 
   }
+
+  eventClick = (info) => { 
+    console.log(info);
+    info.jsEvent.preventDefault(); // don't let the browser navigate
+
+    if (info.event.url) {
+      window.open(info.event.url);
+    }
+  }
+  
 
   handleDateClick = arg => {
     console.log( arg.date);
