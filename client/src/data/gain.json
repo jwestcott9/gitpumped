@@ -4,13 +4,15 @@
         "exercise_name":"Calve Raises",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/48/Male/200sq/48_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/48/Male/200sq/48_2.jpg"
+        },
         "split":"lower-body",      
         "reps": {
-
             "high": ["12-16"],
             "medium": ["10-13"],
-            "low": ["6-8"]
-            
+            "low": ["6-8"] 
         },
         "type_id": 2,
         "id": 8
@@ -21,13 +23,15 @@
         "exercise_name":"Lunges",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/32/Male/200sq/32_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/32/Male/200sq/32_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
-
             "high": ["12-16"],
             "medium": ["10-13"],
-            "low": ["6-8"]
-            
+            "low": ["6-8"]   
         },
         "type_id":2,
         "id": 9
@@ -38,13 +42,15 @@
         "exercise_name":"Backwards Lunges",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/109/Male/200sq/109_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/109/Male/200sq/109_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
-
             "high": ["12-16"],
             "medium": ["10-13"],
-            "low": ["6-8"]
-            
+            "low": ["6-8"]    
         },
         "type_id":2,
         "id": 10
@@ -55,6 +61,10 @@
         "exercise_name":"Squats",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/3861/Male/200sq/3861_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/3861/Male/200sq/3861_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -72,13 +82,16 @@
         "exercise_name":"Standing Calf Raises",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/48/Male/200sq/48_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/detail/view/name/standing-calf-raises"
+        },
         "split":"lower-body", 
         "reps": {
 
             "high": ["12-16"],
             "medium": ["10-13"],
-            "low": ["6-8"]
-            
+            "low": ["6-8"]     
         },
         "type_id":2,
         "id": 12
@@ -89,6 +102,10 @@
         "exercise_name":"Barbell Squat",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/3861/Male/200sq/3861_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/3861/Male/200sq/3861_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -103,9 +120,13 @@
 
     {
         "workout_type":"Lifting",
-        "exercise_name":"Lef Press",
+        "exercise_name":"Leg Press",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/57/Male/200sq/57_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/57/Male/200sq/57_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -123,6 +144,10 @@
         "exercise_name":"Lying Leg Curls",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/52/Male/200sq/52_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/52/Male/200sq/52_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -140,13 +165,15 @@
         "exercise_name":"Dumbbell Lunges",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/32/Male/200sq/32_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/32/Male/200sq/32_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
-
             "high": ["12-16"],
             "medium": ["10-13"],
             "low": ["6-8"]
-            
         },
         "type_id":2,
         "id": 16
@@ -157,6 +184,10 @@
         "exercise_name":"Hack Squat",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/56/Male/200sq/56_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/56/Male/200sq/56_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -174,6 +205,10 @@
         "exercise_name":"Romanian DeadLift",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/4091/Male/200sq/4091_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/4091/Male/200sq/4091_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -188,9 +223,13 @@
 
     {
         "workout_type":"Lifting",
-        "exercise_name":"Romanian DeadLift",
+        "exercise_name":"DeadLift",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/4091/Male/200sq/4091_2.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/4091/Male/200sq/4091_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -208,6 +247,10 @@
         "exercise_name":"Thigh Abductor",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/154/Male/200sq/154_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/154/Male/200sq/154_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -225,6 +268,10 @@
         "exercise_name":"Calf Press/Leg Machine",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/215/Male/200sq/215_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/215/Male/200sq/215_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -242,6 +289,10 @@
         "exercise_name":"Front Barbell Squat",
         "body_part":"leg",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/42/Male/200sq/42_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/42/Male/200sq/42_2.jpg"
+        },
         "split":"lower-body", 
         "reps": {
 
@@ -259,6 +310,10 @@
         "exercise_name":"Cable Crunch",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/200sq/163_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/200sq/163_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -276,6 +331,10 @@
         "exercise_name":"Barbell Side Bend",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/87/Male/200sq/87_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/87/Male/200sq/87_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -293,6 +352,10 @@
         "exercise_name":"Crunches",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/102/Male/200sq/102_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/102/Male/200sq/102_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -310,6 +373,10 @@
         "exercise_name":"Reverse Crunch",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/119/Male/200sq/119_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/119/Male/200sq/119_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -327,6 +394,10 @@
         "exercise_name":"Seated Barbell Twist",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/89/Male/200sq/89_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/89/Male/200sq/89_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -344,6 +415,10 @@
         "exercise_name":"Air Bike",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/209/Male/200sq/209_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/209/Male/200sq/209_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -361,6 +436,10 @@
         "exercise_name":"Crunch-Hands Overhead",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/113/Male/200sq/113_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/113/Male/200sq/113_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -378,6 +457,10 @@
         "exercise_name":"Flat Bench Lying Leg Raise",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/90/Male/200sq/90_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/90/Male/200sq/90_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -395,6 +478,10 @@
         "exercise_name":"Frog Sit-Ups",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/295/Male/200sq/295_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/295/Male/200sq/295_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -412,6 +499,10 @@
         "exercise_name":"Jackknife Sit-Up",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/91/Male/200sq/91_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/91/Male/200sq/91_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -429,6 +520,10 @@
         "exercise_name":"Oblique Crunches",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/104/Male/200sq/104_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/104/Male/200sq/104_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -446,6 +541,10 @@
         "exercise_name":"Reverse Crunch",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/119/Male/200sq/119_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/119/Male/200sq/119_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -463,6 +562,10 @@
         "exercise_name":"Russian Twist",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/208/Male/200sq/208_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/208/Male/200sq/208_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -480,6 +583,10 @@
         "exercise_name":"Ab Crunch Machine",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/225/Male/200sq/225_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/225/Male/200sq/225_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -497,6 +604,10 @@
         "exercise_name":"Barbell Side Bend",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/87/Male/200sq/87_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/116/Male/200sq/116_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -514,6 +625,10 @@
         "exercise_name":"Crunch-Legs on Exercise Ball",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/116/Male/200sq/116_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/116/Male/200sq/116_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -531,6 +646,10 @@
         "exercise_name":"Decline Crunch",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/193/Male/200sq/193_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/193/Male/200sq/193_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -548,6 +667,10 @@
         "exercise_name":"Dumbbell Side Bend",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/88/Male/200sq/88_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/88/Male/200sq/88_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -565,6 +688,10 @@
         "exercise_name":"Exercise Ball Crunch",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/117/Male/200sq/117_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/117/Male/200sq/117_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -582,6 +709,10 @@
         "exercise_name":"Flat Bench Leg Pull-In",
         "body_part":"core",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/94/Male/200sq/94_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/94/Male/200sq/94_2.jpg"
+        },
         "split": "core",
         "reps": {
 
@@ -599,6 +730,10 @@
         "exercise_name":"Barbell Incline Bench Press Medium-Grip",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/3311/Male/200sq/3311_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/3311/Male/200sq/3311_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -616,6 +751,10 @@
         "exercise_name":"Incline Dumbbell Press",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/380/Male/200sq/380_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/380/Male/200sq/380_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -633,6 +772,10 @@
         "exercise_name":"Incline Dumbbell Flyes",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/38/Male/200sq/38_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/38/Male/200sq/38_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -650,6 +793,10 @@
         "exercise_name":"Pushups",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/200sq/70_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/200sq/70_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -667,6 +814,10 @@
         "exercise_name":"Dumbbell Flyes",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/12/Male/200sq/12_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/12/Male/200sq/12_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -684,6 +835,10 @@
         "exercise_name":"Decline Barbell Bench Press",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/34/Male/200sq/34_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/34/Male/200sq/34_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -701,6 +856,10 @@
         "exercise_name":"Decline Dumbbell Bench Press",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/51/Male/200sq/51_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/51/Male/200sq/51_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -718,6 +877,10 @@
         "exercise_name":"Decline Dumbbell Flyes",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/36/Male/200sq/36_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/36/Male/200sq/36_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -735,6 +898,10 @@
         "exercise_name":"Dips- Chest Version",
         "body_part":"chest",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/145/Male/200sq/145_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/145/Male/200sq/145_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -752,6 +919,10 @@
         "exercise_name":"Barbell Shoulder Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/308/Male/200sq/308_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/308/Male/200sq/308_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -769,6 +940,10 @@
         "exercise_name":"One-Arm Side Laterals",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/173/Male/200sq/173_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/173/Male/200sq/173_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -786,6 +961,10 @@
         "exercise_name":"Front Plate Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/230/Male/200sq/230_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/230/Male/200sq/230_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -803,6 +982,10 @@
         "exercise_name":"Lying Rear Delt Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/376/Male/200sq/376_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/376/Male/200sq/376_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -820,6 +1003,10 @@
         "exercise_name":"Seated Side Lateral Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/378/Male/200sq/378_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/378/Male/200sq/378_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -834,9 +1021,13 @@
 
     {
         "workout_type":"Lifting",
-        "exercise_name":"Pushupse",
+        "exercise_name":"Pushups",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/200sq/70_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/200sq/70_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -854,6 +1045,10 @@
         "exercise_name":"Reverse Flyes",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/375/Male/200sq/375_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/375/Male/200sq/375_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -871,6 +1066,10 @@
         "exercise_name":"Side Lateral Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/200sq/373_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/200sq/373_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -888,6 +1087,10 @@
         "exercise_name":"Seated Bent-Over Rear Delt Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/377/Male/200sq/377_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/377/Male/200sq/377_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -905,6 +1108,10 @@
         "exercise_name":"Dumbbell Shoulder Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/200sq/328_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/200sq/328_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -922,6 +1129,10 @@
         "exercise_name":"Standing Low-Pulley Deltoid Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/72/Male/200sq/72_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/72/Male/200sq/72_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -939,6 +1150,10 @@
         "exercise_name":"Barbell Rear Delt Row",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/307/Male/200sq/307_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/307/Male/200sq/307_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -956,6 +1171,10 @@
         "exercise_name":"Arnold Dumbbell Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/82/Male/200sq/82_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/82/Male/200sq/82_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -973,6 +1192,10 @@
         "exercise_name":"Bent Over Low-Pulley Side Lateral",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/73/Male/200sq/73_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/73/Male/200sq/73_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -990,6 +1213,10 @@
         "exercise_name":"Lying One-Arm Lateral Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/165/Male/200sq/165_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/165/Male/200sq/165_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1007,6 +1234,10 @@
         "exercise_name":"Front Dumbbell Raise",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/371/Male/200sq/371_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/371/Male/200sq/371_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1024,6 +1255,10 @@
         "exercise_name":"Standing Military Press",
         "body_part":"shoulders",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/370/Male/200sq/370_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/370/Male/200sq/370_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1041,6 +1276,10 @@
         "exercise_name":"Bent Over Barbell Row",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/200sq/20_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/200sq/20_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1058,6 +1297,10 @@
         "exercise_name":"Seated Cable Rows",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/45/Male/200sq/45_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/45/Male/200sq/45_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1075,6 +1318,10 @@
         "exercise_name":"V-Bar Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/177/Male/200sq/177_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/177/Male/200sq/177_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1092,6 +1339,10 @@
         "exercise_name":"Barbell Shrug",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/97/Male/200sq/97_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/97/Male/200sq/97_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1109,6 +1360,10 @@
         "exercise_name":"Hyperextensions (Back Extensions)",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/47/Male/200sq/47_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/47/Male/200sq/47_2.jpg"
+        },
         "split": "uer-body",
         "reps": {
 
@@ -1126,6 +1381,10 @@
         "exercise_name":"Reverse Grip Bent-Over Rows",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/16/Male/200sq/16_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/16/Male/200sq/16_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1143,6 +1402,10 @@
         "exercise_name":"Close Grip Front Lat Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/14/Male/200sq/14_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/14/Male/200sq/14_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1160,6 +1423,10 @@
         "exercise_name":"Dumbbell Shrug",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/96/Male/200sq/96_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/96/Male/200sq/96_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1177,6 +1444,10 @@
         "exercise_name":"Stiff Leg Barbell Good Morning",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/86/Male/200sq/86_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/86/Male/200sq/86_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1194,6 +1465,10 @@
         "exercise_name":"Wide-Grip Lat Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/200sq/10_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/200sq/10_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1211,6 +1486,10 @@
         "exercise_name":"Underhand Cable Pulldowns",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/139/Male/200sq/139_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/139/Male/200sq/139_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1228,6 +1507,10 @@
         "exercise_name":"Stiff-Legged Barbell Deadlift",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/21/Male/200sq/21_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/21/Male/200sq/21_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1245,6 +1528,10 @@
         "exercise_name":"Full Range-Of-Motion Lat Pulldown",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/182/Male/200sq/182_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/182/Male/200sq/182_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1262,6 +1549,10 @@
         "exercise_name":"One-Arm Dumbbell Row",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/13/Male/200sq/13_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/13/Male/200sq/13_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1279,6 +1570,10 @@
         "exercise_name":"Upright Barbell Row",
         "body_part":"back",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/365/Male/200sq/365_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/365/Male/200sq/365_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1296,6 +1591,10 @@
         "exercise_name":"Close-Grip Barbell Bench Press",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/200sq/23_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/200sq/23_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1313,6 +1612,10 @@
         "exercise_name":"Cable Rope Overhead Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/220/Male/200sq/220_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/220/Male/200sq/220_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1330,6 +1633,10 @@
         "exercise_name":"Triceps Pushdown",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/343/Male/200sq/343_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/343/Male/200sq/343_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1347,6 +1654,10 @@
         "exercise_name":"Barbell Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/169/Male/200sq/169_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/169/Male/200sq/169_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1364,6 +1675,10 @@
         "exercise_name":"Dumbbell Alternate Bicep Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/234/Male/200sq/234_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/234/Male/200sq/234_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1381,6 +1696,10 @@
         "exercise_name":"Standing Biceps Cable Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/131/Male/200sq/131_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/131/Male/200sq/131_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1398,6 +1717,10 @@
         "exercise_name":"Palms-Down Wrist Curl Over a Bench",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/2/Male/200sq/2_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/2/Male/200sq/2_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1415,6 +1738,10 @@
         "exercise_name":"Bench Dips",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/344/Male/200sq/344_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/344/Male/200sq/344_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1432,6 +1759,10 @@
         "exercise_name":"Lying Triceps Press",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/342/Male/200sq/342_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/342/Male/200sq/342_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1449,6 +1780,10 @@
         "exercise_name":"Standing One-Arm Dumbbell Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/350/Male/200sq/350_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/350/Male/200sq/350_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1466,6 +1801,10 @@
         "exercise_name":"Alternate Incline Dumbbell Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/125/Male/200sq/125_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/125/Male/200sq/125_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1483,6 +1822,10 @@
         "exercise_name":"Barbell Curls Lying Against an Incline",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/300/Male/200sq/300_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/300/Male/200sq/300_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1500,6 +1843,10 @@
         "exercise_name":"Cable Wrist Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/317/Male/200sq/317_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/317/Male/200sq/317_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1517,6 +1864,10 @@
         "exercise_name":"EZ-Bar Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/210/Male/200sq/210_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/210/Male/200sq/210_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1534,6 +1885,10 @@
         "exercise_name":"Cable Hammer Curls- Rope Attachment",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/189/Male/200sq/189_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/189/Male/200sq/189_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1551,6 +1906,10 @@
         "exercise_name":"Concentration Curls",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/136/Male/200sq/136_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/136/Male/200sq/136_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1568,6 +1927,10 @@
         "exercise_name":"Dip Machine",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/146/Male/200sq/146_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/146/Male/200sq/146_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1585,6 +1948,10 @@
         "exercise_name":"Decline Dumbbell Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/167/Male/200sq/167_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/167/Male/200sq/167_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1602,6 +1969,10 @@
         "exercise_name":"Cable Incline Triceps Extesion",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/314/Male/200sq/314_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/314/Male/200sq/314_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1619,6 +1990,10 @@
         "exercise_name":"Palms-Up Barbell Wrist Curl Over A Bench",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/390/Male/200sq/390_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/390/Male/200sq/390_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1636,6 +2011,10 @@
         "exercise_name":"Cross Body Hammer Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/236/Male/200sq/236_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/236/Male/200sq/236_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1653,6 +2032,10 @@
         "exercise_name":"Machine Preacher Curls",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/148/Male/200sq/148_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/148/Male/200sq/148_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1670,6 +2053,10 @@
         "exercise_name":"Close-Grip Barbell Bench Press",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/200sq/23_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/200sq/23_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1687,6 +2074,10 @@
         "exercise_name":"Decline EZ Bar Triceps Extension",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/166/Male/200sq/166_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/166/Male/200sq/166_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1704,6 +2095,10 @@
         "exercise_name":"Reverse Grip Triceps Pushdown",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/179/Male/200sq/179_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/179/Male/200sq/179_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1721,6 +2116,10 @@
         "exercise_name":"Incline Dumbbell Curl",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/114/Male/200sq/114_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/114/Male/200sq/114_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 
@@ -1738,6 +2137,10 @@
         "exercise_name":"Lying Triceps Press",
         "body_part":"arms",
         "type":"STRING",
+        "image": {
+            "start":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/342/Male/200sq/342_1.jpg",
+            "finish":"https://www.bodybuilding.com/exercises/exerciseImages/sequences/342/Male/200sq/342_2.jpg"
+        },
         "split": "upper-body",
         "reps": {
 

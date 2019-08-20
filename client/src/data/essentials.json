@@ -3,6 +3,7 @@
         "workout_type":"maintain",
         "exercise_name":"Yoga",
         "type":"STRING",
+        "image": "https://media.self.com/photos/5b7c4e71ecbb7f4c41c77335/4:3/w_728/triangle-pose-beginner-yoga.jpg",
         "time": [15,60,90],
         "type_id":3,
         "id": 1
@@ -12,6 +13,7 @@
         "workout_type":"maintain",
         "exercise_name":"Zumba",
         "type":"STRING",
+        "image": "https://img.grouponcdn.com/iam/55JXTqjThyCCd22bWVdi/AD-5760x3456/v1/c700x420.jpg",
         "time": [15,60,90],
         "type_id":3,
         "id": 2
@@ -21,6 +23,7 @@
         "workout_type":"maintain",
         "exercise_name":"Soccer",
         "type":"STRING",
+        "image": "https://media.istockphoto.com/photos/football-in-the-sunset-picture-id533861572?k=6&m=533861572&s=612x612&w=0&h=xXP7GSvCOFmUfMY2ojUiHudGPdD-KHaP7Fnn6-DlU3U=",
         "time": [15,60,90],
         "type_id":3,
         "id": 3
@@ -30,6 +33,7 @@
         "workout_type":"maintain",
         "exercise_name":"Volleyball",
         "type":"STRING",
+        "image": "https://media.istockphoto.com/photos/volleyball-picture-id507493115?k=6&m=507493115&s=612x612&w=0&h=MPWbm5d0Cxf38oE9BZxwF77XINE2dHYIvs2vL1JI57A=",
         "time": [15,60,90],
         "type_id":3,
         "id": 4
@@ -39,6 +43,7 @@
         "workout_type":"maintain",
         "exercise_name":"Basketball",
         "type":"STRING",
+        "image": "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60",
         "time": [15,60,90],
         "type_id":3,
         "id": 5
@@ -48,6 +53,7 @@
         "workout_type":"maintain",
         "exercise_name":"Tennis",
         "type":"STRING",
+        "image": "https://media.istockphoto.com/photos/tennis-ball-and-racket-on-hard-court-under-sunlight-picture-id832170050?k=6&m=832170050&s=612x612&w=0&h=FRvQAkODC_bYnxLa7L_BoSFylBdmoLwTekg_eDZv8lM=",
         "time": [15,60,90],
         "type_id":3,
         "id": 6
@@ -57,6 +63,7 @@
         "workout_type":"maintain",
         "exercise_name":"Row a Boat",
         "type":"STRING",
+        "image": "https://www.whitehallrow.com/wp-content/uploads/2017/01/Whitehall-Westcoast-11-6-Single-Slide-Seat-Sculling-Rowboat-1170x878.jpg",
         "time": [15,60,90],
         "type_id":3,
         "id": 7
