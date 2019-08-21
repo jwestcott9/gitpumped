@@ -5,6 +5,9 @@ import "./style.css";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
 import UploadPhoto from "../../components/UploadPhoto";
+import DinnerBanner from "../../components/DinnerBanner";
+import Footer from "../../components/Footer";
+// import { ParallaxBanner } from "react-scroll-parallax";
 
 
 class Home extends Component {
@@ -35,28 +38,10 @@ class Home extends Component {
   render() {
     return (
       <div className = "Home">
-      <Container>
-        <Banner/>
-          <Card
-          title= "this is a title"
-          subtitle= "This is a subtitle"
-          content = "this is some content"
-          />
-
-        <Card
-          title= "this is a title"
-          subtitle= "This is a subtitle"
-          content = "this is some content"
-          />
-           <Card
-          title= "this is a title"
-          subtitle= "This is a subtitle"
-          content = "this is some content"
-          />
-          <UploadPhoto/>
-
+      <Banner />
+      <Card />
+      <DinnerBanner />
       
-      </Container>
       </div>
     );
   }

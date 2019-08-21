@@ -1,12 +1,15 @@
 import React from "react";
+import "./style.css";
 
 
 function Footer() {
     return (
         <footer className="footer">
-            <p><i className="fab fa-react react-icon"></i></p>
-            <p>Evan E J Tucker</p>
-            <p><a id="githib" href="https://github.com/evanejtucker/react-auth-simple" target="blank"><i className="fab fa-github gh-icon"></i></a></p>
+            <a id="gitfed" href="" target="blank"><i className="fas fa-drumstick-bite"></i></a>
+   
+            <h2>GitPumped</h2>
+            <a id="gitpumped" href="" target="blank"><i className="fas fa-burn"></i></a>
+           
         </footer>
     )
 }
