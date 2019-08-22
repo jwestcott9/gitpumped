@@ -5,6 +5,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
 import axios from "axios";
 
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 import "./styles.css";
 
 // must manually import the stylesheets for each plugin
@@ -14,23 +16,45 @@ import "@fullcalendar/timegrid/main.css";
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 
 class DemoApp extends React.Component {
+  
   calendarComponentRef = React.createRef();
   constructor(props) {
     super(props);
   this.state = {
+    modal: false,
+    content: null,
     calendarWeekends: true,
     calendarEvents: [
       // initial event data
-      { title: "Event Now", start: new Date()},
-      {title: "event test", back: "something", legs: "somethingelse", cardio: "something",url: "facebook.com", start: new Date ()}
     ],
-    workouts: null
+   
   };
+
+  this.toggle = this.toggle.bind(this);
+
 }
+toggle() {
+  console.log("wassup boo")
+  if(this.state.modal){
+  this.setState({
+    content: this.state.content,
+    modal: false
+  })}
+  if(!this.state.modal){
+    this.setState({
+      content:this.state.content,
+      modal: true
+    })
+  }
+  ;
+}
+
 
   render() {
     return (
+      
       <div className="demo-app">
+        
         <div className="demo-app-top">
           &nbsp; (also, click a date/time to add an event)
         </div>
@@ -48,85 +72,149 @@ class DemoApp extends React.Component {
             editable = "true"
             events={this.state.calendarEvents}
             dateClick={this.handleDateClick}
-            themeSystem = 'bootstrap'
+            themeSystem = 'Standard'
             selectable = "true"
             eventClick = {this.eventClick}
+            eventColor= 'grey'
+            eventTextColor = "white"
+           
+           
           />
+           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>Workout Description</ModalHeader>
+          <ModalBody>
+           {this.state.content}
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+       
         </div>
+       
       </div>
     );
   }
+componentDidMount = () =>{
+    this.getWorkouts(this.props.user)
+   
+  };
 
-  toggleWeekends = () => {
+toggleWeekends = () => {
     this.setState({
       // update a property
       calendarWeekends: !this.state.calendarWeekends
     });
   };
 
-  gotoPast = () => {
+gotoPast = () => {
     let calendarApi = this.calendarComponentRef.current.getApi();
     calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
-  };
+};
 
-  getWorkouts(user){
-    console.log(user)
-    axios.get("api/workouts/all/"+ user)
+getWorkouts(user){
+
+    axios.get("api/workouts/all/" + user)
         .then(data => {
-          console.log(data)
             this.setState({
                 workouts: data
-            }, ()=>{
+            }, () => {
                 console.log(this.state.workouts.data)
-                let paragraph = "";
-                this.state.workouts.data.forEach((element)=>{
-                  for(let i =0; i<element.workouts.length; i++){
-                    console.log(element.workouts[i]); 
-                    console.log(element.workouts[i].back)
-                    paragraph = paragraph + element.workouts[1].back.exercise_name
-                    console.log(paragraph);
+                let start = new Date();
+                let end = new Date();
+                let m = start.getDate();
+  
+                let y = [];
+                for (let i = 0; i < this.state.workouts.data[0].workouts.length; i++) {
+                    m = m + 1;
+                    console.log(this.state.workouts.data[0]);
                     
+                    start.setDate(m)
+                    start.setHours(12);
+                    start.setMinutes(0);
 
-                  }
-                  console.log(element.workouts);
+                    end.setDate(m);
+                    end.setHours(1);
+                    end.setMinutes(0);
+
+          
+                    let workoutObject = this.state.workouts.data[0].workouts[i]
+                    let description = ``;
+                    let x;
+                    for(x in workoutObject){
+                      if(workoutObject[x].reps){
+                        description += 
+                        `do ${workoutObject[x].reps.high[0]} `;
+                      }
+                      if(workoutObject[x].time){
+                        description +=
+                        `for ${workoutObject[x].time[2]} minutes` ;
+                      } 
+                      description +=` ${workoutObject[x].exercise_name}
+                      ` 
+                    }
+                    let data = {
+                      title: description,
+                      start: new Date(start),
+                      end: new Date(end),
+                      info: workoutObject
+                    }
+                   
+                    y.push(data);
+               
+                    this.saveTheWorkouts(data);
+                }
+                this.setState({
+                  calendarEvents: y
+                }, () => {
+                  
                 })
+
             });
         })
 }
 
-  componentDidMount = () =>{
-   
-    this.getWorkouts(this.props.user)
-    console.log(this.state.workouts);
-  
-    let newEvent = {
-      title: 'dynamic event',
-      start: new Date('2019-08-02' + 'T12:00:00'),
-      url: "facebook.com",
-     
+
+saveTheWorkouts = (data) =>{
+
+  this.setState({
+    // add new event data
+    calendarEvents: this.state.calendarEvents.push({
+      // creates a new array
+      title: data.title,
+      start: data.start
       
-    };
-    console.log(typeof newEvent.start)
-    
-    this.setState({
-      // add new event data
-      calendarEvents: this.state.calendarEvents.concat({
-        // creates a new array
-        title: newEvent.title,
-        start: newEvent.start
-        
-      })
+    }, ()=>{
+      console.log(this.state.calendarEvents);
     })
+  })
+}
+
+changeState = ()=>{
+  this.setState({
+    modal: true
+  }, ()=>{
+    this.render()
+  })
+}
  
-  }
 
   eventClick = (info) => { 
+    
     console.log(info);
+    console.log(info.event._def.extendedProps.info);
     info.jsEvent.preventDefault(); // don't let the browser navigate
-
+    this.setState({
+      content: info.event._def.title,
+    }, ()=>{
+     this.changeState();
+    })
     if (info.event.url) {
       window.open(info.event.url);
     }
+    this.toggle();
+    console.log(this.state.modal)
   }
   
 
