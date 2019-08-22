@@ -8,6 +8,8 @@ import UploadPhoto from "../../components/UploadPhoto";
 import DinnerBanner from "../../components/DinnerBanner";
 import Footer from "../../components/Footer";
 // import { ParallaxBanner } from "react-scroll-parallax";
+import MiddleBanner from "../../components/MiddleBanner";
+import CardTwo from "../../components/CardTwo";
 
 
 class Home extends Component {
@@ -39,9 +41,12 @@ class Home extends Component {
     return (
       <div className = "Home">
       <Banner />
+      <Container>
       <Card />
+      <MiddleBanner />
+      <CardTwo />
+      </Container>
       <DinnerBanner />
-      
       </div>
     );
   }

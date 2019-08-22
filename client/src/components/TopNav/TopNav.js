@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import "./style.css"
+import "./style.css";
 import {
     Collapse,
     Navbar,
@@ -13,7 +13,9 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-} from 'reactstrap';
+} from "reactstrap";
+
+
 
 export default class Navigation extends Component {
 
@@ -52,11 +54,18 @@ export default class Navigation extends Component {
         });
     }
 
+    // componentDidMount () {
+    //     window.onscroll = () => {
+    //         this.setState({ currentScrollHeight: window.scrollY})
+    //     };
+    // }
+
     render() {
-        return (
+        return(
+
             <div>
-                <Navbar className="navbar" light expand="md">
-                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-dumbbell"></i> GitPumped</NavbarBrand>
+                <Navbar className="navbar" light expand="md" sticky="top">
+                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-dumbbell"></i><strong>GitPumped</strong></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -93,6 +102,12 @@ export default class Navigation extends Component {
                     </Collapse>
                 </Navbar>
             </div>
+
         );
     }
+    // render() {
+    //     const opacity =Math.min(100 / this.state.currentScrollHeight, 1)
+    //     return <div style={{opacity}} id="navbar"></div>
+    // }
 }
+

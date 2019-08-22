@@ -10,7 +10,7 @@ function dinnerBanner (props) {
             layers={[
                 {
                 image:"http://blog.mycuistot.com/wp-content/uploads/2018/11/shutterstock_521741356-2.jpg",
-                amount: 0.5,
+                amount: 0.8,
                 }
             ]}
             style={{

@@ -1,6 +1,17 @@
 .footer {
     background-color: gray;
     text-align: center;
-    clear: both;
+    position: absolute;
+    font-size: 30px;
+    height:85px;
+    width: 100%;
+    
 }
+
+i {
+    position: relative;
+}
+
+
+
 

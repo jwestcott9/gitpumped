@@ -2,10 +2,12 @@
     width: 30%;
     margin: 15px;
     text-align: center;
-    float: right;
-
+    float: left;
+    
 }
 
 .cardImg {
     height: 100px;
 }
+
+

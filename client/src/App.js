@@ -7,7 +7,7 @@ import UserInfo from "./pages/UserInfo";
 import NoMatch from "./pages/NoMatch";
 import TopNav from "./components/TopNav";
 import Footer from "./components/Footer";
-import { Container } from 'reactstrap';
+// import { Container } from 'reactstrap';
 
 
 
@@ -15,9 +15,7 @@ function App() {
   return (
       <Router>
         <>
-          <TopNav />
-          
-          
+          <TopNav />   
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -28,11 +26,8 @@ function App() {
               <Route component= {NoMatch} />
             </Switch>
           </div>
-
           <Footer />
-                 </>
-
-                 
+                 </>      
       </Router>
   );
 }
