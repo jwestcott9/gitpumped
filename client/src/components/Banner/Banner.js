@@ -1,14 +1,13 @@
 import React from "react";
 import "./style.css";
-import {Jumbotron, Container } from "reactstrap";
+import {Jumbotron } from "reactstrap";
+
+
 function Banner (props){
     return(
-        <>
-        <Jumbotron className = "title">Welcome to GitPumped,
-        <h3>Where we use cutting edge technology to help you meet your fitness goals</h3>
+        <Jumbotron className = "title"><strong>GitPumped</strong>
+        <h3>technology for a better workout</h3>
          </Jumbotron>
-        
-        </>
     )
 }
-export default Banner
+export default Banner;

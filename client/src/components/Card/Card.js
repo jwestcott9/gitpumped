@@ -1,22 +1,35 @@
 import React from "react";
 import './style.css';
-import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from "reactstrap";
+import {Card, CardImg, CardBody, CardText} from "reactstrap";
 
 
-function Section (props){
+const fitnessCard = (props) => {
     return(
         <div>
-      <Card className = "card">
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+          
+      <Card className = "cardone">
+        <CardImg  top width="100%" src="https://media.self.com/photos/5b52046f18a2407a16eba501/4:3/w_728,c_limit/woman-lifting-dumbbells.jpg" alt="Card image cap" height="250"/>
         <CardBody>
-          <CardTitle>{props.title}</CardTitle>
-          <CardSubtitle>{props.subtitle}</CardSubtitle>
-          <CardText>{props.content}</CardText>
-          <Button>Button</Button>
+          <CardText>Maintain Weight</CardText> 
         </CardBody>
       </Card>
+
+      <Card className = "cardtwo">
+        <CardImg top width="100%" src="https://www.mensjournal.com/wp-content/uploads/mf/_main_liftlift.jpg?w=1200&h=1200&crop=1" alt="Card image cap" height="250" />
+        <CardBody>
+          <CardText>Gain Weight</CardText> 
+        </CardBody>
+      </Card>
+
+      <Card className="cardthree">
+        <CardImg top width="100%" src="https://www.mensjournal.com/wp-content/uploads/mf/cardio-builds-muscle-main.jpg?w=1200&h=675&crop=1" alt="Card image cap" height="250" />
+        <CardBody>
+          <CardText>Cardio</CardText> 
+        </CardBody>
+      </Card>
+
     </div>
     )
 };
 
-export default Section;
+export default fitnessCard;

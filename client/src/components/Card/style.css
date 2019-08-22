@@ -1,5 +1,13 @@
 .card{
     width: 30%;
     margin: 15px;
+    text-align: center;
     float: left;
+    
 }
+
+.cardImg {
+    height: 100px;
+}
+
+
