@@ -14,6 +14,15 @@ router.get("/all/:id",  function (req, res, next) {
     });
 });
 
+router.get("/userWorkouts/:id",  function (req, res, next) {
+    db.Workouts.find({ _id: req.params.id }, (err, workouts) => {
+        if(err){
+            res.json(err);
+        }
+        res.json(workouts);
+    });
+});
+
 // /api/workouts/new
 // authMiddleware.isLoggedIn,
 // add new workout, update the user to have workout id

@@ -4,6 +4,10 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
 import axios from "axios";
+import Table from "../../components/Table";
+
+import ModalDialog from 'react-bootstrap/ModalDialog'
+
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -27,6 +31,12 @@ class DemoApp extends React.Component {
     calendarEvents: [
       // initial event data
     ],
+    workoutHeader1: "",
+    workoutBody1: "",
+    workoutHeader2: "",
+    workoutBody2: "",
+    workoutHeader3: "",
+    workoutBody3: "",
    
   };
 
@@ -34,7 +44,6 @@ class DemoApp extends React.Component {
 
 }
 toggle() {
-  console.log("wassup boo")
   if(this.state.modal){
   this.setState({
     content: this.state.content,
@@ -80,10 +89,26 @@ toggle() {
            
            
           />
-           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+           <Modal isOpen={this.state.modal} toggle={this.toggle}  dialogClassName="modal-90w">
           <ModalHeader toggle={this.toggle}>Workout Description</ModalHeader>
           <ModalBody>
-           {this.state.content}
+            <tbody>
+            <Table
+            name = {this.state.workoutHeader1}
+            amount = {this.state.workoutBody1}
+            image = {this.state.image1}
+            />
+            <Table
+            name = {this.state.workoutHeader2}
+            amount= {this.state.workoutBody2}
+            image = {this.state.image2}
+            />
+             <Table
+             name = {this.state.workoutHeader3}
+            amount= {this.state.workoutBody3}
+            image = {this.state.image3}
+            />
+            </tbody>
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
@@ -96,10 +121,50 @@ toggle() {
       </div>
     );
   }
+  
+  renderList = (data)=>{
+   
+      let counter=0;
+      data.forEach((element) =>{
+        counter++;
+        console.log(counter);
+           let name = element.name
+           let amount;
+           if(element.reps){
+            amount = element.reps
+           }
+           if(element.time){
+             amount = element.time
+           }
+                if(counter === 1){
+                  this.setState({
+                    workoutHeader1: name,
+                    workoutBody1: amount
+                  }, ()=>console.log(this.state))
+                }
+                if(counter===2){
+                  this.setState({
+                    workoutHeader2: name,
+                    workoutBody2:amount
+                 },()=> console.log(this.state))
+                }
+                if(counter===3){
+                  this.setState({
+                    workoutHeader3: name,
+                    workoutBody3:amount
+                 }, ()=>console.log(this.state))
+                }
+                   
+    },
+
+    )}
+  
 componentDidMount = () =>{
     this.getWorkouts(this.props.user)
    
   };
+
+
 
 toggleWeekends = () => {
     this.setState({
@@ -114,9 +179,12 @@ gotoPast = () => {
 };
 
 getWorkouts(user){
-
-    axios.get("api/workouts/all/" + user)
-        .then(data => {
+  axios.get("api/users/workoutForUser/"+user)
+  .then(data =>{
+    console.log(data.data.Workouts[0])
+    axios.get("api/workouts/userWorkouts/"+data.data.Workouts[0]).then(
+      data =>{
+      
             this.setState({
                 workouts: data
             }, () => {
@@ -129,25 +197,35 @@ getWorkouts(user){
                  
           
                     let workoutObject = this.state.workouts.data[0].workouts[i]
-                    console.log(workoutObject)
                     let description = ``;
                     let x;
+                    let array =[];
+                    let typeArray = [];
                     for(x in workoutObject){
+                      let obj = {};
+                      
+                  
+                      if(workoutObject[x].exercise_name){
+                        
+                        obj.name =`Type: ${x} - Exercise: ${workoutObject[x].exercise_name}`
+                      }
                       if(workoutObject[x].reps){
-                        description += 
-                        `do ${workoutObject[x].reps.medium[0]} `;
+                          obj.reps = ` Reps: ${workoutObject[x].reps.medium[0]}`
                       }
                       if(workoutObject[x].time){
-                        description +=
-                        `for ${workoutObject[x].time[2]} minutes` ;
+                        obj.time = `Time(in minutes): ${workoutObject[x].time}`
                       } 
-                      if(workoutObject[x].exercise_name){
-                      description +=` ${workoutObject[x].exercise_name}
-                      ` }
+                      typeArray.push(" "+x);
+
+                     array.push(obj)
                     }
+                    typeArray.pop();
+                    typeArray.toString();
+                    array.pop();
+                    console.log(array);
                     let data = {
-                      title: description,
-                      info: workoutObject,
+                      title: typeArray,
+                      info: array,
                       start: workoutObject.event.start,
                       end: workoutObject.event.end
                     }
@@ -165,8 +243,8 @@ getWorkouts(user){
 
             });
         })
+    })
 }
-
 
 saveTheWorkouts = (data) =>{
 
@@ -196,6 +274,7 @@ changeState = ()=>{
     
     console.log(info);
     console.log(info.event._def.extendedProps.info);
+    let data = info.event._def.extendedProps.info;
     info.jsEvent.preventDefault(); // don't let the browser navigate
     this.setState({
       content: info.event._def.title,
@@ -205,6 +284,7 @@ changeState = ()=>{
     if (info.event.url) {
       window.open(info.event.url);
     }
+    this.renderList(data);
     this.toggle();
     console.log(this.state.modal)
   }
@@ -222,7 +302,8 @@ changeState = ()=>{
         })
       });
     
-  };
+  }
 }
+
 
 export default DemoApp;

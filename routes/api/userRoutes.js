@@ -39,6 +39,10 @@ router.post("/signup", function(req, res, next) {
   })
 });
 
+// router.post("/updatedWorkout", function(req, res, next){
+//   dbUser.findOne({_id: })
+// })
+
 // /api/users/unauthorized
 // route that gets hit if user is not logged in
 // send error message back to front end
@@ -78,10 +82,10 @@ router.get("/admin", authMiddleware.isAdmin, function(req, res, next) {
     loggedIn: true
   });
 });
-
-router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
-  db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
-    res.json(workout );
+//  authMiddleware.isLoggedIn, 
+router.get("/user",function(req, res, next) {
+  db.Users.findByIdAndUpdate(req.body.user._id).populate('workouts').then((workout) => {
+    res.json(workout);
   }).catch((err) => {
     res.json(err);
   });
@@ -105,14 +109,29 @@ router.put("/updateProfile", function(req, res, next){
   })
 })
 
+router.get("/workoutForUser/:id", function(req, res){
+  db.User.findOne({
+    _id: req.params.id
+  })
+  .populate("Workout")
+  .then(function(dbUser){
 
-
-router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
-  db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
-    res.json(workout );
-  }).catch((err) => {
+    console.log( "I was hit");
+    res.json(dbUser)
+  })
+  .catch(function(err){
     res.json(err);
-  });
-});
+  })
+})
+
+
+
+// router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
+//   db.Users.findByIdAndUpdate(req.user._id).populate('workouts').then((workout) => {
+//     res.json(workout );
+//   }).catch((err) => {
+//     res.json(err);
+//   });
+// });
 
 module.exports = router;

@@ -66,9 +66,9 @@ I think also you could just save this data to the database and then make a get r
                     let allPlans = response.data.items;
                     
                     allPlans.forEach((element)=>{
-                        console.log(element);
+                       
                         let id = element.value.substring(6,12)
-                        console.log(id);
+                        
                         this.getInstructions(id);
                         let title = element.value.split("title")[1];  
                         let result = title.split(":")[1];   
