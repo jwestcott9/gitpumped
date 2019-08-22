@@ -120,46 +120,38 @@ getWorkouts(user){
             this.setState({
                 workouts: data
             }, () => {
+
                 console.log(this.state.workouts.data)
-                let start = new Date();
-                let end = new Date();
-                let m = start.getDate();
-  
+               
                 let y = [];
                 for (let i = 0; i < this.state.workouts.data[0].workouts.length; i++) {
-                    m = m + 1;
-                    console.log(this.state.workouts.data[0]);
-                    
-                    start.setDate(m)
-                    start.setHours(12);
-                    start.setMinutes(0);
-
-                    end.setDate(m);
-                    end.setHours(1);
-                    end.setMinutes(0);
-
+                  
+                 
           
                     let workoutObject = this.state.workouts.data[0].workouts[i]
+                    console.log(workoutObject)
                     let description = ``;
                     let x;
                     for(x in workoutObject){
                       if(workoutObject[x].reps){
                         description += 
-                        `do ${workoutObject[x].reps.high[0]} `;
+                        `do ${workoutObject[x].reps.medium[0]} `;
                       }
                       if(workoutObject[x].time){
                         description +=
                         `for ${workoutObject[x].time[2]} minutes` ;
                       } 
+                      if(workoutObject[x].exercise_name){
                       description +=` ${workoutObject[x].exercise_name}
-                      ` 
+                      ` }
                     }
                     let data = {
                       title: description,
-                      start: new Date(start),
-                      end: new Date(end),
-                      info: workoutObject
+                      info: workoutObject,
+                      start: workoutObject.event.start,
+                      end: workoutObject.event.end
                     }
+                    console.log(data);
                    
                     y.push(data);
                
@@ -168,7 +160,7 @@ getWorkouts(user){
                 this.setState({
                   calendarEvents: y
                 }, () => {
-                  
+                  console.log(this.state.calendarEvents)
                 })
 
             });
