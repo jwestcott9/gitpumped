@@ -1,4 +1,18 @@
 .title{
     text-align: center;
     font-size: 40pt;
+    background-image: url("https://athleticmuscle.net/wp-content/uploads/2018/09/CrossFit-Barbell-759x500.jpg");
+    color: #F0F8FF;
+    font-family: 'Bitter', serif;
+
+
 }
+
+.title {
+    margin-bottom: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+

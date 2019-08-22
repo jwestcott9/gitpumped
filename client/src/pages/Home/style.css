@@ -1,6 +1,5 @@
 .Home{
-    background-image: url("../../assets/workoutCoverImage.jpg");
-    background-size: cover;
+    background-color: #eee;
     background-repeat: no-repeat;
-    height: 1200px;
+    
 }
