@@ -2,9 +2,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Run",
-        "type":"STRING",
-        "image": "https://media.npr.org/assets/img/2012/05/04/running-sydney_wide-66de7af7e96461730a2d63d24d3c1af426af2610-s800-c85.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id": 1,
         "id": 110
     },
@@ -12,9 +10,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Bike",
-        "type":"STRING",
-        "image": "https://i5.walmartimages.com/dfw/4ff9c6c9-6d80/k2-_d0f607c8-4c73-4162-83a5-bd9736d5cede.v1.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id": 1,
         "id": 111
     },
@@ -22,9 +18,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Swim",
-        "type":"STRING",
-        "image": "https://wpassets.trainingpeaks.com/wp-content/uploads/2017/10/10165849/10252-andy-potts-kona-swim-tips-700x394.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 112
     },
@@ -32,9 +26,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Walk",
-        "type": "STRING",
-        "image": "https://www.medicalnewstoday.com/content//images/articles/320/320463/seniors-walking-in-the-park.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 113
     },
@@ -42,9 +34,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Hike",
-        "type":"STRING",
-        "image": "https://www.nationalgeographic.com/content/dam/adventure/photos/twenty-best-day-hikes/glacier-national-park-hike.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 114
     },
@@ -52,9 +42,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Stair Master",
-        "type":"STRING",
-        "image": "https://www.360fitnesssuperstore.com/images/product-images/stair-climbers/stairmaster/Stairmaster_Stepmill3a.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 115
     },
@@ -62,9 +50,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Row Machine",
-        "type":"STRING",
-        "image": "https://images-na.ssl-images-amazon.com/images/I/81WFXdYzbPL._SL1500_.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 116
     },
@@ -72,9 +58,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Elliptical",
-        "type":"STRING",
-        "image": "https://images-na.ssl-images-amazon.com/images/I/61oScSb0iZL._SY679_.jpg",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 117
     },
@@ -82,9 +66,7 @@
     {
         "workout_type":"cardio",
         "exercise_name":"Sex",
-        "type":"STRING",
-        "image": "",
-        "time": [15,30,60],
+        "time": 30,
         "type_id":1,
         "id": 118
     }

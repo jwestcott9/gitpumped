@@ -18,15 +18,21 @@ router.get("/all/:id",  function (req, res, next) {
 // authMiddleware.isLoggedIn,
 // add new workout, update the user to have workout id
 router.post("/new",  authMiddleware.isLoggedIn, function (req, res, next) {
+    console.log(req.body);
     db.Workouts.create({
         user: req.body.user,
         workouts: req.body.workouts
     }).then(function(dbWorkout) {
+        console.log('success')
         return db.User.findOneAndUpdate({ _id: req.body.user }, { Workouts: dbWorkout._id }, { new: true });
       })
     .then(data => {
+        console.log('data', data)
         res.json(data);
-    }).catch(err => res.status(422).json(err));
+    }).catch(err => {
+        console.log('err', err)
+        res.status(422).json(err)
+    });
 
 });
 
