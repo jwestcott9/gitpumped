@@ -8,8 +8,28 @@ const workoutsSchema = new Schema({
   },
   workouts: {
     type: Array,
-    required:true
+    required: true
   },
+  // first: {
+  //   type: Object,
+  //   required: true
+  // },
+  // second: {
+  //   type: Object,
+  //   required: true
+  // },
+  // third: {
+  //   type: Object,
+  //   required: true
+  // },
+  // fourth: {
+  //   type: Object,
+  //   required: true
+  // },
+  // fifth: {
+  //   type: Object,
+  //   required: true
+  // },
   createdAt: {
     type: Date,
     default: Date.now()

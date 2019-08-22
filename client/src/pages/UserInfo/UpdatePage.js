@@ -114,6 +114,7 @@ generateLose = () => {
   let friday = {};
   let saturday = {};
   let sunday = {};
+
   //switch case checks user gender and conditionals check user bmi and choose workouts accordingly.
   switch (this.state.sex) {
     case "male":
@@ -122,10 +123,11 @@ generateLose = () => {
           monday = {
             back: Lose[6],
             legs: Gain[3],
-            core: Gain[25]
+            core: Gain[25],
+            
           },
           tuesday = {
-            chest: Gain[42],
+            chest: Gain[45],
             legs: Gain[2],
             back: Gain[61]
           },
@@ -143,7 +145,7 @@ generateLose = () => {
             back: Gain[61]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       }
       else if (this.state.bmi > 18 && this.state.bmi < 24) {
         this.setState({ workouts: this.state.workouts.concat([
@@ -172,7 +174,7 @@ generateLose = () => {
           }
           
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       } 
       else {
         this.setState({ workouts: this.state.workouts.concat([
@@ -200,7 +202,7 @@ generateLose = () => {
             core: Gain[32]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       }
 
       break;
@@ -232,7 +234,7 @@ generateLose = () => {
             core: Gain[32]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       }
       else if (this.state.bmi > 18 && this.state.bmi < 24) {
         this.setState({ workouts: this.state.workouts.concat([
@@ -260,7 +262,7 @@ generateLose = () => {
             core: Gain[17]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       } 
       else {
         this.setState({ workouts: this.state.workouts.concat([
@@ -288,10 +290,11 @@ generateLose = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       }
       break;
   }
+ 
 
 }
 
@@ -307,9 +310,7 @@ generateGain = () => {
   //switch case checks user gender and conditionals check user bmi and choose workouts accordingly.
   switch (this.state.sex) {
     case "male":
-      console.log("male");
       if(this.state.bmi < 18) {
-        console.log("too skinny");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -335,10 +336,9 @@ generateGain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       }
       else if (this.state.bmi > 18 && this.state.bmi < 24) {
-        console.log("good weight");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -364,10 +364,9 @@ generateGain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       } 
       else {
-        console.log("too heavy");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -393,16 +392,13 @@ generateGain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       }
 
       break;
     
     case "female":
-      console.log("female");
-
       if(this.state.bmi < 18) {
-        console.log("too skinny");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -428,10 +424,9 @@ generateGain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       }
       else if (this.state.bmi > 18 && this.state.bmi < 24) {
-        console.log("good weight");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -457,10 +452,9 @@ generateGain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       } 
       else {
-        console.log("too heavy");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -486,7 +480,7 @@ generateGain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       }
       break;
   }
@@ -504,9 +498,7 @@ generateMaintain = () => {
   //switch case checks user gender and conditionals check user bmi and choose workouts accordingly.
   switch (this.state.sex) {
     case "male":
-      console.log("male");
       if(this.state.bmi < 18) {
-        console.log("too skinny");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -532,10 +524,9 @@ generateMaintain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       }
       else if (this.state.bmi > 18 && this.state.bmi < 24) {
-        console.log("good weight");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -561,10 +552,9 @@ generateMaintain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       } 
       else {
-        console.log("too heavy");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -590,16 +580,13 @@ generateMaintain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       }
 
       break;
     
     case "female":
-      console.log("female");
-
       if(this.state.bmi < 18) {
-        console.log("too skinny");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -625,10 +612,9 @@ generateMaintain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       }
       else if (this.state.bmi > 18 && this.state.bmi < 24) {
-        console.log("good weight");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -654,10 +640,9 @@ generateMaintain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);        
+          this.getDates);        
       } 
       else {
-        console.log("too heavy");
         this.setState({ workouts: this.state.workouts.concat([
           monday = {
             core: Gain[26],
@@ -683,18 +668,62 @@ generateMaintain = () => {
             cardio: Gain[0]
           }
         ])}, 
-          this.getWorkouts);
+          this.getDates);
       }
       break;
   }
 }
 
+getDates = () => {
+  let start = new Date();
+  let end = new Date();
+  let m = start.getDate();
+  let y = [];
+
+  this.state.workouts.forEach((element)=>{
+    m = m+1;
+    
+    start.setDate(m);
+    start.setHours(12);
+    start.setMinutes(0);
+
+    end.setDate(m);
+    end.setHours(1);
+    end.setMinutes(0); 
+    
+    let event = {
+      start: new Date(start),
+      end: new Date(end)
+    }
+    element.event = event
+
+
+    y.push(element);
+
+    this.setState({
+      workouts: y
+    }, ()=>{
+    })
+  })
+
+  this.getWorkouts();
+}
 getWorkouts = () =>{
+const userWorkoutArray = [
+  this.state.workouts[0],
+  this.state.workouts[1],
+  this.state.workouts[2],
+  this.state.workouts[0],
+  this.state.workouts[1]
+]
+
+console.log(userWorkoutArray);
 
   const workoutInfo = {
     user: this.state.user,
-    workouts: this.state.workouts
+    workouts: userWorkoutArray
   }
+
 
   API.addWorkouts(workoutInfo).then(data => {
     console.log(data); 
