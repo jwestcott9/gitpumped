@@ -45,7 +45,10 @@ class DemoApp extends React.Component {
     MealInfo: "",
     Summary1: "",
     Summary2: "",
-    Summary3: ""
+    Summary3: "",
+    MealName1: "",
+    MealName2: "",
+    MealName3: "",
    
   };
 
@@ -67,8 +70,21 @@ toggle() {
   }
   ;
 }
-toggle2() {
+toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 ) {
   console.log(this);
+  if(MealInfo){
+  this.setState({
+    MealInfo: MealInfo,
+    Summary1: Summary1, 
+    Summary2: Summary2, 
+    Summary3: Summary3,
+    MealName1: MealName1, 
+    MealName2: MealName2,
+    MealName3:MealName3
+  }, ()=>{
+    console.log(this.state)
+  })
+}
   if(this.state.modal2){
   this.setState({
     content: this.state.content,
@@ -79,8 +95,7 @@ toggle2() {
       content:this.state.content,
       modal2: true
     })
-  }
-  ;
+  };
 }
 
 
@@ -135,17 +150,17 @@ toggle2() {
           <ModalBody>
             <tbody>
             <Table
-            name = {this.state.MealInfo.breakfastTitle}
+            name = {this.state.MealName1}
             amount = {this.state.Summary1}
             image = {this.state.image1}
             />
             <Table
-            name = {this.state.MealInfo.lunchTitle}
+            name = {this.state.MealName2}
             amount= {this.state.Summary2}
             image = {this.state.image2}
             />
              <Table
-             name = {this.state.MealInfo.dinnerTitle}
+             name = {this.state.MealName3}
             amount= {this.state.Summary3}
             image = {this.state.image3}
             />
@@ -163,17 +178,17 @@ toggle2() {
           <ModalBody>
             <tbody>
             <Table
-            name = {this.state.workoutHeader1}
+            name = {this.state.MealName1}
             summary = {this.state.Summary1}
             image = {this.state.image1}
             />
             <Table
-            name = {this.state.workoutHeader2}
+            name = {this.state.MealName2}
             summary= {this.state.Summary2}
             image = {this.state.image2}
             />
              <Table
-             name = {this.state.workoutHeader3}
+             name = {this.state.MealName3}
             summary = {this.state.Summary3}
             image = {this.state.image3}
             />
@@ -226,7 +241,7 @@ renderMeal = (data) => {
                 if(counter===3){
                   this.setState({
                     workoutHeader3: name,
-                    workoutBody3:amount
+                    workoutBody3: amount
                  }, ()=>console.log(this.state))
                 }
                    
@@ -294,18 +309,7 @@ getMealPlans(user){
         console.log(this.state.calendarEvents)
         
       })
-/*{title: Array(3), info: Array(3), start: "2019-08-29T19:00:04.633Z", end: "2019-08-29T19:00:04.633Z"}
- {title: Array(3), info: Array(3), start: "2019-08-30T19:00:04.633Z", end: "2019-08-30T19:00:04.633Z"}
- {title: Array(1), info: Array(1), start: "2019-08-31T19:00:04.633Z", end: "2019-08-31T19:00:04.633Z"}
- {title: Array(3), info: Array(3), start: "2019-09-01T19:00:04.633Z", end: "2019-09-01T19:00:04.633Z"}
- {title: Array(3), info: Array(3), start: "2019-09-02T19:00:04.633Z", end: "2019-09-02T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-23T19:00:04.633Z", end: "2019-08-23T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-24T19:00:04.633Z", end: "2019-08-24T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-25T19:00:04.633Z", end: "2019-08-25T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-26T19:00:04.633Z", end: "2019-08-26T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-27T19:00:04.633Z", end: "2019-08-27T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-28T19:00:04.633Z", end: "2019-08-28T19:00:04.633Z"}
- {title: "MealPLan", info: {…}, start: "2019-08-29T19:00:04.633Z", end: "2019-08-29T19:00:04.633Z"}*/
+
 
       })
       
@@ -432,16 +436,20 @@ getWorkouts(user){
   }
 else{
     console.log(info.event._def.extendedProps.info);
-    let data = info.event._def.extendedProps.info
-    this.setState({
-      MealInfo: data,
-      Summary1: data.breakfastSummary,
-      Sumamry2: data.lunchSummary,
-      Summary3: data.dinnerSummary
-    },() => {
-      console.log(`THIS RIGHT HER IS GOING TO BE THE MEAL INFO OBJECT
-       ${this.state.MealInfo.breakfastSummary} `)
-    this.toggle2()})
+     let MealInfo = info.event._def.extendedProps.info;
+     let Summary1= MealInfo.breakfastSummary;
+     let Summary2 =  MealInfo.lunchSummary;
+     let Summary3 = MealInfo.dinnerSummary;
+     let MealName1 = MealInfo.breakfastTitle;
+     let MealName2 = MealInfo.lunchTitle;
+     let MealName3 = MealInfo.dinnerTitle; 
+ 
+    console.log(Summary1);
+    console.log(Summary2);
+    console.log(Summary3);
+    
+    
+    this.toggle2(MealInfo, Summary1, Summary2, Summary3,  MealName1, MealName2, MealName3 )
     }
   }
   
