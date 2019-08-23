@@ -82,7 +82,6 @@ render(){
                <Input type="age" name="age" id="age" placeholder="age" value= {this.props.age} onChange={this.props.handleInputChange}/>
               <Label>Desired Start Date</Label>
                <DatePicker
-            
             onChange={this.handleChange}
             onSelect = {this.props.handleSelect}
             selected={this.state.startDate}

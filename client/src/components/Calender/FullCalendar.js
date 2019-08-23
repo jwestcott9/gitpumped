@@ -8,6 +8,7 @@ import Table from "../../components/Table";
 
 
 
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import "./styles.css";
@@ -17,6 +18,7 @@ import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
 import bootstrapPlugin from '@fullcalendar/bootstrap'
+import Calendar from "react-calendar";
 
 class DemoApp extends React.Component {
   
@@ -24,9 +26,11 @@ class DemoApp extends React.Component {
   constructor(props) {
     super(props);
   this.state = {
+    
     modal: false,
     content: null,
     calendarWeekends: true,
+    mealPlans: [],
     calendarEvents: [
       // initial event data
     ],
@@ -36,6 +40,9 @@ class DemoApp extends React.Component {
     workoutBody2: "",
     workoutHeader3: "",
     workoutBody3: "",
+    loading: true,
+    modal2: false,
+    MealInfo: null,
    
   };
 
@@ -56,16 +63,40 @@ toggle() {
   }
   ;
 }
+toggle2() {
+  if(this.state.modal){
+  this.setState({
+    content: this.state.content,
+    modal2: false
+  })}
+  if(!this.state.modal){
+    this.setState({
+      content:this.state.content,
+      modal2: true
+    })
+  }
+  ;
+}
+
+
+// saveTheMealPlans(event){
+//   console.log(this.state.calendarEvents);
+//   console.log("444444444444444444444444444444444444444444")
+//   this.setState({
+//     calendarEvents: this.state.calendarEvents.push({
+//       title: event.title,
+//       start: event.start,
+//       end: event.end
+//     })
+//   })
+// }
 
 
   render() {
     return (
       
       <div className="demo-app">
-        
-        <div className="demo-app-top">
-          &nbsp; (also, click a date/time to add an event)
-        </div>
+        {!this.state.loading?
         <div className="demo-app-calendar">
           <FullCalendar
             defaultView="dayGridMonth"
@@ -85,9 +116,14 @@ toggle() {
             eventClick = {this.eventClick}
             eventColor= 'grey'
             eventTextColor = "white"
+            Integer = '9000000'
            
            
           />
+          </div>: <div></div>
+          }
+          <div>
+        
            <Modal isOpen={this.state.modal} toggle={this.toggle}  dialogClassName="modal-90w"
            size="lg">
           <ModalHeader toggle={this.toggle}>Workout Description</ModalHeader>
@@ -115,12 +151,46 @@ toggle() {
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
+
+        <Modal isOpen={this.state.modal2} toggle={this.toggle2}  dialogClassName="modal-90w"
+           size="lg">
+          <ModalHeader toggle={this.toggle2}>Workout Description</ModalHeader>
+          <ModalBody>
+            <tbody>
+            <Table
+            name = {this.state.workoutHeader1}
+            amount = {this.state.workoutBody1}
+            image = {this.state.image1}
+            />
+            <Table
+            name = {this.state.workoutHeader2}
+            amount= {this.state.workoutBody2}
+            image = {this.state.image2}
+            />
+             <Table
+             name = {this.state.workoutHeader3}
+            amount= {this.state.workoutBody3}
+            image = {this.state.image3}
+            />
+            </tbody>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle2}>Do Something</Button>{' '}
+            <Button color="secondary" onClick={this.toggle2}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+
        
         </div>
        
       </div>
+      
     );
   }
+renderMeal = (data)=>{
+  
+}
+
   
   renderList = (data)=>{
    
@@ -160,10 +230,83 @@ toggle() {
     )}
   
 componentDidMount = () =>{
-    this.getWorkouts(this.props.user)
-   
+    this.getWorkouts(this.props.user);
+    
   };
+getMealPlans(user){
+  axios.get("/api/users/mealPlanForUser/"+user)
+  .then((data)=>{
+    let id = data.data.MealPlans[0];
+    axios.get("/api/mealPlans/all/" +id)
+    .then((data)=>{
+      this.setState({
+        mealPlans: data
+      }, ()=>{
+        console.log(
+      this.state.mealPlans.Dates)
+      let  y = this.state.calendarEvents;
+      let count = -1;
 
+      data.data[0].Dates.forEach((element)=>{
+       
+        count = count+1
+        let startingIndex = count*3
+        let obj = {};
+       for(let i =0; i<3; i++){
+         let increment = startingIndex;
+          if(i===0){
+            obj.breakfastTitle= data.data[0].MealPlan[increment][0]
+            obj.breakfastSummary = data.data[0].Summary[increment]
+          }
+          if(i===1){
+            obj.lunchTitle = data.data[0].MealPlan[increment+1][0]
+            obj.lunchSummary = data.data[0].Summary[increment+1]
+          }
+          if( i ===2){
+            obj.dinnerTitle = data.data[0].MealPlan[increment+2][0]
+            obj.dinnerSummary = data.data[0].Summary[increment+2]
+          }
+          increment++
+       }
+      
+       console.log(element);
+        let event = {
+          title: "MealPLan",
+          info: obj,
+          start: element.start,
+          end: element.end, 
+          color: "red"
+        }
+        y.push(event)
+      })
+      this.setState({
+        calendarEvents: y 
+        
+      }, ()=>{
+        this.setState({
+          loading: false
+        })
+        console.log(this.state.calendarEvents)
+        
+      })
+/*{title: Array(3), info: Array(3), start: "2019-08-29T19:00:04.633Z", end: "2019-08-29T19:00:04.633Z"}
+ {title: Array(3), info: Array(3), start: "2019-08-30T19:00:04.633Z", end: "2019-08-30T19:00:04.633Z"}
+ {title: Array(1), info: Array(1), start: "2019-08-31T19:00:04.633Z", end: "2019-08-31T19:00:04.633Z"}
+ {title: Array(3), info: Array(3), start: "2019-09-01T19:00:04.633Z", end: "2019-09-01T19:00:04.633Z"}
+ {title: Array(3), info: Array(3), start: "2019-09-02T19:00:04.633Z", end: "2019-09-02T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-23T19:00:04.633Z", end: "2019-08-23T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-24T19:00:04.633Z", end: "2019-08-24T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-25T19:00:04.633Z", end: "2019-08-25T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-26T19:00:04.633Z", end: "2019-08-26T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-27T19:00:04.633Z", end: "2019-08-27T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-28T19:00:04.633Z", end: "2019-08-28T19:00:04.633Z"}
+ {title: "MealPLan", info: {…}, start: "2019-08-29T19:00:04.633Z", end: "2019-08-29T19:00:04.633Z"}*/
+
+      })
+      
+    })
+  })
+}
 
 
 toggleWeekends = () => {
@@ -218,18 +361,32 @@ getWorkouts(user){
                     typeArray.pop();
                     typeArray.toString();
                     array.pop();
-                    console.log(array);
+                    console.log(array[0].name);
+                    
+                    let color = "blue";
+                    if(array[0].name.includes("cardio")){
+                      color = "lightBlue"
+                    }
+                    if(array[0].name.includes("Upper")){
+                      color = "forestgreen"
+                    }
+                    if(array[0].name.includes("core")){
+                      color="black"
+                    }
+                    /* This is where the data is stored for the events
+                     */
                     let data = {
                       title: typeArray,
                       info: array,
                       start: workoutObject.event.start,
                       end: workoutObject.event.end,
+                      color: color
                     }
                     console.log(data);
                    
                     y.push(data);
                
-                    this.saveTheWorkouts(data);
+                    // this.saveTheWorkouts(data);
                 }
                 this.setState({
                   calendarEvents: y
@@ -238,38 +395,34 @@ getWorkouts(user){
                 })
 
             });
+            this.getMealPlans(this.props.user);
         })
     })
 }
 
-saveTheWorkouts = (data) =>{
 
-  this.setState({
-    // add new event data
-    calendarEvents: this.state.calendarEvents.push({
-      // creates a new array
-      title: data.title,
-      start: data.start,
-      color: "pink"
-      
-    }, ()=>{
-      console.log(this.state.calendarEvents);
-    })
-  })
-}
 
-changeState = ()=>{
-  this.setState({
+changeState = (check)=>{
+  
+  if(!check){this.setState({
     modal: true
   }, ()=>{
     this.render()
-  })
+  })}
+  if(check){
+    this.setState({
+      modal2: true
+    }, ()=>{
+      this.render();
+    })
+  }
 }
  
 
   eventClick = (info) => { 
-    
-    console.log(info);
+    console.log(info)
+    if(info.event._def.title !== "MealPlan"){
+  /*   console.log(info);
     console.log(info.event._def.extendedProps.info);
     let data = info.event._def.extendedProps.info;
     info.jsEvent.preventDefault(); // don't let the browser navigate
@@ -283,7 +436,16 @@ changeState = ()=>{
     }
     this.renderList(data);
     this.toggle();
-    console.log(this.state.modal)
+    console.log(this.state.modal) */
+  }
+
+    console.log(info.event._def.extendedProps.info);
+    let data = info.event._def.extendedProps.info
+    this.setState({
+      MealInfo: data
+    },() => {
+    this.changeState("check")})
+
   }
   
 

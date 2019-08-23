@@ -5,8 +5,8 @@ const authMiddleware = require("../../config/middleware/authMiddleware");
 //  authMiddleware.isLoggedIn,
 // /api/mealPlans/all
 // get all mealPlans from the signed in user
-router.get("/all", function (req, res, next) {
-    db.MealPlans.find({ user: req.body.user}, (err, mealplans) => {
+router.get("/all/:id", function (req, res, next) {
+    db.MealPlans.find({ _id: req.params.id}, (err, mealplans) => {
         res.json(mealplans);
     });
 });
@@ -18,6 +18,7 @@ router.get("/all", function (req, res, next) {
 // add new workout, update the user to have workout id
 router.post("/new", function (req, res, next) {
     console.log("I was hit");
+    console.log(req.body.Dates);
     
     const newMealPlan = new db.MealPlans({
         user: req.body.user,

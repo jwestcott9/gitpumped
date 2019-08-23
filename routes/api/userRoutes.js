@@ -124,6 +124,20 @@ router.get("/workoutForUser/:id", function(req, res){
   })
 })
 
+router.get("/mealPlanForUser/:id", function(req, res){
+  db.User.findOne({
+    _id: req.params.id  
+  })
+  .populate("MealPlan")
+  .then(function(dbUser){
+    console.log("userRouts.js/router.get/MealPlansforUser")
+    res.json(dbUser)
+  })
+  .catch(function(err){
+    res.json(err);
+  })
+})
+
 
 
 // router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
