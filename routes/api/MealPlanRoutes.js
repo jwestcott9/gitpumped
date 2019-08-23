@@ -18,9 +18,12 @@ router.get("/all", function (req, res, next) {
 // add new workout, update the user to have workout id
 router.post("/new", function (req, res, next) {
     console.log("I was hit");
+    
     const newMealPlan = new db.MealPlans({
         user: req.body.user,
-        MealPlan: req.body.MealPlan
+        MealPlan: req.body.MealPlan,
+        Summary: req.body.Summary,
+        Dates: req.body.Dates
     });
 
     newMealPlan.save((err, newMealPlan) => {

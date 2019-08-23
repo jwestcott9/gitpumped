@@ -5,20 +5,40 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Allergies from "../Allergies";
 import UploadPhoto from "../UploadPhoto"
+import DatePicker from "react-datepicker";
+import MealPlan from "../MealPlan";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
+class UserInfo extends React.Component{
+  constructor(props){
+    super(props);
+    this.child = React.createRef();
+    this.state={
+      startDate: new Date()
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-function UserInfo (props){
-    console.log(props);
+  handleChange(date){
+    console.log(date);
+      this.setState({
+        startDate: date
+      });
+      this.props.handleChange(date);
+  }
+  
+render(){
         return(
            
 <>
-{props.loggedIn ? (<>
+{this.props.loggedIn ? (<>
             
         
         <Container>
-        <h2 className = "welcomeMessage"> Hello, {props.username} ! </h2>
+        <h2 className = "welcomeMessage"> Hello, {this.props.username} ! </h2>
              <h4 className="loginTitle title-font">Please help us get a better understanding of you and your intention</h4>
         <Form>
 
@@ -26,14 +46,14 @@ function UserInfo (props){
                 <legend>Fitness Goals</legend>
             <Label loseweight>
 
-            <Input type="radio" value = "1" onChange={props.handleInputChange} name="goals" />{' '}
+            <Input type="radio" value = "1" onChange={this.props.handleInputChange} name="goals" />{' '}
               Lose Weight
             </Label>
             </FormGroup>
             <FormGroup>
             <Label check>
 
-            <Input type="radio" value = "3" onChange={props.handleInputChange} name="goals" />{' '}
+            <Input type="radio" value = "3" onChange={this.props.handleInputChange} name="goals" />{' '}
               Maintain Weight but Improve Health
             </Label>
 
@@ -42,35 +62,41 @@ function UserInfo (props){
             <FormGroup>
             <Label check>
 
-            <Input type="radio" value = "2" onChange={props.handleInputChange} name="goals" />{' '}
+            <Input type="radio" value = "2" onChange={this.props.handleInputChange} name="goals" />{' '}
             Gain Muscle
                 </Label>
             </FormGroup>
             <FormGroup>
                 <Label for="Height">Height</Label>
-               <Input type="height" name="height" id="height" placeholder="height" value= {props.height} onChange={props.handleInputChange}/>
+               <Input type="height" name="height" id="height" placeholder="height" value= {this.props.height} onChange={this.props.handleInputChange}/>
 
                  <Label for="Weight">Weight</Label>
-               <Input type="weight" name="weight" id="weight" placeholder="weight" value= {props.weight} onChange={props.handleInputChange}/>
+               <Input type="weight" name="weight" id="weight" placeholder="weight" value= {this.props.weight} onChange={this.props.handleInputChange}/>
 
                <Label for="sex">Sex</Label>
-               <Input type="sex" name="sex" id="sex" placeholder="sex" value= {props.sex} onChange={props.handleInputChange}/>
+               <Input type="sex" name="sex" id="sex" placeholder="sex" value= {this.props.sex} onChange={this.props.handleInputChange}/>
 
                <Label for="age">
                  
                </Label>
-               <Input type="age" name="age" id="age" placeholder="age" value= {props.age} onChange={props.handleInputChange}/>
+               <Input type="age" name="age" id="age" placeholder="age" value= {this.props.age} onChange={this.props.handleInputChange}/>
+              <Label>Desired Start Date</Label>
+               <DatePicker
+            
+            onChange={this.handleChange}
+            onSelect = {this.props.handleSelect}
+            selected={this.state.startDate}
+          />
                <UploadPhoto
                 buttonLabel = "upload profile photo"
-                user = {props.user}/>
-                <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {props.handleFormSubmit}> Submit </Button>
+                user = {this.props.user}/>
+                <Button  name = "UserInfoSubmit" id="userInfoSubmit" onClick = {this.props.handleFormSubmit}> Submit </Button>
                 {/* <Label for="confirmPassword">Confirm Password</Label>
                 <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
                 <FormText>at least 8 characters, 1 capital & 1 number</FormText> */}
             </FormGroup>
             {/* if all fields are valid, allow the user to submit the form */}
          
-            
         </Form>
         </Container>
         </>)
@@ -102,6 +128,7 @@ function UserInfo (props){
     // </div>
     
     )}
+  }
 
 
 export default UserInfo;

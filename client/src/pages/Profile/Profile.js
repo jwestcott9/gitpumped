@@ -6,10 +6,10 @@ import API from "../../utils/API";
 import MealPlan from "../../components/MealPlan/MealPlan";
 import axios from "axios";
 import Calendar from "../../components/Calender";
-import SideBar from "../../components/SideBar";
+import MealPlanModal from "../../components/MealPlanModal";
+// import SideBar from "../../components/SideBar";
 
 
-let image;
 class Profile extends Component {
    
     // calendarComponentRef = React.createRef()
@@ -49,7 +49,7 @@ componentDidMount() {
                     age: user.data.age,
                     goals: user.data.goals
                 }, ()=>{
-                
+                    console.log(this.state.goals);
                     this.getProfileImage(this.state.user._id);
                    
                 });
@@ -70,8 +70,8 @@ getProfileImage(user){
         axios.get('/api/image/getImage/' + user)
             .then(data => {
                 // console.log(data.data.imageData)
-                let str = data.data.imageData;
-                let image = str.substring(10);
+              
+                let image = "shutup";
                
                 // console.log(image);
                 this.setState({
@@ -101,19 +101,20 @@ loading() {
     render() {
         return (
             <div className="profilePage">
+                {/* <SideBar /> */}
                 <Container>
                     
                 
                 {this.state.loggedIn ? (    
                                //  puts the name in the header
-                <>      
-                    {/* <SideBar/>      */}
+                <>                         
+                    
+               
                         <div className="profileBox"> 
-                        
-                        
                            {/* header */}
                         <img id="profile" src= {this.state.image} alt= "profile"/> 
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                        
                         <Calendar
                         user = {this.state.user._id}/>
 
@@ -134,9 +135,9 @@ loading() {
                     }
                         
                         <p id= "height">Height: {this.state.user.height}</p>
-                        <p id= "weight">weight: {this.state.user.weight}</p>
-                        <p id= "sex">sex: {this.state.user.sex}</p>
-                        <p id= "age">age: {this.state.user.age}</p>
+                        <p id= "weight">Weight: {this.state.user.weight}</p>
+                        <p id= "sex">Sex: {this.state.user.sex}</p>
+                        <p id= "age">Age: {this.state.user.age}</p>
                         {/* <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} /> */}
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
                         <MealPlan
