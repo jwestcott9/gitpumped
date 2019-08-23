@@ -28,6 +28,7 @@ class DemoApp extends React.Component {
   this.state = {
     
     modal: false,
+    modal2: false,
     content: null,
     calendarWeekends: true,
     mealPlans: [],
@@ -41,8 +42,10 @@ class DemoApp extends React.Component {
     workoutHeader3: "",
     workoutBody3: "",
     loading: true,
-    modal2: false,
-    MealInfo: null,
+    MealInfo: "",
+    Summary1: "",
+    Summary2: "",
+    Summary3: ""
    
   };
 
@@ -50,6 +53,7 @@ class DemoApp extends React.Component {
 
 }
 toggle() {
+  console.log(this.state)
   if(this.state.modal){
   this.setState({
     content: this.state.content,
@@ -64,12 +68,13 @@ toggle() {
   ;
 }
 toggle2() {
-  if(this.state.modal){
+  console.log(this);
+  if(this.state.modal2){
   this.setState({
     content: this.state.content,
     modal2: false
   })}
-  if(!this.state.modal){
+  if(!this.state.modal2){
     this.setState({
       content:this.state.content,
       modal2: true
@@ -130,18 +135,18 @@ toggle2() {
           <ModalBody>
             <tbody>
             <Table
-            name = {this.state.workoutHeader1}
-            amount = {this.state.workoutBody1}
+            name = {this.state.MealInfo.breakfastTitle}
+            amount = {this.state.Summary1}
             image = {this.state.image1}
             />
             <Table
-            name = {this.state.workoutHeader2}
-            amount= {this.state.workoutBody2}
+            name = {this.state.MealInfo.lunchTitle}
+            amount= {this.state.Summary2}
             image = {this.state.image2}
             />
              <Table
-             name = {this.state.workoutHeader3}
-            amount= {this.state.workoutBody3}
+             name = {this.state.MealInfo.dinnerTitle}
+            amount= {this.state.Summary3}
             image = {this.state.image3}
             />
             </tbody>
@@ -159,24 +164,24 @@ toggle2() {
             <tbody>
             <Table
             name = {this.state.workoutHeader1}
-            amount = {this.state.workoutBody1}
+            summary = {this.state.Summary1}
             image = {this.state.image1}
             />
             <Table
             name = {this.state.workoutHeader2}
-            amount= {this.state.workoutBody2}
+            summary= {this.state.Summary2}
             image = {this.state.image2}
             />
              <Table
              name = {this.state.workoutHeader3}
-            amount= {this.state.workoutBody3}
+            summary = {this.state.Summary3}
             image = {this.state.image3}
             />
             </tbody>
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle2}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={this.toggle2}>Cancel</Button>
+            <Button color="secondary" data = {this.state.modal2} onClick={this.toggle2}>Cancel</Button>
           </ModalFooter>
         </Modal>
 
@@ -187,7 +192,7 @@ toggle2() {
       
     );
   }
-renderMeal = (data)=>{
+renderMeal = (data) => {
   
 }
 
@@ -271,7 +276,7 @@ getMealPlans(user){
       
        console.log(element);
         let event = {
-          title: "MealPLan",
+          title: "MealPlan",
           info: obj,
           start: element.start,
           end: element.end, 
@@ -402,50 +407,42 @@ getWorkouts(user){
 
 
 
-changeState = (check)=>{
-  
-  if(!check){this.setState({
-    modal: true
-  }, ()=>{
-    this.render()
-  })}
-  if(check){
-    this.setState({
-      modal2: true
-    }, ()=>{
-      this.render();
-    })
-  }
-}
+
  
 
   eventClick = (info) => { 
-    console.log(info)
+    console.log(info.event._def.title)
+    console.log(info.event._def.title !== "MealPlan")
     if(info.event._def.title !== "MealPlan"){
-  /*   console.log(info);
+    console.log(info);
     console.log(info.event._def.extendedProps.info);
     let data = info.event._def.extendedProps.info;
     info.jsEvent.preventDefault(); // don't let the browser navigate
     this.setState({
       content: info.event._def.title,
     }, ()=>{
-     this.changeState();
+    //  this.changeState();
     })
     if (info.event.url) {
       window.open(info.event.url);
     }
     this.renderList(data);
     this.toggle();
-    console.log(this.state.modal) */
+    console.log(this.state.modal)
   }
-
+else{
     console.log(info.event._def.extendedProps.info);
     let data = info.event._def.extendedProps.info
     this.setState({
-      MealInfo: data
+      MealInfo: data,
+      Summary1: data.breakfastSummary,
+      Sumamry2: data.lunchSummary,
+      Summary3: data.dinnerSummary
     },() => {
-    this.changeState("check")})
-
+      console.log(`THIS RIGHT HER IS GOING TO BE THE MEAL INFO OBJECT
+       ${this.state.MealInfo.breakfastSummary} `)
+    this.toggle2()})
+    }
   }
   
 
