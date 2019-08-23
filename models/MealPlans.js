@@ -14,7 +14,7 @@ const MealPlanSchema = new Schema({
   Summary:{
     type: Array,
   },
-  dates:{
+  Dates:{
     type:Array,
   },
   createdAt: {
