@@ -47,6 +47,7 @@ class Home extends Component {
       <CardTwo />
       </Container>
       <DinnerBanner />
+      <Footer />
       </div>
     );
   }

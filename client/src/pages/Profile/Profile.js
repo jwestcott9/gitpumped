@@ -7,7 +7,7 @@ import MealPlan from "../../components/MealPlan/MealPlan";
 import axios from "axios";
 import Calendar from "../../components/Calender";
 import MealPlanModal from "../../components/MealPlanModal";
-
+import SideBar from "../../components/SideBar";
 
 
 class Profile extends Component {
@@ -95,19 +95,30 @@ loading() {
     }
 
 
+
+
  
     
 
     render() {
         return (
             <div className="profilePage">
+
+                {/* all of this is the sidebar. working on getting it functioning. */}
+                {/* var isMenuOpen = function(state) {
+  return state.isOpen;
+};
+
+<Menu onStateChange={ isMenuOpen } /> */}
+                
                 <Container>
                     
-                
+
                 {this.state.loggedIn ? (    
                                //  puts the name in the header
-                <>                         
-                    
+                <>      
+
+
                
                         <div className="profileBox"> 
                            {/* header */}
@@ -134,9 +145,9 @@ loading() {
                     }
                         
                         <p id= "height">Height: {this.state.user.height}</p>
-                        <p id= "weight">weight: {this.state.user.weight}</p>
-                        <p id= "sex">sex: {this.state.user.sex}</p>
-                        <p id= "age">age: {this.state.user.age}</p>
+                        <p id= "weight">Weight: {this.state.user.weight}</p>
+                        <p id= "sex">Sex: {this.state.user.sex}</p>
+                        <p id= "age">Age: {this.state.user.age}</p>
                         {/* <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} /> */}
                         <Link className = "UserInfoLink" to ="/UserInfo"><Button className = "updateAccount" color = "info" block> Update Profile</Button></Link>
                         <MealPlan
@@ -146,6 +157,17 @@ loading() {
                         diet = "vegetarian"
                         exclude = "dairy" />
                         
+                        {/* <SideBar>
+                        user= {this.state.user._id}>
+                        <a id="image" className="menu-item" >{this.state.user.image}</a>
+                        <a id="user" className="menu-item" >User: {this.state.user}</a>
+                        <a id="sex" className="menu-item">Sex: {this.state.user.sex}</a>
+                        <a id="height" className="menu-item" >Height: {this.state.user.height}</a>
+                        <a id="weight" className="menu-item" >Weight: {this.state.user.weight}</a>
+                        <a id="age" className="menu-item" >Age: {this.state.user.age}</a>
+                        <a id="goals" className="menu-item" >Goals: {this.state.user.goals}</a>
+                       <a onClick={ this.showSettings } className="menu-item--small" href=""></a>
+                      </SideBar>  */}
                     </div>
 
             </>

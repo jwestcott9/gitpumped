@@ -1,34 +1,46 @@
+// import React from 'react';
+// import { slide as Menu } from 'react-burger-menu';
+// import './style.scss';
 
-import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
-import './style.scss';
 
-export default props => {
-  return (
-    <Menu>
-      <a className="menu-item" href="/">
-        Home
-      </a>
+// // import { isPropsEqual } from '@fullcalendar/core';
 
-      <a className="menu-item" href="/laravel">
-        Laravel
-      </a>
 
-      <a className="menu-item" href="/angular">
-        Angular
-      </a>
 
-      <a className="menu-item" href="/react">
-        React
-      </a>
 
-      <a className="menu-item" href="/vue">
-        Vue
-      </a>
+// class SideBar extends Component {
+//   showSettings (event) {
+//     event.preventDefault();
+//       state = {
+//       isOpen: false
+//     }
 
-      <a className="menu-item" href="/node">
-        Node
-      </a>
-    </Menu>
-  );
-};
+
+//   };
+
+
+//   componentDidMount() {
+//     this.loading();
+//     API.isLoggedIn().onClick(SideBar => {
+//       if (user.data.loggedIn) {
+//         this.setState({
+//             isOpen: true
+//         },
+        
+//       }
+    
+     
+//        function SideBar (props) {
+//        return (
+//          <Menu width={ 260 } >
+//            <a id="" className="menu-item" href="">{props}</a>
+           
+//          </Menu>
+//         )
+       
+//        }
+//        };     
+// export default SideBar;
+
+
+
