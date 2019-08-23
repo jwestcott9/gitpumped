@@ -763,6 +763,8 @@ getDates = () => {
 
   // this.getWorkouts();
 }
+
+
 getWorkouts = () =>{
   console.log("I am the page trigger function");
 const userWorkoutArray = [

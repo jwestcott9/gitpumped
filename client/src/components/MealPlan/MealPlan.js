@@ -11,7 +11,8 @@ class MealPlan extends Component{
             recipe: [],
             counter: 0,
             summary: [],
-            dates:[]
+            dates:[],
+            array: []
         };
       }
       
@@ -33,19 +34,20 @@ getInstructions(id, title){
         user: this.props.user,
         plans: placeholder,
         counter: counter,
-        summary: summary
+        summary: summary,
     }, ()=>{
         console.log(this.state);
         if(this.state.counter === 21){
             console.log("printing to the database now")
             this.props.generateWorkouts();
-            
+            console.log(this.state.dates)
             API.addMealPlan({
                 user: this.props.user,
                 MealPlan: this.state.plans,
-                Summary: this.state.summary
-                               }, ()=>{
-                                   console.log(this.props)
+                Summary: this.state.summary,
+                Dates: this.state.dates
+                               }, (response)=>{
+                                   console.log(response); 
                                    
                                })
         }
@@ -67,8 +69,11 @@ I think also you could just save this data to the database and then make a get r
             let m = start.getDate();
             let month = start.getMonth();
             m = m-1
-            let y = [];
+            let y = ["", "", "", "", "","",""];
+            
              for(let i=0; i<7; i++){
+              
+               
  
               if(month === 1 || 3 || 5 || 7 || 8 || 10 || 12 ){
                 if(m === 32){
@@ -91,7 +96,7 @@ I think also you could just save this data to the database and then make a get r
                 }
               }
               m = m+1;
-              
+              console.log(m);
               start.setDate(m);
               start.setHours(12);
               start.setMinutes(0);
@@ -101,22 +106,35 @@ I think also you could just save this data to the database and then make a get r
               end.setHours(13);
               end.setMinutes(0); 
               end.setMonth(month);
-          
+              
+              console.log(start);
+              console.log(end)
               let event = {
                 start: new Date(start),
                 end: new Date(end)
               }
-              let placeholder = this.state.dates;
-              placeholder.push(event)
-              
-          
-              this.setState({
-                dates: placeholder
-              }, ()=>{
-                console.log(this.state.dates)
-              })
+              console.log(event);
+             
+             
+             y[i]=event
+             
+             console.log(y[i]);
+                this.setState({
+                  dates: y
+                },()=> console.log(this.state.dates[i]))
             }
+
+            
+
+          this.check(); 
         }
+        
+        check=()=>{
+          this.state.dates.forEach((element)=>{
+            console.log(element);
+          })
+        }
+        
       triggerLogic(){
          console.log("----------------------------wazzzzzzzzzzuuuuuuuuuu")
          this.getDates(this.props.StartDate);

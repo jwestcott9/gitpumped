@@ -8,6 +8,7 @@ import Table from "../../components/Table";
 
 
 
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import "./styles.css";
@@ -17,6 +18,7 @@ import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
 import bootstrapPlugin from '@fullcalendar/bootstrap'
+import Calendar from "react-calendar";
 
 class DemoApp extends React.Component {
   
@@ -24,9 +26,12 @@ class DemoApp extends React.Component {
   constructor(props) {
     super(props);
   this.state = {
+    
     modal: false,
+    modal2: false,
     content: null,
     calendarWeekends: true,
+    mealPlans: [],
     calendarEvents: [
       // initial event data
     ],
@@ -36,6 +41,14 @@ class DemoApp extends React.Component {
     workoutBody2: "",
     workoutHeader3: "",
     workoutBody3: "",
+    loading: true,
+    MealInfo: "",
+    Summary1: "",
+    Summary2: "",
+    Summary3: "",
+    MealName1: "",
+    MealName2: "",
+    MealName3: "",
    
   };
 
@@ -43,6 +56,7 @@ class DemoApp extends React.Component {
 
 }
 toggle() {
+  console.log(this.state)
   if(this.state.modal){
   this.setState({
     content: this.state.content,
@@ -56,16 +70,53 @@ toggle() {
   }
   ;
 }
+toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 ) {
+  console.log(this);
+  if(MealInfo){
+  this.setState({
+    MealInfo: MealInfo,
+    Summary1: Summary1, 
+    Summary2: Summary2, 
+    Summary3: Summary3,
+    MealName1: MealName1, 
+    MealName2: MealName2,
+    MealName3:MealName3
+  }, ()=>{
+    console.log(this.state)
+  })
+}
+  if(this.state.modal2){
+  this.setState({
+    content: this.state.content,
+    modal2: false
+  })}
+  if(!this.state.modal2){
+    this.setState({
+      content:this.state.content,
+      modal2: true
+    })
+  };
+}
+
+
+// saveTheMealPlans(event){
+//   console.log(this.state.calendarEvents);
+//   console.log("444444444444444444444444444444444444444444")
+//   this.setState({
+//     calendarEvents: this.state.calendarEvents.push({
+//       title: event.title,
+//       start: event.start,
+//       end: event.end
+//     })
+//   })
+// }
 
 
   render() {
     return (
       
       <div className="demo-app">
-        
-        <div className="demo-app-top">
-          &nbsp; (also, click a date/time to add an event)
-        </div>
+        {!this.state.loading?
         <div className="demo-app-calendar">
           <FullCalendar
             defaultView="dayGridMonth"
@@ -85,27 +136,32 @@ toggle() {
             eventClick = {this.eventClick}
             eventColor= 'grey'
             eventTextColor = "white"
+            Integer = '9000000'
            
            
           />
+          </div>: <div></div>
+          }
+          <div>
+        
            <Modal isOpen={this.state.modal} toggle={this.toggle}  dialogClassName="modal-90w"
            size="lg">
           <ModalHeader toggle={this.toggle}>Workout Description</ModalHeader>
           <ModalBody>
             <tbody>
             <Table
-            name = {this.state.workoutHeader1}
-            amount = {this.state.workoutBody1}
+            name = {this.state.MealName1}
+            amount = {this.state.Summary1}
             image = {this.state.image1}
             />
             <Table
-            name = {this.state.workoutHeader2}
-            amount= {this.state.workoutBody2}
+            name = {this.state.MealName2}
+            amount= {this.state.Summary2}
             image = {this.state.image2}
             />
              <Table
-             name = {this.state.workoutHeader3}
-            amount= {this.state.workoutBody3}
+             name = {this.state.MealName3}
+            amount= {this.state.Summary3}
             image = {this.state.image3}
             />
             </tbody>
@@ -115,12 +171,46 @@ toggle() {
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
+
+        <Modal isOpen={this.state.modal2} toggle={this.toggle2}  dialogClassName="modal-90w"
+           size="lg">
+          <ModalHeader toggle={this.toggle2}>Workout Description</ModalHeader>
+          <ModalBody>
+            <tbody>
+            <Table
+            name = {this.state.MealName1}
+            summary = {this.state.Summary1}
+            image = {this.state.image1}
+            />
+            <Table
+            name = {this.state.MealName2}
+            summary= {this.state.Summary2}
+            image = {this.state.image2}
+            />
+             <Table
+             name = {this.state.MealName3}
+            summary = {this.state.Summary3}
+            image = {this.state.image3}
+            />
+            </tbody>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle2}>Do Something</Button>{' '}
+            <Button color="secondary" data = {this.state.modal2} onClick={this.toggle2}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+
        
         </div>
        
       </div>
+      
     );
   }
+renderMeal = (data) => {
+  
+}
+
   
   renderList = (data)=>{
    
@@ -151,7 +241,7 @@ toggle() {
                 if(counter===3){
                   this.setState({
                     workoutHeader3: name,
-                    workoutBody3:amount
+                    workoutBody3: amount
                  }, ()=>console.log(this.state))
                 }
                    
@@ -160,10 +250,72 @@ toggle() {
     )}
   
 componentDidMount = () =>{
-    this.getWorkouts(this.props.user)
-   
+    this.getWorkouts(this.props.user);
+    
   };
+getMealPlans(user){
+  axios.get("/api/users/mealPlanForUser/"+user)
+  .then((data)=>{
+    let id = data.data.MealPlans[0];
+    axios.get("/api/mealPlans/all/" +id)
+    .then((data)=>{
+      this.setState({
+        mealPlans: data
+      }, ()=>{
+        console.log(
+      this.state.mealPlans.Dates)
+      let  y = this.state.calendarEvents;
+      let count = -1;
 
+      data.data[0].Dates.forEach((element)=>{
+       
+        count = count+1
+        let startingIndex = count*3
+        let obj = {};
+       for(let i =0; i<3; i++){
+         let increment = startingIndex;
+          if(i===0){
+            obj.breakfastTitle= data.data[0].MealPlan[increment][0]
+            obj.breakfastSummary = data.data[0].Summary[increment]
+          }
+          if(i===1){
+            obj.lunchTitle = data.data[0].MealPlan[increment+1][0]
+            obj.lunchSummary = data.data[0].Summary[increment+1]
+          }
+          if( i ===2){
+            obj.dinnerTitle = data.data[0].MealPlan[increment+2][0]
+            obj.dinnerSummary = data.data[0].Summary[increment+2]
+          }
+          increment++
+       }
+      
+       console.log(element);
+        let event = {
+          title: "MealPlan",
+          info: obj,
+          start: element.start,
+          end: element.end, 
+          color: "red"
+        }
+        y.push(event)
+      })
+      this.setState({
+        calendarEvents: y 
+        
+      }, ()=>{
+        this.setState({
+          loading: false
+        })
+        console.log(this.state.calendarEvents)
+        
+      })
+
+
+      })
+      
+    })
+  })
+}
 
 
 toggleWeekends = () => {
@@ -218,18 +370,32 @@ getWorkouts(user){
                     typeArray.pop();
                     typeArray.toString();
                     array.pop();
-                    console.log(array);
+                    console.log(array[0].name);
+                    
+                    let color = "blue";
+                    if(array[0].name.includes("cardio")){
+                      color = "lightBlue"
+                    }
+                    if(array[0].name.includes("Upper")){
+                      color = "forestgreen"
+                    }
+                    if(array[0].name.includes("core")){
+                      color="black"
+                    }
+                    /* This is where the data is stored for the events
+                     */
                     let data = {
                       title: typeArray,
                       info: array,
                       start: workoutObject.event.start,
                       end: workoutObject.event.end,
+                      color: color
                     }
                     console.log(data);
                    
                     y.push(data);
                
-                    this.saveTheWorkouts(data);
+                    // this.saveTheWorkouts(data);
                 }
                 this.setState({
                   calendarEvents: y
@@ -238,37 +404,20 @@ getWorkouts(user){
                 })
 
             });
+            this.getMealPlans(this.props.user);
         })
     })
 }
 
-saveTheWorkouts = (data) =>{
 
-  this.setState({
-    // add new event data
-    calendarEvents: this.state.calendarEvents.push({
-      // creates a new array
-      title: data.title,
-      start: data.start,
-      color: "pink"
-      
-    }, ()=>{
-      console.log(this.state.calendarEvents);
-    })
-  })
-}
 
-changeState = ()=>{
-  this.setState({
-    modal: true
-  }, ()=>{
-    this.render()
-  })
-}
+
  
 
   eventClick = (info) => { 
-    
+    console.log(info.event._def.title)
+    console.log(info.event._def.title !== "MealPlan")
+    if(info.event._def.title !== "MealPlan"){
     console.log(info);
     console.log(info.event._def.extendedProps.info);
     let data = info.event._def.extendedProps.info;
@@ -276,7 +425,7 @@ changeState = ()=>{
     this.setState({
       content: info.event._def.title,
     }, ()=>{
-     this.changeState();
+    //  this.changeState();
     })
     if (info.event.url) {
       window.open(info.event.url);
@@ -284,6 +433,24 @@ changeState = ()=>{
     this.renderList(data);
     this.toggle();
     console.log(this.state.modal)
+  }
+else{
+    console.log(info.event._def.extendedProps.info);
+     let MealInfo = info.event._def.extendedProps.info;
+     let Summary1= MealInfo.breakfastSummary;
+     let Summary2 =  MealInfo.lunchSummary;
+     let Summary3 = MealInfo.dinnerSummary;
+     let MealName1 = MealInfo.breakfastTitle;
+     let MealName2 = MealInfo.lunchTitle;
+     let MealName3 = MealInfo.dinnerTitle; 
+ 
+    console.log(Summary1);
+    console.log(Summary2);
+    console.log(Summary3);
+    
+    
+    this.toggle2(MealInfo, Summary1, Summary2, Summary3,  MealName1, MealName2, MealName3 )
+    }
   }
   
 
