@@ -11,6 +11,12 @@ const MealPlanSchema = new Schema({
     unique: false,
     required: [true, "text is required"]
   },
+  Summary:{
+    type: Array,
+  },
+  dates:{
+    type:Array,
+  },
   createdAt: {
     type: Date,
     default: Date.now()

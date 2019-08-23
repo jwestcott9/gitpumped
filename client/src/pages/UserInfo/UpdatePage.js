@@ -9,9 +9,15 @@ import Lose from '../../data/cardio.json';
 import Gain from '../../data/gain.json';
 // eslint-disable-next-line no-unused-vars
 import Maintain from '../../data/essentials.json';
+import MealPlan from "../../components/MealPlan";
+
+
 
 class UpdatePage extends Component {
-    state={
+  constructor(props){
+    super(props);
+    this.child = React.createRef();
+    this.state={
     loggedIn: false,
     username: null,
     sex: "",
@@ -21,7 +27,22 @@ class UpdatePage extends Component {
     age: "",
     goals: "",
     bmi: "",
-    workouts: []
+    workouts: [],
+    startDate: new Date(),
+    loading: false
+    }
+this.handleChange = this.handleChange.bind(this);
+  }
+
+    handleChange(date) {
+      console.log(date);
+      this.setState({
+        startDate: date
+      });
+    }
+    handleSelect(date){
+      console.log(date);
+    
     }
 
     componentDidMount() {
@@ -41,6 +62,11 @@ class UpdatePage extends Component {
       }).catch(err => {
           console.log(err);
       });
+  }
+  changeLoadingStatus(){
+    this.setState(prevState =>({
+     loading: !prevState.loading
+    }))
   }
 
   
@@ -67,6 +93,9 @@ class UpdatePage extends Component {
       };
 
 handleFormSubmit = event => {
+  this.changeLoadingStatus();
+  this.child.current.triggerLogic();
+
     event.preventDefault();
       API.updateProfile({
         user: this.state.user,
@@ -485,7 +514,6 @@ generateGain = () => {
       break;
   }
 }
-
 //this function renders a workout for physique maintenance
 generateMaintain = () => {
   let monday = {};
@@ -675,22 +703,48 @@ generateMaintain = () => {
 }
 
 getDates = () => {
-  let start = new Date();
-  let end = new Date();
+  let start = this.state.startDate
+  let end = this.state.startDate
   let m = start.getDate();
+  let month = start.getMonth();
+  m = m-1
   let y = [];
 
   this.state.workouts.forEach((element)=>{
+   
+   
+    if(month === 1 || 3 || 5 || 7 || 8 || 10 || 12 ){
+      if(m === 32){
+        m = 0
+        month ++
+      }
+    }
+    if(month ===  4 || 6 || 9 || 11){
+      if(m===31){
+        m = 0;
+        month ++
+
+      }
+    }
+
+    if(month === 2){
+      if(m===29){
+        m=0;
+        month++
+      }
+    }
     m = m+1;
     
     start.setDate(m);
     start.setHours(12);
     start.setMinutes(0);
+    start.setMonth(month)
 
     end.setDate(m);
-    end.setHours(1);
+    end.setHours(13);
     end.setMinutes(0); 
-    
+    end.setMonth(month);
+
     let event = {
       start: new Date(start),
       end: new Date(end)
@@ -703,18 +757,20 @@ getDates = () => {
     this.setState({
       workouts: y
     }, ()=>{
+      console.log(this.state.workouts)
     })
   })
 
-  this.getWorkouts();
+  // this.getWorkouts();
 }
 getWorkouts = () =>{
+  console.log("I am the page trigger function");
 const userWorkoutArray = [
   this.state.workouts[0],
   this.state.workouts[1],
   this.state.workouts[2],
-  this.state.workouts[0],
-  this.state.workouts[1]
+  this.state.workouts[3],
+  this.state.workouts[4]
 ]
 
 console.log(userWorkoutArray);
@@ -734,6 +790,10 @@ console.log(userWorkoutArray);
       render(){
         
         return(
+         <>
+         
+         
+         
           
             <UserInfo
             username = {this.state.username}
@@ -746,7 +806,21 @@ console.log(userWorkoutArray);
             goals = {this.state.goals}
             handleInputChange = {this.handleInputChange}
             handleFormSubmit = {this.handleFormSubmit}
+            handleChange = {this.handleChange}
+            selected = {this.state.startDate}
+            handleSelect = {this.handleSelect}
+
             />
+            <MealPlan ref = {this.child}
+            user = {this.state.user}
+            StartDate = {this.state.startDate}
+            generateWorkouts = {this.getWorkouts}
+            changeLoadingStatus = {this.changeLoadingStatus}/>
+            
+            
+          </> 
+          
+        
         )
         }
 
