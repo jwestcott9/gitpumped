@@ -85,7 +85,7 @@ class Signup extends Component {
                         <Button onClick={this.props.handleSignup} color="danger" block disabled>Signup</Button>
                     )}
                     <p className="signupLink">
-                        <Link to="/login">already have an account?  Sign in here</Link>
+                        <Link to="/login">already have an account?  Sign up here</Link>
                     </p>
                 </Form>
             </div>

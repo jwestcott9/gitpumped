@@ -15,7 +15,7 @@ class Profile extends Component {
     // calendarComponentRef = React.createRef()
     
 state = {
-
+        
         loggedIn: false,                   
         user: null,
         loading: true,
@@ -104,12 +104,7 @@ loading() {
         return (
             <div className="profilePage">
 
-                {/* all of this is the sidebar. working on getting it functioning. */}
-                {/* var isMenuOpen = function(state) {
-  return state.isOpen;
-};
-
-<Menu onStateChange={ isMenuOpen } /> */}
+                <SideBar />
                 
                 <Container>
                     
@@ -157,17 +152,7 @@ loading() {
                         diet = "vegetarian"
                         exclude = "dairy" />
                         
-                        {/* <SideBar>
-                        user= {this.state.user._id}>
-                        <a id="image" className="menu-item" >{this.state.user.image}</a>
-                        <a id="user" className="menu-item" >User: {this.state.user}</a>
-                        <a id="sex" className="menu-item">Sex: {this.state.user.sex}</a>
-                        <a id="height" className="menu-item" >Height: {this.state.user.height}</a>
-                        <a id="weight" className="menu-item" >Weight: {this.state.user.weight}</a>
-                        <a id="age" className="menu-item" >Age: {this.state.user.age}</a>
-                        <a id="goals" className="menu-item" >Goals: {this.state.user.goals}</a>
-                       <a onClick={ this.showSettings } className="menu-item--small" href=""></a>
-                      </SideBar>  */}
+                    
                     </div>
 
             </>
