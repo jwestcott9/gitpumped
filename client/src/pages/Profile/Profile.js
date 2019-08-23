@@ -107,7 +107,7 @@ loading() {
                 {this.state.loggedIn ? (    
                                //  puts the name in the header
                 <>      
-                    <SideBar/>     
+                    {/* <SideBar/>      */}
                         <div className="profileBox"> 
                         
                         
