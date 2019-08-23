@@ -9,12 +9,14 @@ import Lose from '../../data/cardio.json';
 import Gain from '../../data/gain.json';
 // eslint-disable-next-line no-unused-vars
 import Maintain from '../../data/essentials.json';
+import MealPlan from "../../components/MealPlan";
 
 
 
 class UpdatePage extends Component {
   constructor(props){
     super(props);
+    this.child = React.createRef();
     this.state={
     loggedIn: false,
     username: null,
@@ -26,7 +28,8 @@ class UpdatePage extends Component {
     goals: "",
     bmi: "",
     workouts: [],
-    startDate: new Date()
+    startDate: new Date(),
+    loading: false
     }
 this.handleChange = this.handleChange.bind(this);
   }
@@ -60,6 +63,11 @@ this.handleChange = this.handleChange.bind(this);
           console.log(err);
       });
   }
+  changeLoadingStatus(){
+    this.setState(prevState =>({
+     loading: !prevState.loading
+    }))
+  }
 
   
   loading() {
@@ -85,6 +93,9 @@ this.handleChange = this.handleChange.bind(this);
       };
 
 handleFormSubmit = event => {
+  this.changeLoadingStatus();
+  this.child.current.triggerLogic();
+
     event.preventDefault();
       API.updateProfile({
         user: this.state.user,
@@ -750,9 +761,10 @@ getDates = () => {
     })
   })
 
-  this.getWorkouts();
+  // this.getWorkouts();
 }
 getWorkouts = () =>{
+  console.log("I am the page trigger function");
 const userWorkoutArray = [
   this.state.workouts[0],
   this.state.workouts[1],
@@ -778,7 +790,11 @@ console.log(userWorkoutArray);
       render(){
         
         return(
+         <>
          
+         
+         
+          
             <UserInfo
             username = {this.state.username}
             loggedIn = {this.state.loggedIn}
@@ -795,7 +811,15 @@ console.log(userWorkoutArray);
             handleSelect = {this.handleSelect}
 
             />
-           
+            <MealPlan ref = {this.child}
+            user = {this.state.user}
+            StartDate = {this.state.startDate}
+            generateWorkouts = {this.getWorkouts}
+            changeLoadingStatus = {this.changeLoadingStatus}/>
+            
+            
+          </> 
+          
         
         )
         }

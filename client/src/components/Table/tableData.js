@@ -1,9 +1,10 @@
 import React from "react";
+import "./style.scss"
 
 function tableData(props){
 
 return(
-    <td>{props.children}</td>
+    <td className = "tableData">{props.children}</td>
 )
 
 

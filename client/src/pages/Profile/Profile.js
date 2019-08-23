@@ -49,7 +49,7 @@ componentDidMount() {
                     age: user.data.age,
                     goals: user.data.goals
                 }, ()=>{
-                
+                    console.log(this.state.goals);
                     this.getProfileImage(this.state.user._id);
                    
                 });
@@ -106,15 +106,14 @@ loading() {
                 
                 {this.state.loggedIn ? (    
                                //  puts the name in the header
-                <>      
-                     
+                <>                         
+                    
+               
                         <div className="profileBox"> 
-                        
-                        
                            {/* header */}
                         <img id="profile" src= {this.state.image} alt= "profile"/> 
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
-                        <MealPlanModal/>
+                        
                         <Calendar
                         user = {this.state.user._id}/>
 

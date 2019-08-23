@@ -6,7 +6,6 @@ import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClic
 import axios from "axios";
 import Table from "../../components/Table";
 
-import ModalDialog from 'react-bootstrap/ModalDialog'
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -89,7 +88,8 @@ toggle() {
            
            
           />
-           <Modal isOpen={this.state.modal} toggle={this.toggle}  dialogClassName="modal-90w">
+           <Modal isOpen={this.state.modal} toggle={this.toggle}  dialogClassName="modal-90w"
+           size="lg">
           <ModalHeader toggle={this.toggle}>Workout Description</ModalHeader>
           <ModalBody>
             <tbody>
@@ -193,18 +193,14 @@ getWorkouts(user){
                
                 let y = [];
                 for (let i = 0; i < this.state.workouts.data[0].workouts.length; i++) {
-                  
-                 
-          
+
                     let workoutObject = this.state.workouts.data[0].workouts[i]
-                    let description = ``;
                     let x;
                     let array =[];
                     let typeArray = [];
                     for(x in workoutObject){
                       let obj = {};
-                      
-                  
+                    
                       if(workoutObject[x].exercise_name){
                         
                         obj.name =`Type: ${x} - Exercise: ${workoutObject[x].exercise_name}`
@@ -215,7 +211,7 @@ getWorkouts(user){
                       if(workoutObject[x].time){
                         obj.time = `Time(in minutes): ${workoutObject[x].time}`
                       } 
-                      typeArray.push(" "+x);
+                    typeArray.push(" "+x);
 
                      array.push(obj)
                     }
@@ -227,7 +223,7 @@ getWorkouts(user){
                       title: typeArray,
                       info: array,
                       start: workoutObject.event.start,
-                      end: workoutObject.event.end
+                      end: workoutObject.event.end,
                     }
                     console.log(data);
                    
@@ -253,7 +249,8 @@ saveTheWorkouts = (data) =>{
     calendarEvents: this.state.calendarEvents.push({
       // creates a new array
       title: data.title,
-      start: data.start
+      start: data.start,
+      color: "pink"
       
     }, ()=>{
       console.log(this.state.calendarEvents);

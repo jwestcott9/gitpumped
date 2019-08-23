@@ -8,6 +8,7 @@ function Table (props ){
             <tr>
                 <TableData>{props.name}</TableData>
                 <TableData>{props.amount}</TableData>
+                <TableData>{props.image}</TableData>
             </tr>
     
     )

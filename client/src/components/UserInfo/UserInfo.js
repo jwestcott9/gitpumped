@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Allergies from "../Allergies";
 import UploadPhoto from "../UploadPhoto"
 import DatePicker from "react-datepicker";
+import MealPlan from "../MealPlan";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -14,6 +15,7 @@ import "react-datepicker/dist/react-datepicker.css";
 class UserInfo extends React.Component{
   constructor(props){
     super(props);
+    this.child = React.createRef();
     this.state={
       startDate: new Date()
     }
@@ -95,7 +97,6 @@ render(){
             </FormGroup>
             {/* if all fields are valid, allow the user to submit the form */}
          
-            
         </Form>
         </Container>
         </>)
