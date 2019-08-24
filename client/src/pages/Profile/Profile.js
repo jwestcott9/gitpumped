@@ -117,7 +117,7 @@ loading() {
                
                         <div className="profileBox"> 
                            {/* header */}
-                        <img id="profile" src= {this.state.image} alt= "profile"/> 
+                        {/* <img id="profile" src= {this.state.image} alt= "profile"/>  */}
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
                         
                         <Calendar

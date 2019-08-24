@@ -35,6 +35,7 @@ this.handleChange = this.handleChange.bind(this);
   }
 
     handleChange(date) {
+      this.getDates();
       console.log(date);
       this.setState({
         startDate: date
@@ -703,6 +704,7 @@ generateMaintain = () => {
 }
 
 getDates = () => {
+  console.log("******************************************" +this.state.startDate)
   let start = this.state.startDate
   let end = this.state.startDate
   let m = start.getDate();
