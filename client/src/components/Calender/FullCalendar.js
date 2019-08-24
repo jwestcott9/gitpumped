@@ -9,6 +9,7 @@ import Table from "../../components/Table";
 
 
 
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import "./styles.css";
@@ -70,7 +71,13 @@ toggle() {
   }
   ;
 }
-toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 ) {
+toggle3=()=>{
+  console.log(this)
+  this.setState({
+    modal2:false
+  })
+}
+toggle2 = (MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 )=> {
   console.log(this);
   if(MealInfo){
   this.setState({
@@ -87,12 +94,11 @@ toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 
 }
   if(this.state.modal2){
   this.setState({
-    content: this.state.content,
     modal2: false
   })}
   if(!this.state.modal2){
     this.setState({
-      content:this.state.content,
+      
       modal2: true
     })
   };
@@ -150,18 +156,18 @@ toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 
           <ModalBody>
             <tbody>
             <Table
-            name = {this.state.MealName1}
-            amount = {this.state.Summary1}
+            name = {this.state.workoutHeader1}
+            amount = {this.state.workoutBody1}
             image = {this.state.image1}
             />
             <Table
-            name = {this.state.MealName2}
-            amount= {this.state.Summary2}
+            name = {this.state.workoutHeader2}
+            amount= {this.state.workoutBody2}
             image = {this.state.image2}
             />
              <Table
-             name = {this.state.MealName3}
-            amount= {this.state.Summary3}
+             name = {this.state.workoutHeader3}
+            amount= {this.state.workoutBody3}
             image = {this.state.image3}
             />
             </tbody>
@@ -196,7 +202,7 @@ toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle2}>Do Something</Button>{' '}
-            <Button color="secondary" data = {this.state.modal2} onClick={this.toggle2}>Cancel</Button>
+            <Button color="secondary"  onClick={this.toggle3}>Cancel</Button>
           </ModalFooter>
         </Modal>
 
@@ -207,10 +213,6 @@ toggle2(MealInfo, Summary1, Summary2, Summary3, MealName1, MealName2, MealName3 
       
     );
   }
-renderMeal = (data) => {
-  
-}
-
   
   renderList = (data)=>{
    
@@ -246,8 +248,10 @@ renderMeal = (data) => {
                 }
                    
     },
-
-    )}
+   
+    )
+  
+    this.toggle();}
   
 componentDidMount = () =>{
     this.getWorkouts(this.props.user);
@@ -431,7 +435,7 @@ getWorkouts(user){
       window.open(info.event.url);
     }
     this.renderList(data);
-    this.toggle();
+    
     console.log(this.state.modal)
   }
 else{
