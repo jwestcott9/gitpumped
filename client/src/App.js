@@ -6,7 +6,7 @@ import Auth from "./pages/Auth";
 import UserInfo from "./pages/UserInfo";
 import NoMatch from "./pages/NoMatch";
 import TopNav from "./components/TopNav";
-import Footer from "./components/Footer";
+
 // import { Container } from 'reactstrap';
 
 
@@ -26,8 +26,7 @@ function App() {
               <Route component= {NoMatch} />
             </Switch>
           </div>
-          
-                 </>      
+          </>      
       </Router>
   );
 }
