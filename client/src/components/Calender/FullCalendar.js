@@ -371,7 +371,7 @@ getWorkouts(user){
                     typeArray.toString();
                     array.pop();
                     console.log(array[0].name);
-                    
+                                       
                     let color = "blue";
                     if(array[0].name.includes("cardio")){
                       color = "lightBlue"
