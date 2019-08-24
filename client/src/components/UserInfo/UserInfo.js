@@ -7,6 +7,7 @@ import Allergies from "../Allergies";
 import UploadPhoto from "../UploadPhoto"
 import DatePicker from "react-datepicker";
 import MealPlan from "../MealPlan";
+import './style.css';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -37,55 +38,76 @@ render(){
 {this.props.loggedIn ? (<>
             
         
-        <Container>
+        <Container className="background">
         <h2 className = "welcomeMessage"> Hello, {this.props.username} ! </h2>
              <h4 className="loginTitle title-font">Please help us get a better understanding of you and your intention</h4>
         <Form>
-
             <FormGroup>
-                <legend>Fitness Goals</legend>
-            <Label loseweight>
+                <legend className="bulletTitle">Fitness Goals:</legend>
+            <div className="bullet-host">
+            <Label className="lose bulletFont" loseweight>
 
             <Input type="radio" value = "1" onChange={this.props.handleInputChange} name="goals" />{' '}
               Lose Weight
             </Label>
+            </div>
             </FormGroup>
             <FormGroup>
-            <Label check>
+            <div className="bullet-host">
+            <Label className="bulletFont" check>
 
             <Input type="radio" value = "3" onChange={this.props.handleInputChange} name="goals" />{' '}
               Maintain Weight but Improve Health
             </Label>
-
+            </div>
             </FormGroup>
 
             <FormGroup>
-            <Label check>
+            <div className="bullet-host bullet-pad">
+            <Label className="bulletFont" check>
 
             <Input type="radio" value = "2" onChange={this.props.handleInputChange} name="goals" />{' '}
             Gain Muscle
                 </Label>
+                </div>
             </FormGroup>
+            
             <FormGroup>
-                <Label for="Height">Height</Label>
+            <div className="stats-host">
+                <Label className="bulletFont" for="Height">Height</Label>
                <Input type="height" name="height" id="height" placeholder="height" value= {this.props.height} onChange={this.props.handleInputChange}/>
 
-                 <Label for="Weight">Weight</Label>
+                 <Label className="bulletFont" for="Weight">Weight</Label>
                <Input type="weight" name="weight" id="weight" placeholder="weight" value= {this.props.weight} onChange={this.props.handleInputChange}/>
 
-               <Label for="sex">Sex</Label>
-               <Input type="sex" name="sex" id="sex" placeholder="sex" value= {this.props.sex} onChange={this.props.handleInputChange}/>
-
-               <Label for="age">
-                 
+               <Label className="bulletFont" for="sex">Sex</Label>
+               <div className="sexBulletHost">
+               <FormGroup>
+                <Label className="sexButton">
+                  <Input type="radio" name="sex" id="sex" placeholder="sex" value="male" onChange={this.props.handleInputChange}/>{' '}
+                    Male
+                </Label>
+               </FormGroup>
+               <FormGroup>
+                <Label className="sexButton">
+                  <Input type="radio" name="sex" id="sex" placeholder="sex" value="female" onChange={this.props.handleInputChange}/>{' '}
+                    Female
+                </Label>
+               </FormGroup>
+               </div>
+               {/* <Input type="sex" name="sex" id="sex" placeholder="sex" value= {this.props.sex} onChange={this.props.handleInputChange}/> */}
+               <Label className="bulletFont" for="age">
+                 Age
                </Label>
                <Input type="age" name="age" id="age" placeholder="age" value= {this.props.age} onChange={this.props.handleInputChange}/>
-              <Label>Desired Start Date</Label>
+               </div>
+              <Label className="bulletFont startDate">Desired Start Date</Label>
                <DatePicker
             onChange={this.handleChange}
             onSelect = {this.props.handleSelect}
             selected={this.state.startDate}
           />
+          
                <UploadPhoto
                 buttonLabel = "upload profile photo"
                 user = {this.props.user}/>

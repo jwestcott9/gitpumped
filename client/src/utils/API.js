@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export default {
   // logs in user
   login: function(loginInfo) {
@@ -40,5 +39,6 @@ export default {
   addMealPlan: function(userPlan){
     return axios.post("/api/mealPlans/new", userPlan);
   }
+
 
 };
