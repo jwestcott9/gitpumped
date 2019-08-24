@@ -2,8 +2,9 @@ import React from "react";
 import "./style.scss";
 import TableData from "./tableData"
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-function Table (props){
-    console.log(props)
+function Table (props) {
+  
+  
     return(
        
             <tr>
