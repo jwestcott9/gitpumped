@@ -1,7 +1,7 @@
 {
-  "name": "react-auth",
+  "name": "gitpumped",
   "version": "1.0.0",
-  "description": "react app with passport auth",
+  "description": "workout app",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evanejtucker/react-auth.git"
+    "url": "git+https://github.com/jwestcott9/gitpumped"
   },
   "keywords": [],
-  "author": "Evan E J Tucker",
+  "author": "Jeff Westcott",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/evanejtucker/react-auth/issues"
+    "url": "https://github.com/jwestcott9/gitpumped/issues"
   },
-  "homepage": "https://github.com/evanejtucker/react-auth#readme",
+  "homepage": "https://github.com/jwestcott9/gitpumped#readme",
   "dependencies": {
     "@fullcalendar/bootstrap": "^4.3.0",
     "@fullcalendar/core": "^4.3.1",
