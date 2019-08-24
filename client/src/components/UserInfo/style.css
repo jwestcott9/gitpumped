@@ -1,0 +1,65 @@
+.background {
+    background-color: white;
+}
+
+.welcomeMessage {
+    margin-top: 20px;
+    font-family: 'Bitter', serif;
+    font-size: 37px;
+}
+
+.loginTitle {
+    text-decoration:none;
+    font-family: 'Bitter', serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.bulletTitle {
+    font-family: 'Bitter', serif;
+    margin-top: 15px;
+    font-size: 30px;
+    text-decoration:underline;
+}
+
+.lose {
+    margin-top:10px;
+}
+
+.bulletFont {
+    font-family: 'Bitter', serif;
+}
+
+.startDate {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.bullet-host {
+    padding-left: 20px;
+}
+
+.bullet-pad {
+    border-bottom: solid 1px silver;
+    padding-bottom: 15px;
+
+}
+
+.stats-host {
+    margin-top: 17px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px silver;
+}
+
+#userInfoSubmit {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.sexButton {
+    font-family: 'Bitter', serif;
+}
+
+.sexBulletHost {
+    padding-left:30px;
+}
