@@ -6,7 +6,7 @@ import {Jumbotron } from "reactstrap";
 function Banner (props){
     return(
         <Jumbotron className = "title"><strong>GitPumped</strong>
-        <h3>technology for a better workout</h3>
+        <h3>Technology is Your Trainer</h3>
          </Jumbotron>
     )
 }

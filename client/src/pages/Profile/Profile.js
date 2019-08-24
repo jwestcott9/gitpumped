@@ -104,8 +104,8 @@ loading() {
         return (
             <div className="profilePage">
 
-                <SideBar />
-                
+                <SideBar></SideBar>
+
                 <Container>
                     
 
