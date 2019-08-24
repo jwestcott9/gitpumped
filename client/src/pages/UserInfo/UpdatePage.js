@@ -90,8 +90,6 @@ this.handleChange = this.handleChange.bind(this);
           [name]: value
         }, ()=>
         console.log("this.state"));
-        
-        console.log(this.state.sex);
       };
 
 handleFormSubmit = event => {
